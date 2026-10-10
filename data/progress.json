@@ -1,0 +1,781 @@
+{
+  "schema": "awesome-icl.public-progress.v1",
+  "updated_at": "2026-10-10T16:00:31.372916+00:00",
+  "repository_url": "https://github.com/asimfish/awesome-icl-research-notebook",
+  "scope": {
+    "zh": "冻结 PIM 策略的经验内容与迁移边界",
+    "en": "Experience content and transfer boundaries in a frozen PIM policy"
+  },
+  "current": {
+    "zh": "V8首错记录与继续ACTUAL532/532复核已闭合：GL1281对应42项越界shininess。只读XML抽查发现同类值；逐项来源与修复验证未完成，正式评估尚未开始。",
+    "en": "The V8 first-fault record and continued ACTUAL 532/532 review are closed: GL1281 corresponds to 42 out-of-range shininess values. Bounded XML examples contain the same values; exact provenance and repair validation remain open. Formal evaluation has not started."
+  },
+  "next": {
+    "title": {
+      "zh": "追踪材质来源，验证渲染修复",
+      "en": "Trace material provenance and validate a renderer repair"
+    },
+    "description": {
+      "zh": "只读追踪越界shininess的XML/转换来源，再设计独立的修复验证。保留原始失败，不静默修改资源或重写旧结论；重建有效RGB证据后才推进来源与共享R₀。",
+      "en": "Trace out-of-range shininess to XML/conversion sources before a separate repair validation. Preserve the original failure and old claims. Valid RGB evidence must precede legal source and shared R₀ qualification."
+    }
+  },
+  "gates": [
+    {
+      "label": {
+        "zh": "完整恢复与原生记忆一致性 B",
+        "en": "Full restoration and native-memory consistency B"
+      },
+      "status": {
+        "zh": "未通过",
+        "en": "Not qualified"
+      }
+    },
+    {
+      "label": {
+        "zh": "合法来源与物理干预 C_physical",
+        "en": "Legal sources and physical intervention C_physical"
+      },
+      "status": {
+        "zh": "未通过",
+        "en": "Not qualified"
+      }
+    },
+    {
+      "label": {
+        "zh": "共享 R₀ 与同观察估计 C_matched",
+        "en": "Shared R₀ and matched-observation C_matched"
+      },
+      "status": {
+        "zh": "未通过",
+        "en": "Not qualified"
+      }
+    },
+    {
+      "label": {
+        "zh": "正式 query 评估",
+        "en": "Formal query evaluation"
+      },
+      "status": {
+        "zh": "0 / 未开始",
+        "en": "0 / Not started"
+      }
+    }
+  ],
+  "conditions": {
+    "H11": {
+      "zh": "来自相同任务、相同执行增益的历史。用于检验在任务与执行条件均匹配时，额外经验是否有用。初始记忆为共享 R₀ + H11。",
+      "en": "History from the same task and matching execution gain. Tests the utility of additional experience when both source conditions match. Initial memory is shared R₀ + H11."
+    },
+    "H10": {
+      "zh": "来自相同任务、不同执行增益的历史。与 H11 成对比较，估计任务匹配时的增益匹配效应。初始记忆为共享 R₀ + H10。",
+      "en": "History from the same task and a mismatched execution gain. Paired against H11 to estimate the gain-matching effect when the source task matches. Initial memory is shared R₀ + H10."
+    },
+    "H01": {
+      "zh": "来自不同任务、相同执行增益的历史。检验执行条件信息是否在来源任务改变后仍有作用。初始记忆为共享 R₀ + H01。",
+      "en": "History from a different task with a matching execution gain. Tests whether execution-condition information remains useful across source tasks. Initial memory is shared R₀ + H01."
+    },
+    "H00": {
+      "zh": "来自不同任务、不同执行增益的历史。与 H01 成对比较，检查异任务来源中的增益匹配效应。初始记忆为共享 R₀ + H00。",
+      "en": "History from a different task with a mismatched execution gain. Paired against H01 to assess gain matching for a different source task. Initial memory is shared R₀ + H00."
+    }
+  },
+  "protocol": [
+    {
+      "title": {
+        "zh": "冻结与权限",
+        "en": "Frozen parameters and permissions"
+      },
+      "text": {
+        "zh": "神经参数、检索器与感知器参数在测试时冻结。增益 g 只对环境、scorer 和标记的 oracle 可见；模型只接收许可的 RGB、本体和 gain 前命令。",
+        "en": "Neural, retrieval and perception parameters stay frozen at test time. Gain g is restricted to the environment, scorer and labeled oracle; the policy receives permitted RGB, proprioception and commands before gain."
+      }
+    },
+    {
+      "title": {
+        "zh": "共同标定与合法历史",
+        "en": "Shared calibration and legal histories"
+      },
+      "text": {
+        "zh": "两份名义 R₀ 先于变量 Hs 恢复。每份来源计划 64 步自由空间 + 64 步任务后缀；固定时序、真实边界图像和命令，不按 query 成绩选择历史。",
+        "en": "Two nominal R₀ records precede variable Hs restoration. Each source plans 64 free-space steps and a 64-step task suffix, preserving chronology, actual boundary images and commands without selection by query outcomes."
+      }
+    },
+    {
+      "title": {
+        "zh": "配对统计与停止",
+        "en": "Paired statistics and stopping"
+      },
+      "text": {
+        "zh": "主比较按独立 query world 配对。任何必需来源不合法、提前终止或配额不足都会暂停阶段；保留失败与未知，不补抽幸存者。",
+        "en": "Primary contrasts are paired by independent query world. An illegal, terminated or incomplete required source pauses the stage. Failures and unknown outcomes remain; no replacement sampling of survivors."
+      }
+    }
+  ],
+  "groups": [
+    {
+      "name": {
+        "zh": "四格合法来源",
+        "en": "Four legal source conditions"
+      },
+      "count": 4,
+      "memory": "R₀ + Hs",
+      "extra": {
+        "zh": "无",
+        "en": "None"
+      }
+    },
+    {
+      "name": {
+        "zh": "Hempty",
+        "en": "Hempty"
+      },
+      "count": 1,
+      "memory": "R₀",
+      "extra": {
+        "zh": "无变量旧经历",
+        "en": "No variable source history"
+      }
+    },
+    {
+      "name": {
+        "zh": "Broken 对照",
+        "en": "Broken controls"
+      },
+      "count": 2,
+      "memory": "R₀ + broken(Hs)",
+      "extra": {
+        "zh": "命令—结果配对打乱，再冻结重编码",
+        "en": "Shuffle command–outcome pairs, then re-encode with frozen CTE"
+      }
+    },
+    {
+      "name": {
+        "zh": "同观察解析校准",
+        "en": "Matched-observation analytic calibration"
+      },
+      "count": 4,
+      "memory": "R₀",
+      "extra": {
+        "zh": "同一 R₀ + Hs 的 RGB / 命令",
+        "en": "RGB and commands from the same R₀ + Hs"
+      }
+    },
+    {
+      "name": {
+        "zh": "Oracle 上界",
+        "en": "Oracle upper bound"
+      },
+      "count": 1,
+      "memory": "R₀",
+      "extra": {
+        "zh": "真 query g 仅供补偿器",
+        "en": "True query g for the compensator only"
+      }
+    }
+  ],
+  "records": [
+    {
+      "id": "constructor-v8",
+      "status": "blocked",
+      "date": "2026-10-10",
+      "spec_id": "5200ea34",
+      "title": {
+        "zh": "构造V8：GL材质越界已定位",
+        "en": "Constructor V8: GL material-range error localized"
+      },
+      "summary": {
+        "zh": "单次CPU /tee=2 /0，首次mjr_render后GL1281。原始驱动指出glMaterial shininess越界；构造未返回，无RGB读回。",
+        "en": "One execution, CPU /tee=2 /0, with GL1281 after the first mjr_render. The driver identifies out-of-range glMaterial shininess; construction did not return and no RGB readback occurred."
+      },
+      "metric": "42",
+      "metric_label": {
+        "zh": "本次驱动错误 · 诊断计数",
+        "en": "Driver errors in this run; diagnostic count"
+      },
+      "observations": [
+        {
+          "zh": "325项模型材料与569项场景几何中，各42项shininess越界；41项为−1023，1项为2。",
+          "en": "Among 325 model materials and 569 scene geoms, 42 in each have out-of-range shininess: 41 at −1023 and 1 at 2."
+        },
+        {
+          "zh": "渲染传入值乘128，得到−130944与256；与原始驱动41+1条错误一致。",
+          "en": "Rendering multiplies these values by 128, producing −130944 and 256, matching the 41+1 original driver messages."
+        },
+        {
+          "zh": "40个命名阶段39返回、1未知；4个原生C调用返回，但最后渲染包装失败。三组恢复成功，作者487/487与继续ACTUAL532/532复核闭合。",
+          "en": "Of 40 named stages, 39 returned and 1 is unknown. All 4 instrumented C calls returned, while the last render wrapper failed. Three attribute groups restored; author 487/487 and continued ACTUAL 532/532 checks closed."
+        },
+        {
+          "zh": "只读抽查3个资源XML，发现13项越界材质；尚未将这些文件逐一绑定到本次42项材料。",
+          "en": "Read-only inspection of 3 asset XML examples found 13 out-of-range materials. These files have not been bound to the 42 compiled materials in this run."
+        }
+      ],
+      "limits": {
+        "zh": "定位范围仅限本次首次渲染；材料源头与修复的反事实验证未完成，不能证明旧137/139或历史图像损坏的原因。正式query仍为0。",
+        "en": "Localization applies only to this run’s first render. Asset provenance and a repair counterfactual remain open; older exit137/139 and historical image corruption are not explained. Formal queries remain0."
+      },
+      "next": {
+        "zh": "记录材料名称及所选XML来源，再审查独立的场景材质修复验证；原始失败保持冻结。",
+        "en": "Capture material names and selected XML ancestry, then review a separate scene-material repair validation. Preserve the frozen original failure."
+      },
+      "provenance": {
+        "source_type": "Actual native first-fault record; author487 and continued saved-record ACTUAL532; bounded XML examples",
+        "review_checks": [
+          532,
+          532
+        ]
+      }
+    },
+    {
+      "id": "constructor-v6",
+      "status": "blocked",
+      "date": "2026-10-10",
+      "spec_id": "43ef620b",
+      "title": {
+        "zh": "构造 V6：137结束，终态未知",
+        "en": "Constructor V6: exit137, final census unknown"
+      },
+      "summary": {
+        "zh": "修复版本只执行一次，CPU / tee =137 /0。仅留下两份调用前检查点，没有终端报告，未定位具体停滞调用。",
+        "en": "The corrected version executed once, CPU / tee =137 /0. Only two pre-call checkpoints remain, with no terminal report or precise stalled-call location."
+      },
+      "metric": "137",
+      "metric_label": {
+        "zh": "实际退出码 · 未证明OOM",
+        "en": "Actual exit code; OOM not established"
+      },
+      "observations": [
+        {
+          "zh": "执行前CODE核验291 /291；保存失败记录作者核验163 /163，ACTUAL审查292 /292已关闭。",
+          "en": "Pre-execution CODE checks291 /291; saved-failure author checks163 /163 and closed ACTUAL review292 /292."
+        },
+        {
+          "zh": "两份检查点共1698字节；保存的零调用是调用前状态，最终构造、原生调用和控制计数保持未知。",
+          "en": "Two checkpoints total1698bytes. Saved zero counts are pre-dispatch state; final constructor, native-call and control counts remain unknown."
+        }
+      ],
+      "limits": {
+        "zh": "退出137不足以区分期限杀停、OOM或其他外部终止。日志没有崩溃栈，方法恢复状态未知。",
+        "en": "Exit137 cannot distinguish deadline killing, OOM or other external termination. No crash stack is saved; method restoration is unknown."
+      },
+      "next": {
+        "zh": "封存失败，不重复原版本。在新版本中补充更早的操作边界与定时栈记录。",
+        "en": "Seal the failure without an unchanged retry. Add earlier boundaries and a timed stack record in a separate version."
+      },
+      "provenance": {
+        "source_type": "Actual exit, saved-failure integrity and closed ACTUAL read-only review",
+        "review_checks": [
+          292,
+          292
+        ]
+      }
+    },
+    {
+      "id": "constructor-v5",
+      "status": "blocked",
+      "date": "2026-10-10",
+      "spec_id": "f29fc21d",
+      "title": {
+        "zh": "构造 V5：执行前审查阻断",
+        "en": "Constructor V5: blocked before execution"
+      },
+      "summary": {
+        "zh": "初始化前错误查询已修正，但已返回原生上下文可能因后处理异常漏出显式所有权。该版本冻结，未执行。",
+        "en": "The pre-initialization query was corrected, but post-processing exceptions can lose explicit ownership of an already-returned native context. This frozen version did not execute."
+      },
+      "metric": "MAIN 0",
+      "metric_label": {
+        "zh": "该版本尚未执行",
+        "en": "This version has not executed"
+      },
+      "observations": [
+        {
+          "zh": "CODE 核验 287 / 286，唯一阻断为返回上下文的所有权保留。",
+          "en": "CODE checks 287 / 286; the sole blocker is retention of returned-context ownership."
+        }
+      ],
+      "limits": {
+        "zh": "尚无新构造结果；GL1281 对应调用和材质假设均未确认。",
+        "en": "No new constructor result. The GL1281-producing call and material hypothesis remain unconfirmed."
+      },
+      "next": {
+        "zh": "在独立新版本中保留已返回上下文，然后重新进行 CODE 审查。",
+        "en": "Retain the already-returned context in a separate new version, then obtain CODE review."
+      },
+      "provenance": {
+        "source_type": "Frozen source and read-only CODE review",
+        "review_checks": [
+          287,
+          286
+        ],
+        "review_publication_sha256": "81a51ed820cc69c215cd37b51aa4eef8458d0de46bed8cc7d8180d34d1006e0b"
+      }
+    },
+    {
+      "id": "glad-initialization",
+      "status": "verified",
+      "date": "2026-10-09",
+      "spec_id": "9d1fca61",
+      "title": {
+        "zh": "GLAD 初始化顺序得到验证",
+        "en": "GLAD initialization order verified"
+      },
+      "summary": {
+        "zh": "函数指针在仅构造模型后仍为空，创建原生渲染上下文后才非空。初始化前的 PyOpenGL 查询安全返回零。",
+        "en": "The pointer remains null after model creation and becomes nonnull after native render-context creation. The pre-initialization PyOpenGL query returned zero safely."
+      },
+      "metric": "14 / 14",
+      "metric_label": {
+        "zh": "命名操作返回 · 含两次清理",
+        "en": "Named operations returned, including two cleanup calls"
+      },
+      "observations": [
+        {
+          "zh": "一次原生执行 CPU / tee = 0 / 0；29 个检查点与终端记录完整。",
+          "en": "One native execution, CPU / tee = 0 / 0; all 29 checkpoints and the terminal record saved."
+        },
+        {
+          "zh": "保存记录作者核验 133 / 133；只读审查 230 / 230。",
+          "en": "Saved-record author checks 133 / 133; read-only review 230 / 230."
+        },
+        {
+          "zh": "OSMesa 返回 Mesa 4.5 Compatibility Profile；三个安全错误查询均为零。",
+          "en": "OSMesa returned a Mesa 4.5 Compatibility Profile; all three safe error queries returned zero."
+        }
+      ],
+      "limits": {
+        "zh": "只验证最小初始化机制，不证明旧段错误的实际崩溃位置、GL1281 来源或历史图像损坏原因。",
+        "en": "Establishes the minimal initialization mechanism only; it does not prove the historical crash location, GL1281 origin or cause of old image corruption."
+      },
+      "next": {
+        "zh": "把安全查询顺序用于新的构造诊断。",
+        "en": "Apply the safe query order to a separately reviewed constructor diagnostic."
+      },
+      "provenance": {
+        "source_type": "Saved native execution and read-only ACTUAL review",
+        "review_checks": [
+          230,
+          230
+        ],
+        "review_publication_sha256": "fcbbcd864c01a956416ff8d8a4f1bf2068529bd85616748153e5ec414873843e"
+      }
+    },
+    {
+      "id": "constructor-crash",
+      "status": "blocked",
+      "date": "2026-10-09",
+      "spec_id": "4aa876b5",
+      "title": {
+        "zh": "构造诊断发生原生段错误",
+        "en": "Constructor diagnostic ended in a native crash"
+      },
+      "summary": {
+        "zh": "一次执行以 SIGSEGV 139 结束，只留下两份调用前检查点。该版本已停止。",
+        "en": "One execution ended with SIGSEGV 139, leaving two pre-call checkpoints. This version is closed."
+      },
+      "metric": "139",
+      "metric_label": {
+        "zh": "实际进程退出码 · tee 0",
+        "en": "Actual process exit code; tee 0"
+      },
+      "observations": [
+        {
+          "zh": "保存载荷为 1,472 字节，没有终端执行报告或 Python 崩溃栈。",
+          "en": "Saved payload is 1,472 bytes, with no terminal execution report or Python crash stack."
+        },
+        {
+          "zh": "只读 ACTUAL 核验 246 / 246，失败记录保持封存。",
+          "en": "Read-only ACTUAL checks 246 / 246; the failure record remains sealed."
+        }
+      ],
+      "limits": {
+        "zh": "最终构造、原生调用和控制计数以及方法恢复状态均为未知，不记作零。",
+        "en": "Final constructor, native-call and control counts, and method restoration are unknown, not zero."
+      },
+      "next": {
+        "zh": "保留旧版本；用独立最小探针检验初始化假设。",
+        "en": "Preserve this version; test the initialization hypothesis in a distinct minimal probe."
+      },
+      "provenance": {
+        "source_type": "Saved failure checkpoints and ACTUAL closure",
+        "review_checks": [
+          246,
+          246
+        ],
+        "review_publication_sha256": "20f9bd5b02acfcdcdc95717c1f2c7c0668eaff988a27e8e7264a879aba959b5c"
+      }
+    },
+    {
+      "id": "guarded-readback",
+      "status": "blocked",
+      "date": "2026-10-09",
+      "spec_id": "c6d294ee",
+      "title": {
+        "zh": "守卫在第一次像素读取前截获错误",
+        "en": "Guard caught an error before the first pixel read"
+      },
+      "summary": {
+        "zh": "GC 最小检查通过，但首次 RoboCasa 构造检测到 GL1281；没有把初始化缓冲区当作 RGB 观测。",
+        "en": "The minimal GC checks passed, but the first RoboCasa constructor detected GL1281. Initialized buffers were not treated as RGB observations."
+      },
+      "metric": "GL 1281",
+      "metric_label": {
+        "zh": "首次失败 · 该版本零外部控制",
+        "en": "First fault; zero external controls in this version"
+      },
+      "observations": [
+        {
+          "zh": "八个 CPU 回归检查已通过并保留；原生执行 CPU / tee = 2 / 0。",
+          "en": "Eight CPU regressions passed and were retained; native CPU / tee = 2 / 0."
+        },
+        {
+          "zh": "两个失败缓冲区保留原填充值 17 / 231，读取尚未发生。",
+          "en": "The two failed buffers retained fill values 17 / 231; their reads had not occurred."
+        },
+        {
+          "zh": "保存记录核验 112 / 112，只读 ACTUAL 217 / 217。",
+          "en": "Saved-record checks 112 / 112, read-only ACTUAL 217 / 217."
+        }
+      ],
+      "limits": {
+        "zh": "GL_INVALID_VALUE 的名称不足以识别错误来源。零外部控制不等于构造内部没有原生工作。",
+        "en": "The name GL_INVALID_VALUE does not identify its source. Zero external controls does not mean the constructor performed no native work."
+      },
+      "next": {
+        "zh": "保留首次故障；通过原生驱动回调定位具体调用。",
+        "en": "Preserve the first fault and locate the responsible call using native driver callbacks."
+      },
+      "provenance": {
+        "source_type": "Guarded constructor failure and ACTUAL closure",
+        "review_checks": [
+          217,
+          217
+        ],
+        "review_publication_sha256": "cd6a8972c31380939135972c127615c9ffbfeffd2df41407f6fc47ab851a1a16"
+      }
+    },
+    {
+      "id": "renderer-lifecycle",
+      "status": "verified",
+      "date": "2026-10-09",
+      "spec_id": "0e4857ad",
+      "title": {
+        "zh": "上下文释放的最小机制对照",
+        "en": "Minimal render-context lifecycle controls"
+      },
+      "summary": {
+        "zh": "在三个固定分支中，错误的上下文选择可导致读回失败；选择资源所属上下文的对照保持图像逐字节一致。",
+        "en": "Across three fixed branches, incorrect context selection caused readback failure; owner-selected controls kept images byte-exact."
+      },
+      "metric": "3 branches",
+      "metric_label": {
+        "zh": "合成夹具 · 完整保留",
+        "en": "Synthetic fixture, all branches retained"
+      },
+      "observations": [
+        {
+          "zh": "12 个初始化读回数组完整核验。错误分支保留 GL1286 和缓冲区填充值。",
+          "en": "All 12 initialized readback arrays were checked. The failing branch retained GL1286 and buffer fill values."
+        },
+        {
+          "zh": "只读 ACTUAL 核验 481 / 481。",
+          "en": "Read-only ACTUAL checks 481 / 481."
+        }
+      ],
+      "limits": {
+        "zh": "证明合成夹具中的释放机制，不足以证明旧 RoboCasa 图像损坏的历史原因。",
+        "en": "Establishes the release mechanism in this synthetic fixture, not the historical cause of RoboCasa image corruption."
+      },
+      "next": {
+        "zh": "在进程范围内保持资源所属上下文的释放规则。",
+        "en": "Keep owner-selected release within the owned process."
+      },
+      "provenance": {
+        "source_type": "Synthetic native fixture and saved-array audit",
+        "review_checks": [
+          481,
+          481
+        ]
+      }
+    },
+    {
+      "id": "motion-observability",
+      "status": "blocked",
+      "date": "2026-10-09",
+      "spec_id": "92c86d4c",
+      "title": {
+        "zh": "运动可测，RGB 观测仍不合格",
+        "en": "Motion is measurable; RGB remains unqualified"
+      },
+      "summary": {
+        "zh": "保存的运动日志可核验，但全量 170 帧 RGB 呈现严重退化，不能据此评价视觉 gain 估计方法。",
+        "en": "Saved motion logs are auditable, but all 170 RGB frames exhibit severe degradation. They cannot establish the quality of the visual gain estimator."
+      },
+      "metric": "170 frames",
+      "metric_label": {
+        "zh": "全量图像检查 · 未选择子集",
+        "en": "All images inspected; no selected subset"
+      },
+      "observations": [
+        {
+          "zh": "保存数据包含 65 个末端 / 相机位姿和 17 个图像边界；相机并非严格静止。",
+          "en": "Saved data includes 65 end-effector/camera poses and 17 image boundaries; the cameras are not exactly stationary."
+        },
+        {
+          "zh": "完整记录只读 ACTUAL 核验 437 / 437。",
+          "en": "Complete-record read-only ACTUAL checks 437 / 437."
+        }
+      ],
+      "limits": {
+        "zh": "输入观测无效时，较差的估计结果不能证明方法无效。更多传感的本体结果不替代同观察资格。",
+        "en": "Poor estimates under invalid observations do not establish method failure. Proprioceptive results with extra sensing do not replace matched-observation qualification."
+      },
+      "next": {
+        "zh": "修复有效 RGB 采集，再检验点身份、姿态、幅度和局部模型适用域。",
+        "en": "Recover valid RGB collection, then test point identity, pose, amplitude and the local model's validity."
+      },
+      "provenance": {
+        "source_type": "Saved motion and full-image observability audit",
+        "review_checks": [
+          437,
+          437
+        ]
+      }
+    },
+    {
+      "id": "amplitude-contact",
+      "status": "verified",
+      "date": "2026-10-09",
+      "spec_id": "e52afbd3",
+      "title": {
+        "zh": "命令、状态与接触路径已记录",
+        "en": "Command, state and contact paths recorded"
+      },
+      "summary": {
+        "zh": "固定两任务的 10 个诊断条件保存了 640 条命令和内部状态记录。它们是开发证据，不是迁移成功率。",
+        "en": "Ten diagnostic conditions across two fixed tasks preserved 640 commands and internal-state records. They are development evidence, not transfer success rates."
+      },
+      "metric": "640",
+      "metric_label": {
+        "zh": "实际返回的诊断命令",
+        "en": "Diagnostic commands actually returned"
+      },
+      "observations": [
+        {
+          "zh": "完整日志保存 32,010 个状态快照、592,422 条接触项，未发生未知命令。",
+          "en": "Complete logs preserved 32,010 state snapshots and 592,422 contact entries, with no unknown commands."
+        },
+        {
+          "zh": "后续图像审计发现 RGB 退化；运动与图像资格分别记录。",
+          "en": "Later image audits found RGB degradation; motion and image qualification are tracked separately."
+        }
+      ],
+      "limits": {
+        "zh": "这些诊断没有完成合法任务后缀、共享 R₀、全 clone 或正式任务收益门槛。",
+        "en": "These diagnostics do not complete legal task suffixes, shared R₀, full cloning or formal task-benefit gates."
+      },
+      "next": {
+        "zh": "保留命令和状态证据，先恢复有效视觉观测。",
+        "en": "Preserve command/state evidence and recover valid visual observations first."
+      },
+      "provenance": {
+        "source_type": "Saved fixed-scope amplitude/contact diagnostics"
+      }
+    },
+    {
+      "id": "pim-recovery",
+      "status": "verified",
+      "date": "2026-10-09",
+      "spec_id": "a638",
+      "title": {
+        "zh": "受限 PIM 恢复路径保持数值",
+        "en": "Restricted PIM recovery preserved values"
+      },
+      "summary": {
+        "zh": "受限恢复流程完成真实 API 返回及 rank 内数组检查，为后续完整恢复门槛提供前置证据。",
+        "en": "The restricted recovery path completed real API returns and within-rank array checks, providing prerequisite evidence for a full restoration gate."
+      },
+      "metric": "30 returns",
+      "metric_label": {
+        "zh": "受限 API 诊断返回",
+        "en": "Restricted API diagnostic returns"
+      },
+      "observations": [
+        {
+          "zh": "18 个服务调用与 12 个 CPU 调用返回；原有数值一致性检查全部保留。",
+          "en": "18 service calls and 12 CPU calls returned; original numerical consistency checks were retained."
+        },
+        {
+          "zh": "只读 ACTUAL 核验 668 / 668。",
+          "en": "Read-only ACTUAL checks 668 / 668."
+        }
+      ],
+      "limits": {
+        "zh": "不授予完整中间状态 clone、原生闭环恢复一致性 B 或自然跨任务积累能力。",
+        "en": "Does not qualify full intermediate-state cloning, native closed-loop restoration B or natural cross-task accumulation."
+      },
+      "next": {
+        "zh": "完成合法来源与共同标定后，再进行原生恢复和更新的一致性验证。",
+        "en": "After legal sources and shared calibration, verify native restoration and subsequent update consistency."
+      },
+      "provenance": {
+        "source_type": "Restricted recovery saved-record audit",
+        "review_checks": [
+          668,
+          668
+        ]
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-10-03",
+      "status": "verified",
+      "title": {
+        "zh": "锁定问题与反事实设计",
+        "en": "Lock the question and counterfactual design"
+      },
+      "text": {
+        "zh": "固定冻结策略、四格来源、共享 R₀、成功重放关闭，以及未通过门槛时的停止规则。",
+        "en": "Fix the frozen policy, four source cells, shared R₀, disabled success replay and gate-dependent stopping."
+      }
+    },
+    {
+      "date": "2026-10-09",
+      "status": "verified",
+      "title": {
+        "zh": "隔离运行条件与受限恢复前置",
+        "en": "Isolated runtime and restricted recovery prerequisites"
+      },
+      "text": {
+        "zh": "完成基础运行与 API 诊断；受限 PIM 恢复保留数值。完整 B / C 资格仍未取得。",
+        "en": "Complete basic runtime and API diagnostics; restricted PIM recovery preserved values. Full B / C qualification remains open."
+      }
+    },
+    {
+      "date": "2026-10-09",
+      "status": "blocked",
+      "title": {
+        "zh": "全量审计发现视觉观测退化",
+        "en": "Full audit detects degraded visual observations"
+      },
+      "text": {
+        "zh": "保留全部条件与 170 帧图像，暂停把视觉估计结果解释为方法表现。",
+        "en": "Retain every condition and all 170 images; stop interpreting visual estimates as method performance."
+      }
+    },
+    {
+      "date": "2026-10-09",
+      "status": "verified",
+      "title": {
+        "zh": "验证最小上下文释放机制",
+        "en": "Verify a minimal context-release mechanism"
+      },
+      "text": {
+        "zh": "固定夹具区分资源所属上下文释放与错误释放，仅作合成机制证据。",
+        "en": "Fixed fixtures distinguish owner-selected and incorrect release, as synthetic mechanism evidence only."
+      }
+    },
+    {
+      "date": "2026-10-09",
+      "status": "blocked",
+      "title": {
+        "zh": "守卫截获 GL1281，构造诊断随后崩溃",
+        "en": "Guard catches GL1281; constructor diagnostic later crashes"
+      },
+      "text": {
+        "zh": "两个独立版本分别首次失败并封存；没有重复原版本追求成功。",
+        "en": "Two distinct versions stopped at their first faults and were sealed; no unchanged retry to seek success."
+      }
+    },
+    {
+      "date": "2026-10-09",
+      "status": "verified",
+      "title": {
+        "zh": "最小初始化探针 14 / 14 返回",
+        "en": "Minimal initialization probe returns 14 / 14"
+      },
+      "text": {
+        "zh": "确认 GLAD 指针初始化顺序与安全查询，继续保存记录复核 230 / 230。",
+        "en": "Confirm GLAD pointer initialization order and safe queries; continued saved-record review 230 / 230."
+      }
+    },
+    {
+      "date": "2026-10-10",
+      "status": "blocked",
+      "title": {
+        "zh": "首次渲染的材质越界已定位",
+        "en": "Material-range error localized at the first render"
+      },
+      "text": {
+        "zh": "V8一次运行CPU/tee=2/0，42条原始驱动错误与材质/场景值一致；作者487及继续ACTUAL532闭合。三组恢复成功；旧137原因未知。已完成修复验证草案与双语网页，GitHub发布仓库待指定。",
+        "en": "V8 ran once, CPU/tee=2/0. Its 42 original driver errors match material/scene values; author487 and continued ACTUAL532 are closed. Three attribute groups restored; the older137 cause is unknown. A repair-validation draft and bilingual website are ready; the GitHub destination remains pending."
+      }
+    }
+  ],
+  "references": [
+    {
+      "title": "Robotensor · What in-context robot learning asks",
+      "url": "https://www.robotensor.ai/blog/what-in-context-robot-learning-asks",
+      "kind": "context"
+    },
+    {
+      "title": "Robotensor · The missing variable: the task itself",
+      "url": "https://www.robotensor.ai/blog/the-missing-variable-in-robot-benchmarking-the-task-itself",
+      "kind": "context"
+    },
+    {
+      "title": "Robotensor · Robotics in 2026",
+      "url": "https://www.robotensor.ai/blog/robotics-in-2026-from-imitation-to-self-improving-physical-intelligence",
+      "kind": "context"
+    },
+    {
+      "title": "ARIS · Research workflow",
+      "url": "https://github.com/wanshuiyin/auto-claude-code-research-in-sleep",
+      "kind": "workflow"
+    },
+    {
+      "title": "MuJoCo 3.3.1 · Rendering context source",
+      "url": "https://github.com/google-deepmind/mujoco/blob/3.3.1/src/render/render_context.c",
+      "kind": "source"
+    },
+    {
+      "title": "RoboDojo · Evaluation report format",
+      "url": "https://robodojo-benchmark.com/report/gpt-6-astra-eval",
+      "kind": "presentation"
+    },
+    {
+      "title": "Awesome Astra Embodied AI · Reference index",
+      "url": "https://github.com/zjwzcx/Awesome-Astra-Embodied-AI",
+      "kind": "presentation"
+    },
+    {
+      "title": "Anonymous report · Interactive report format",
+      "url": "https://anonymous-report-421.github.io/public-website/?lang=en&view=",
+      "kind": "presentation"
+    },
+    {
+      "title": "MuJoCo 3.3.1 · Material shininess range",
+      "url": "https://mujoco.readthedocs.io/en/3.3.1/XMLreference.html#asset-material-shininess",
+      "kind": "source"
+    },
+    {
+      "title": "MuJoCo 3.3.1 · glMaterial shininess scaling",
+      "url": "https://github.com/google-deepmind/mujoco/blob/3.3.1/src/render/render_gl3.c",
+      "kind": "source"
+    }
+  ],
+  "publication_policy": {
+    "public_only": true,
+    "includes_private_payloads": false,
+    "includes_machine_paths": false,
+    "includes_credentials": false,
+    "formal_queries_completed": 0,
+    "full_restore_B_qualified": false,
+    "physical_C_qualified": false,
+    "matched_C_qualified": false,
+    "reviewer_fresh": false,
+    "reviewer_provider": "UNATTESTED"
+  }
+}
