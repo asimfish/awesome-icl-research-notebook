@@ -1,23 +1,23 @@
 {
   "schema": "awesome-icl.public-progress.v1",
-  "updated_at": "2026-10-10T16:00:31.372916+00:00",
+  "updated_at": "2026-10-11T04:24:54.940155+00:00",
   "repository_url": "https://github.com/asimfish/awesome-icl-research-notebook",
   "scope": {
     "zh": "冻结 PIM 策略的经验内容与迁移边界",
     "en": "Experience content and transfer boundaries in a frozen PIM policy"
   },
   "current": {
-    "zh": "V8首错记录与继续ACTUAL532/532复核已闭合：GL1281对应42项越界shininess。只读XML抽查发现同类值；逐项来源与修复验证未完成，正式评估尚未开始。",
-    "en": "The V8 first-fault record and continued ACTUAL 532/532 review are closed: GL1281 corresponds to 42 out-of-range shininess values. Bounded XML examples contain the same values; exact provenance and repair validation remain open. Formal evaluation has not started."
+    "zh": "主线已改为：示范指定必要线索，机器人在抓取遮住它前补看。30个符号案例与经典策略成本相同；模型和机器人试点均未运行。旧U3保留历史记录，正式query仍0。",
+    "en": "The main pilot now asks which cue demonstrations require a robot to inspect before a grasp hides it. Classical cost matches in 30 symbolic cases; model and robot pilots have not run. Earlier U3 records remain historical, with zero formal queries."
   },
   "next": {
     "title": {
-      "zh": "追踪材质来源，验证渲染修复",
-      "en": "Trace material provenance and validate a renderer repair"
+      "zh": "先检验具体能力缺口",
+      "en": "Test a concrete capability gap first"
     },
     "description": {
-      "zh": "只读追踪越界shininess的XML/转换来源，再设计独立的修复验证。保留原始失败，不静默修改资源或重写旧结论；重建有效RGB证据后才推进来源与共享R₀。",
-      "en": "Trace out-of-range shininess to XML/conversion sources before a separate repair validation. Preserve the original failure and old claims. Valid RGB evidence must precede legal source and shared R₀ qualification."
+      "zh": "锁定六组同信息对照，制备可读的视觉刺激；若模型可用，最多120次离线决策。没有差距或同证据prompt已修复，就停止外部门槛扩张。完整任务与停止条件见最新方案。",
+      "en": "Fix six equal-information controls and prepare readable visual stimuli. If a model is available, cap offline decisions at 120 calls. Stop expanding an external gate if no deficit appears or a same-evidence prompt resolves it. See the latest plan for the task and stop rules."
     }
   },
   "gates": [
@@ -712,6 +712,18 @@
         "zh": "V8一次运行CPU/tee=2/0，42条原始驱动错误与材质/场景值一致；作者487及继续ACTUAL532闭合。三组恢复成功；旧137原因未知。已完成修复验证草案与双语网页，GitHub发布仓库待指定。",
         "en": "V8 ran once, CPU/tee=2/0. Its 42 original driver errors match material/scene values; author487 and continued ACTUAL532 are closed. Three attribute groups restored; the older137 cause is unknown. A repair-validation draft and bilingual website are ready; the GitHub destination remains pending."
       }
+    },
+    {
+      "date": "2026-10-11",
+      "status": "verified",
+      "title": {
+        "zh": "ARIS重新选题与经典负对照",
+        "en": "ARIS rethink and classical negative controls"
+      },
+      "text": {
+        "zh": "9个完整候选经查新与研究审查，选示范线索×自致遮挡为受限试点。30个符号案例中经典成本与拟议门槛相同，取消该设计内的新调度器主张。视觉、模型、机器人均未验证。",
+        "en": "Nine complete candidates underwent novelty and research review. A bounded demo-cue × self-occlusion pilot was selected. Classical control matches gate cost in all 30 symbolic cases, ending scheduler novelty for this design. Visual, model and robot validation remain absent."
+      }
     }
   ],
   "references": [
@@ -764,6 +776,30 @@
       "title": "MuJoCo 3.3.1 · glMaterial shininess scaling",
       "url": "https://github.com/google-deepmind/mujoco/blob/3.3.1/src/render/render_gl3.c",
       "kind": "source"
+    },
+    {
+      "title": "ATAP / Imagine then Verify",
+      "url": "https://arxiv.org/html/2609.23504v1"
+    },
+    {
+      "title": "EventVLA",
+      "url": "https://arxiv.org/html/2606.20092v1"
+    },
+    {
+      "title": "Active Perception for Embodied Disambiguation",
+      "url": "https://arxiv.org/html/2608.13605v1"
+    },
+    {
+      "title": "SimpleICL",
+      "url": "https://arxiv.org/html/2609.38173v1"
+    },
+    {
+      "title": "BiCICLe · v3 §A.5, Table 9",
+      "url": "https://arxiv.org/html/2604.20348v3"
+    },
+    {
+      "title": "RESETTLE · 2026-10-08",
+      "url": "https://arxiv.org/html/2610.12185v1"
     }
   ],
   "publication_policy": {

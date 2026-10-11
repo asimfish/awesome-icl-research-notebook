@@ -1,0 +1,459 @@
+{
+  "schema": "awesome-icl.research-plan.v1",
+  "title": {
+    "zh": "示范教机器人：抓取前，先看什么？",
+    "en": "What should a demonstration teach a robot to inspect?"
+  },
+  "intro": {
+    "zh": "同一个箱件，只换示范：按颜色分拣可以直接抓；按侧面符号分拣，应在夹爪遮住符号前补看。先检验冻结模型的具体能力缺口，再判断是否需要新方法。",
+    "en": "The same box, different demonstrations: sorting by color permits a direct grasp; sorting by a side symbol calls for a view before the gripper hides it. Test a specific frozen-policy limitation before claiming a new method."
+  },
+  "status": {
+    "zh": "当前：符号负对照和八个程序视觉输入包完成；模型决策、真实图像验证与机器人闭环未运行。科研主张仍 REVISE。",
+    "en": "Current: symbolic negative controls and eight drawn input packs completed. Model decisions, physical-image validation and robot rollouts have not run. Scientific claims remain REVISE."
+  },
+  "metrics": [
+    {
+      "value": 9,
+      "label": {
+        "zh": "完整候选，经查新筛选",
+        "en": "Candidates reviewed"
+      }
+    },
+    {
+      "value": 15,
+      "label": {
+        "zh": "符号配对上下文",
+        "en": "Symbolic paired contexts"
+      }
+    },
+    {
+      "value": 0,
+      "label": {
+        "zh": "试点模型调用",
+        "en": "Pilot model calls"
+      }
+    },
+    {
+      "value": 0,
+      "label": {
+        "zh": "机器人新回合",
+        "en": "New robot episodes"
+      }
+    }
+  ],
+  "example": {
+    "title": {
+      "zh": "红色、圆形。同一个物体，两种教学。",
+      "en": "Red, circular. One object, two lessons."
+    },
+    "scope": {
+      "zh": "假设当前只读到正面颜色，侧面符号未知。两类特征对应的箱子相反；抓取会遮住符号。点击比较下一动作。",
+      "en": "Assume the current view reveals front color but not the side symbol. The cues imply opposite bins, and the grasp hides the symbol. Compare the next action."
+    },
+    "limits": {
+      "zh": "这是声明的信息结构示意，不是机器人录像。真实图像是否可读、抓取是否确实遮挡、腕部换位能否补看，仍需验证。抓后允许放回、观察、重抓，计入恢复成本。",
+      "en": "This is a declared information-structure illustration, not robot footage. Cue readability, actual grasp occlusion and a feasible wrist-camera view remain unverified. Place-back, inspection and regrasp are allowed and charged as recovery."
+    },
+    "cases": [
+      {
+        "label": {
+          "zh": "示范1：按颜色",
+          "en": "Lesson 1: color"
+        },
+        "stages": [
+          {
+            "title": {
+              "zh": "示范改变规则",
+              "en": "Demos bind the rule"
+            },
+            "text": {
+              "zh": "符号保持不变，颜色改变时目标箱改变。两例在限定语法中识别颜色规则。",
+              "en": "Hold symbol fixed; changing color changes the target bin. Two examples identify color within the declared grammar."
+            }
+          },
+          {
+            "title": {
+              "zh": "必要证据已知",
+              "en": "Evidence already known"
+            },
+            "text": {
+              "zh": "红色已从当前图像读到。侧面的圆形与当前任务无关。",
+              "en": "Red is observed in the current view. The side symbol is irrelevant to this task."
+            }
+          },
+          {
+            "title": {
+              "zh": "直接抓取",
+              "en": "Grasp directly"
+            },
+            "text": {
+              "zh": "去颜色指定的右箱，无需额外看侧面。",
+              "en": "Use the color-selected right bin. No extra side inspection is needed."
+            }
+          }
+        ]
+      },
+      {
+        "label": {
+          "zh": "示范2：按符号",
+          "en": "Lesson 2: symbol"
+        },
+        "stages": [
+          {
+            "title": {
+              "zh": "场景保持相同",
+              "en": "Keep the scene fixed"
+            },
+            "text": {
+              "zh": "颜色保持不变，符号改变时目标箱改变。查询图像、物体、初态完全不变。",
+              "en": "Hold color fixed; changing symbol changes the target bin. Query image, object and initial state are unchanged."
+            }
+          },
+          {
+            "title": {
+              "zh": "未知线索将被遮住",
+              "en": "Unknown cue will be hidden"
+            },
+            "text": {
+              "zh": "必须先读侧面符号。直接抓取会让取回这条证据更贵。",
+              "en": "The side symbol must be read. Grasping first makes acquiring it more expensive."
+            }
+          },
+          {
+            "title": {
+              "zh": "先补看，再抓取",
+              "en": "Inspect, then grasp"
+            },
+            "text": {
+              "zh": "用真实可行视角读到圆形，再去符号指定的左箱。",
+              "en": "Obtain a feasible view of the circle, then use the symbol-selected left bin."
+            }
+          }
+        ]
+      },
+      {
+        "label": {
+          "zh": "控制：符号此前已读",
+          "en": "Control: symbol seen earlier"
+        },
+        "stages": [
+          {
+            "title": {
+              "zh": "仍按符号分拣",
+              "en": "Still sort by symbol"
+            },
+            "text": {
+              "zh": "使用同一符号教学，不改任务规则。",
+              "en": "Use the same symbol demonstrations; keep the task rule fixed."
+            }
+          },
+          {
+            "title": {
+              "zh": "合法历史已有证据",
+              "en": "Evidence exists in history"
+            },
+            "text": {
+              "zh": "先前已确认本件是圆形；暂时看不见不等于从未观察到。",
+              "en": "Legal prior observations identify this object as circular. Currently hidden does not mean never seen."
+            }
+          },
+          {
+            "title": {
+              "zh": "无需再看",
+              "en": "No extra view"
+            },
+            "text": {
+              "zh": "直接抓取。始终多看一眼的策略应在这里付出不必要成本。",
+              "en": "Grasp directly. An always-inspect policy should incur unnecessary cost here."
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "method_scope": {
+    "zh": "唯一干预接口：候选抓取派发前，选择先补看或执行。机制比较共享示范解析、证据估计和未来可见性预测；不是重训低层控制器。",
+    "en": "The single intervention is the pre-dispatch choice to inspect or execute a candidate grasp. Mechanism controls share demo parsing, evidence estimates and visibility prediction; low-level control is unchanged."
+  },
+  "steps": [
+    {
+      "title": {
+        "zh": "示范指定必要线索",
+        "en": "Bind the relevant cue"
+      },
+      "text": {
+        "zh": "用交叉示范识别颜色/符号规则及其后验。限定语法可辨识，不等于任意人类意图可识别。",
+        "en": "Infer the color/symbol rule and its posterior from crossed examples. Identifiability in this grammar does not establish general human-intent inference."
+      }
+    },
+    {
+      "title": {
+        "zh": "区分已知、未知与暂时被挡",
+        "en": "Track known versus unseen evidence"
+      },
+      "text": {
+        "zh": "把证据绑定到当前物体。当前看不见但历史已读的线索，不应触发无谓观察。",
+        "en": "Bind evidence to the current object. A hidden cue already seen in history should not trigger redundant inspection."
+      }
+    },
+    {
+      "title": {
+        "zh": "动作使取证更贵时，先补看",
+        "en": "Inspect before evidence becomes costly"
+      },
+      "text": {
+        "zh": "选择真实观察动作，而非原地暂停。恢复动作也向所有组开放；代价相同的首动作都算正确。",
+        "en": "Choose an actual view action, not a pause. All controls may recover after grasp; accept every tied cost-optimal first action."
+      }
+    }
+  ],
+  "budget": {
+    "zh": "第一阶段上限：1人两天、CPU计算8小时、GPU0、训练0、新机器人回合0。有可用端点才启用最多120次离线模型调用；目前调用0，不等待API才算完成。",
+    "en": "First-stage cap: one person, two days, eight CPU compute-hours, zero GPU/training/new robot episodes. An available endpoint enables at most 120 offline model calls; none have run. Completion does not depend on waiting for an API."
+  },
+  "pilots": [
+    {
+      "label": {
+        "zh": "01 / 信息结构",
+        "en": "01 / Information structure"
+      },
+      "title": {
+        "zh": "同场景只换示范",
+        "en": "Change only demonstrations"
+      },
+      "text": {
+        "zh": "复用30例/15对，补足共同恢复序列、并列最优动作；保留经典成本相同的负结果。交换可见面与抓取遮挡面，排除固定捷径。",
+        "en": "Reuse 30 cases / 15 pairs; specify recovery and tied optimal actions. Preserve the equal-cost classical result. Swap visible and grasp-occluded faces to rule out a fixed shortcut."
+      },
+      "decision": {
+        "zh": "状态：符号控制已运行。不能证明视觉或模型能力。",
+        "en": "Status: symbolic controls ran. They do not establish visual or model capability."
+      }
+    },
+    {
+      "label": {
+        "zh": "02 / 视觉与冻结决策",
+        "en": "02 / Visuals and frozen decisions"
+      },
+      "title": {
+        "zh": "先证明线索真的可取得",
+        "en": "First establish obtainable evidence"
+      },
+      "text": {
+        "zh": "四组、八包程序图已制备。先检查未知且代价变贵、未知但同成本、历史已知、当前可见；端点可用时原模型与同证据prompt最多16次请求，计入全部六组120次上限。",
+        "en": "Four pairs / eight drawn packs are prepared: unseen costly, unseen equal-cost, known history and currently visible. If an endpoint is available, start with raw versus same-evidence prompts, at most 16 requests within the six-control 120-call cap."
+      },
+      "decision": {
+        "zh": "状态：离散输入包已制备，模型未运行。程序图只审计信息结构，不验证接触物理或可达视角。",
+        "en": "Status: discrete input packs prepared; models not run. Drawings audit information structure, not contact physics or reachable views."
+      }
+    },
+    {
+      "label": {
+        "zh": "03 / 条件式闭环",
+        "en": "03 / Conditional robot pilot"
+      },
+      "title": {
+        "zh": "发现可修复缺口后才接机器人",
+        "en": "Use robots after a repairable deficit"
+      },
+      "text": {
+        "zh": "先验证同一相机补看与抓放原语，再用10个配对布局、两种教学安排小额先导。完整六组预算另算，不自动启动大规模实验。",
+        "en": "Verify shared view and grasp/place primitives, then consider ten paired layouts and two lessons. Cost all six controls separately; do not automatically launch a large rollout study."
+      },
+      "decision": {
+        "zh": "状态：未运行、未授予物理资格。新方法主张须越过同证据提示和经典控制。",
+        "en": "Status: not run; physical qualification is absent. A method claim must exceed same-evidence prompting and classical control."
+      }
+    }
+  ],
+  "baselines": [
+    {
+      "name": {
+        "zh": "原冻结策略",
+        "en": "Frozen policy"
+      },
+      "purpose": {
+        "zh": "它本来就能解决吗？给予相同观察与恢复动作。",
+        "en": "Can it already solve the task? Provide the same view and recovery actions."
+      }
+    },
+    {
+      "name": {
+        "zh": "同模型＋同证据提示",
+        "en": "Same model + same-evidence prompt"
+      },
+      "purpose": {
+        "zh": "把相同线索后验与可见性写入prompt，但不替它选动作。",
+        "en": "Write the same cue posterior and visibility into the prompt; let it choose the action."
+      }
+    },
+    {
+      "name": {
+        "zh": "始终抓前补看全部线索",
+        "en": "Always inspect every cue"
+      },
+      "purpose": {
+        "zh": "是不是只增加观察就足够？检查已知线索下的冗余成本。",
+        "en": "Is extra observation sufficient? Check redundant cost when the cue is already known."
+      }
+    },
+    {
+      "name": {
+        "zh": "任务条件主动感知",
+        "en": "Task-conditioned active perception"
+      },
+      "purpose": {
+        "zh": "普通不确定性处理是否已经解释收益？当前符号案例成本相同。",
+        "en": "Does ordinary uncertainty handling explain the benefit? It already matches symbolic cost."
+      }
+    },
+    {
+      "name": {
+        "zh": "信息价值／短视域规划",
+        "en": "Value of information / short-horizon planning"
+      },
+      "purpose": {
+        "zh": "用相同预测与动作预算检查经典规划；最优成本另作下界，不要求门槛超过最优。",
+        "en": "Use the same predictions and budget. Optimal cost is a separate lower bound; a gate need not outperform an optimum."
+      }
+    },
+    {
+      "name": {
+        "zh": "拟议的抓前观察门槛",
+        "en": "Proposed pre-grasp inspection gate"
+      },
+      "purpose": {
+        "zh": "唯一改变下一动作的派发选择。比较预算1/2/3，允许抓后放回、补看、重抓。",
+        "en": "Change only pre-dispatch action selection. Compare budgets 1/2/3 and allow place-back, inspection and regrasp."
+      }
+    }
+  ],
+  "stop": {
+    "zh": "经典策略已在30个符号例中匹配门槛成本：取消这一设计内的新调度算法主张。如果冻结模型没有缺口，或同证据提示已完全修复，就不扩张外部门槛。看不清线索、没有真实自致遮挡、只在oracle未来画面下有效，也停止部署主张。",
+    "en": "Classical control already matches the gate in all 30 symbolic cases: stop the scheduler-novelty claim for this design. Do not expand an external gate if the frozen model has no deficit or same-evidence prompting fully fixes it. Stop deployment claims if cues are unreadable, occlusion is unreal, or only future-image oracles help."
+  },
+  "evidence": [
+    {
+      "zh": "ARIS三种lens共生成9个完整候选，未预先按质量删候选；查新与两轮研究审查选A3为受限主线，D3为条件备选。",
+      "en": "Three ARIS lenses generated nine complete candidates without quality prefiltering. Novelty review and iterative research review select A3 as a bounded main pilot, with D3 conditional."
+    },
+    {
+      "zh": "实际30个符号case＝15个配对上下文；5种手工未来成本×3种知识状态。两组只改变示范，经典策略与门槛30/30观察成本相同。",
+      "en": "Actually ran 30 symbolic cases = 15 paired contexts, crossing five hand-authored future costs with three knowledge states. Only demonstrations change; classical and gate costs match in 30/30."
+    },
+    {
+      "zh": "4/15对的原型首动作随示范改变；5例存在并列最优首动作，全部接受。这是任务设计检查，不是模型学会观察的结果。",
+      "en": "Prototype first actions change in 4/15 pairs; five cases admit tied optimal first actions, all accepted. This checks task design, not learned model behavior."
+    },
+    {
+      "zh": "已制备4组、8个程序绘制的视觉输入包，配对内原始输入仅替换教学图；7张共享SVG。不含机器人图像，尚未调用模型；共享证据prompt标为oracle解析控制。",
+      "en": "Prepared four pairs / eight program-drawn visual input packs using seven shared SVGs. Within raw pairs only teaching images change. No robot images or model calls; structured evidence is explicitly an oracle-parsing control."
+    },
+    {
+      "zh": "任务修改40行只有两种逻辑结构，经典规则全部解决；不以改名重复案例主张泛化。",
+      "en": "Forty task-amendment rows contain only two logical structures, both solved classically. Renamed repetitions do not establish generalization."
+    },
+    {
+      "zh": "空抓方向仅准备24公开视频回合、最多48个尝试槽，完成标签0；保留为诊断资产，不是检索因果证据。",
+      "en": "The empty-grasp alternative has a 24-video worklist with at most 48 attempt slots and zero completed labels. It is an audit asset, not retrieval-causality evidence."
+    }
+  ],
+  "review_limit": {
+    "zh": "审查独立性：same-family；接受状态：provisional。请求gpt-6-astra xhigh/ultra，后端身份未独立认证；不可用的gpt-5.5生成器未运行。没有跨家族接受，也没有模型或机器人收益。",
+    "en": "Review independence: same-family; acceptance status: provisional. Requested gpt-6-astra xhigh/ultra; backend identity was not independently attested. The unavailable gpt-5.5 generator did not run. No cross-family acceptance or measured model/robot benefit."
+  },
+  "backup": {
+    "title": {
+      "zh": "备选：物体没动，坐标轴跳了？",
+      "en": "Alternative: the object stays still, but its axes jump?"
+    },
+    "intro": {
+      "zh": "先查真实BiCICLe点云，比较OBB Euler、轴一致化、6D和二阶矩。Plate/Laptop在原表中改善，不能当已知退化案例；Handover/Tray Oven才是退化任务。",
+      "en": "Audit real BiCICLe point clouds: OBB Euler, axis consistency, 6D and second moments. Plate/Laptop improve in the original table; Handover/Tray Oven are reported degradations."
+    },
+    "gate": {
+      "zh": "取得数据最多4小时，CPU几何审计4小时。各表示获得相同形状/尺度信息，同时验证把手或铰链方向是否保留。无真实点云或简单轴一致化已解决，就停止该方法版本。尚未运行。",
+      "en": "Cap access at four hours and geometry audit at four CPU-hours. Give representations equal shape/scale information and test retained handle/hinge direction. Stop without real data or if simple axis consistency suffices. Not run."
+    }
+  },
+  "novelty_summary": {
+    "zh": "新示范改变“必要线索”，自己的候选操纵改变“以后取得它的成本”：这是待检验的联合现象。主动感知、遮挡前记忆和任务规划都有直接前作；尚未查到完整等价实验不等于原创证明。",
+    "en": "A new demonstration changes the needed cue; the robot’s own manipulation changes the future cost of acquiring it. This joint phenomenon remains to be tested. Active perception, pre-occlusion memory and task planning have direct predecessors; not finding an identical experiment is not proof of novelty."
+  },
+  "priors": [
+    {
+      "title": "ATAP / Imagine then Verify",
+      "url": "https://arxiv.org/html/2609.23504v1",
+      "covered": {
+        "zh": "已按任务affordance主动观察，并在抓取前验证。",
+        "en": "Already actively observes task affordances and verifies before grasping."
+      },
+      "delta": {
+        "zh": "需要隔离新示范改变线索与抓取改变取证成本的联合条件。",
+        "en": "Isolate the joint condition of demo-bound cues and manipulation-dependent evidence cost."
+      }
+    },
+    {
+      "title": "EventVLA",
+      "url": "https://arxiv.org/html/2606.20092v1",
+      "covered": {
+        "zh": "已预测并保存短暂、遮挡前的关键证据。",
+        "en": "Already predicts and retains transient, pre-occlusion evidence."
+      },
+      "delta": {
+        "zh": "保留已见证据与主动取得从未见过的证据分开测试。",
+        "en": "Test remembering seen evidence separately from acquiring unseen evidence."
+      }
+    },
+    {
+      "title": "Active Perception for Embodied Disambiguation",
+      "url": "https://arxiv.org/html/2608.13605v1",
+      "covered": {
+        "zh": "已通过视角动作澄清不确定证据。",
+        "en": "Already changes viewpoint to resolve ambiguous evidence."
+      },
+      "delta": {
+        "zh": "不能宣称首次补看；必须保留同任务后验的经典主动感知。",
+        "en": "Do not claim the first active view; retain classical perception with the same task posterior."
+      }
+    },
+    {
+      "title": "SimpleICL",
+      "url": "https://arxiv.org/html/2609.38173v1",
+      "covered": {
+        "zh": "已检验示范的动作、对象、顺序与affordance语义。",
+        "en": "Already probes action, object, order and affordance semantics in demonstrations."
+      },
+      "delta": {
+        "zh": "进一步问：示范能否指定需要读哪条证据、何时读。",
+        "en": "Ask whether demonstrations specify which evidence to acquire and when."
+      }
+    },
+    {
+      "title": "BiCICLe · v3 §A.5, Table 9",
+      "url": "https://arxiv.org/html/2604.20348v3",
+      "covered": {
+        "zh": "报告姿态输入的平均退化，但Plate与Laptop提升。",
+        "en": "Reports aggregate degradation from pose inputs, while Plate and Laptop improve."
+      },
+      "delta": {
+        "zh": "备选先验证真实OBB不稳定，不把二阶矩本身命名为创新。",
+        "en": "First verify actual OBB instability; second moments alone are not an innovation."
+      }
+    },
+    {
+      "title": "RESETTLE · 2026-10-08",
+      "url": "https://arxiv.org/html/2610.12185v1",
+      "covered": {
+        "zh": "已有冻结基策略的检索恢复；动作一致仍失败也已讨论。",
+        "en": "Already retrieves corrections for a frozen base policy and discusses consistent actions that still fail."
+      },
+      "delta": {
+        "zh": "空抓/恢复保留为审计，不能重新主张首次验证物理前提。",
+        "en": "Keep empty-grasp recovery as an audit; do not reclaim first physical-precondition validation."
+      }
+    }
+  ]
+}

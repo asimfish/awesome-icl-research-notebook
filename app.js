@@ -2,12 +2,12 @@
 const copy = {
   zh: {
     figureEvidenceLabel:'实际诊断图',openFigure:'查看完整图 ↗',figureEvidenceTitle:'相同场景，不同上下文释放方式。',figureEvidenceCaption:'完整保留三个合成分支、十二个读回数组。中间失败分支保留初始化填充值；其余对照图像逐字节一致。仅证明最小释放机制，不证明历史 RoboCasa 图像损坏原因。',
-    skip:'跳到内容',navOverview:'概览',navProposal:'研究方案',navEvidence:'证据记录',navTimeline:'进展',
-    eyebrow:'具身智能 · 经验迁移 · 公开研究记录',heroTitle:'换一个任务，\n旧经验还能帮忙吗？',
-    heroSubtitle:'在权重冻结的机器人策略中，把任务记忆与执行条件拆开，追踪经验从输入、压缩到检索和行动的每一步。',
-    exploreDesign:'阅读研究方案',inspectEvidence:'查看现有证据 →',heroFootnote:'当前处于运行与观测资格验证阶段。正式迁移评估尚未开始。',
-    figureTitle:'经验的去向',figureCaption:'概念示意 · 神经参数冻结，研究者干预初始记忆。',
-    metricFormal:'已完成正式 query',metricFormalSub:'尚未授予物理与信息资格',metricTasks:'固定任务',metricCells:'核心反事实条件',metricCellsSub:'任务匹配 × 执行增益匹配',metricSmoke:'计划 smoke queries',metricSmokeSub:'4 worlds × 12 条件 · 未运行',
+    skip:'跳到内容',navOverview:'概览',navLatest:'最新方案',navProposal:'旧方案',navEvidence:'证据记录',navTimeline:'进展',
+    eyebrow:'具身智能 · 经验迁移 · 公开研究记录',heroTitle:'抓取之前，\n应该先看哪里？',
+    heroSubtitle:'同一个箱件，只换教学示范：按颜色分拣可以直接抓；按侧面符号分拣，应在夹爪遮住线索前补看。先验证冻结模型是否真的存在这个能力缺口。',
+    exploreDesign:'阅读研究方案',inspectEvidence:'查看现有证据 →',heroFootnote:'符号负对照与离散视觉输入包已制备；模型和机器人试点尚未运行。',
+    figureTitle:'示范改变必要线索',figureCaption:'概念示意 · 场景相同，只换示范；真实遮挡与补看仍待验证。',
+    metricFormal:'试点模型调用',metricFormalSub:'离线能力探针未运行',metricTasks:'已审查完整候选',metricTasksSub:'ARIS三种lens × 三个候选',metricCells:'符号配对上下文',metricCellsSub:'仅切换示范 · 非模型结果',metricSmoke:'机器人新回合',metricSmokeSub:'未授予物理与闭环资格',
     currentLabel:'当前进展',questionLabel:'研究问题',questionTitle:'经验里，究竟是什么在迁移？',questionIntro:'任务外观、执行响应、状态延续与额外尝试很容易混在一起。方案通过配对的来源条件，审计它们各自的作用边界。',
     claimOneTitle:'初始经验的条件效应',claimOneText:'在完整 reset 和相同当前任务下，来源执行增益是否匹配，会怎样改变同一冻结策略的闭环表现？',claimTwoTitle:'信息利用与误用的边界',claimTwoText:'信息是否进入压缩表示、被检索并影响行动？用合法对照和同观察校准，限制解释，而不把日志当作因果机制证明。',scopeLabel:'研究范围',scopeText:'针对公开冻结 PIM 策略的研究者记忆移植。关闭成功轨迹重放；不重新训练策略，也不声称原生跨任务自我改进。',
     designLabel:'反事实设计',designTitle:'同一个 query，四种旧经历。',designIntro:'所有组共享名义标定 R₀。分别改变来源任务与执行增益，保留真实来源身份，再恢复到当前 query 的初始记忆。',gainMismatch:'增益不匹配',gainMatch:'增益匹配',taskMatch:'任务匹配',taskMismatch:'任务不匹配',h10:'相同任务 · 不同增益',h11:'相同任务 · 相同增益',h00:'不同任务 · 不同增益',h01:'不同任务 · 相同增益',matrixNote:'点击条件查看其含义。这里展示实验设计，尚无成功率结果。',conditionLabel:'所选条件',contrastNote:'预定主比较：任务匹配时，增益匹配带来的差异。按独立 query world 配对；不挑选最大差异。',
@@ -17,12 +17,12 @@ const copy = {
   },
   en: {
     figureEvidenceLabel:'Observed diagnostic figure',openFigure:'Open full figure ↗',figureEvidenceTitle:'The same scene. Different context-release rules.',figureEvidenceCaption:'All three synthetic branches and twelve readback arrays are retained. The failing middle branch preserves initialization fills; control images remain byte-exact. This establishes a minimal release mechanism, not the historical cause of RoboCasa image corruption.',
-    skip:'Skip to content',navOverview:'Overview',navProposal:'Research design',navEvidence:'Evidence',navTimeline:'Progress',
-    eyebrow:'Embodied intelligence · Experience transfer · Open notebook',heroTitle:'When the task changes,\nwhat carries over?',
-    heroSubtitle:'Separate task memory from execution conditions in a frozen robot policy. Follow experience through input, compression, retrieval, and action.',
-    exploreDesign:'Explore the design',inspectEvidence:'Inspect the evidence →',heroFootnote:'Runtime and observation qualification are in progress. Formal transfer evaluation has not started.',
-    figureTitle:'Where experience goes',figureCaption:'Conceptual diagram · Frozen neural parameters, researcher-controlled initial memory.',
-    metricFormal:'Formal queries completed',metricFormalSub:'Physical and information gates remain open',metricTasks:'Fixed tasks',metricCells:'Counterfactual source cells',metricCellsSub:'Task match × execution-gain match',metricSmoke:'Planned smoke queries',metricSmokeSub:'4 worlds × 12 conditions · Not run',
+    skip:'Skip to content',navOverview:'Overview',navLatest:'Latest plan',navProposal:'Earlier design',navEvidence:'Evidence',navTimeline:'Progress',
+    eyebrow:'Embodied intelligence · Experience transfer · Open notebook',heroTitle:'Before grasping,\nwhat should the robot inspect?',
+    heroSubtitle:'One box, different demonstrations: color sorting permits a direct grasp; symbol sorting needs a side view before the cue is hidden. First test whether frozen policies actually exhibit this limitation.',
+    exploreDesign:'Explore the design',inspectEvidence:'Inspect the evidence →',heroFootnote:'Symbolic controls and discrete visual inputs are prepared. Model and robot pilots remain untested.',
+    figureTitle:'Demonstrations change the needed cue',figureCaption:'Concept only · Same scene, different demos. Physical occlusion and inspection remain unverified.',
+    metricFormal:'Pilot model calls',metricFormalSub:'Offline capability probes have not run',metricTasks:'Complete candidates reviewed',metricTasksSub:'Three ARIS lenses × three candidates',metricCells:'Symbolic paired contexts',metricCellsSub:'Only demos change · No model results',metricSmoke:'New robot episodes',metricSmokeSub:'Physical and rollout qualification absent',
     currentLabel:'Current frontier',questionLabel:'The research question',questionTitle:'What, exactly, transfers in experience?',questionIntro:'Task appearance, execution response, persistent state, and extra attempts can be confounded. Paired source conditions help audit their boundaries.',
     claimOneTitle:'The conditional effect of initial experience',claimOneText:'After a full reset and under the same current task, how does a matching source execution gain change the closed-loop behavior of a frozen policy?',claimTwoTitle:'Boundaries of information use and misuse',claimTwoText:'Does information enter the compressed representation, get retrieved, and affect action? Legal controls and matched-observation calibration constrain interpretation; logs alone do not prove a causal mechanism.',scopeLabel:'Scope',scopeText:'Researcher-controlled memory transplantation in a public frozen PIM policy. Success-trajectory replay is disabled. No policy retraining or claim of native cross-task self-improvement.',
     designLabel:'Counterfactual design',designTitle:'One query. Four kinds of prior experience.',designIntro:'All groups share nominal calibration R₀. Vary the source task and execution gain, preserve the true source identity, and restore the history into the current query memory.',gainMismatch:'Gain mismatch',gainMatch:'Gain match',taskMatch:'Task match',taskMismatch:'Task mismatch',h10:'Same task · Different gain',h11:'Same task · Same gain',h00:'Different task · Different gain',h01:'Different task · Same gain',matrixNote:'Select a cell to inspect the design. No task success rates have been measured here.',conditionLabel:'Selected condition',contrastNote:'Prespecified primary contrast: the effect of gain matching when the task matches. Paired by independent query world; no selection of the largest contrast.',
@@ -52,7 +52,7 @@ function route(nextView, nextLang, push = true) {
 }
 function applyCopy() {
   document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
-  document.title = lang === 'zh' ? 'awesome ICL — 冻结策略的经验迁移审计' : 'awesome ICL — Experience, under examination';
+  document.title = lang === 'zh' ? 'awesome ICL — 示范教机器人先看什么' : 'awesome ICL — Demonstrations and pre-grasp inspection';
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const value = copy[lang][el.dataset.i18n];
     if (value === undefined) return;
@@ -60,6 +60,7 @@ function applyCopy() {
     lines.forEach((line,i) => { if(i) el.append(document.createElement('br')); el.append(document.createTextNode(line)); });
   });
   document.querySelectorAll('[data-i18n-placeholder]').forEach(el => { el.placeholder = copy[lang][el.dataset.i18nPlaceholder]; });
+  document.querySelectorAll('[data-latest-plan]').forEach(link => link.href = `research-plan.html?lang=${lang}`);
   $('#language-toggle').textContent = lang === 'zh' ? 'EN' : '中文';
   $('#language-toggle').setAttribute('aria-label',lang === 'zh' ? 'Switch to English' : '切换到中文');
   $('#navigation').setAttribute('aria-label',lang === 'zh' ? '主导航' : 'Main navigation');

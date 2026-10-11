@@ -77,6 +77,47 @@ for name in parser.paths:
 check('no_remote_scripts_or_stylesheets', 'src="https://' not in html and 'href="https://' not in html)
 check('CSP_no_eval_or_inline_script_permission', "script-src 'self'" in html and 'unsafe-eval' not in html and 'unsafe-inline' not in html)
 
+# New plan: verify its publishing resources and science/evidence boundary.
+plan = json.loads((ROOT / 'data/research-plan.json').read_text())
+check('plan_schema', plan['schema'] == 'awesome-icl.research-plan.v1')
+check('six_controls', len(plan['baselines']) == 6)
+check('three_counterfactual_examples', len(plan['example']['cases']) == 3)
+check('model_and_robot_counts_zero', [m['value'] for m in plan['metrics'][-2:]] == [0, 0])
+for item in plan['baselines']:
+    check('bilingual_control', set(item['name']) == set(item['purpose']) == {'zh', 'en'})
+plan_html = (ROOT / 'research-plan.html').read_text()
+plan_parser = Resources()
+plan_parser.feed(plan_html)
+check('unique_plan_HTML_ids', len(plan_parser.ids) == len(set(plan_parser.ids)))
+for name in plan_parser.paths:
+    parts = urlsplit(name)
+    if parts.scheme:
+        check('plan_HTTPS_external_links', parts.scheme == 'https')
+        continue
+    path = unquote(parts.path)
+    if not path:
+        continue
+    resource = (ROOT / path).resolve()
+    check('plan_resource:' + path, not path.startswith('/') and ROOT in resource.parents and resource.is_file())
+check('plan_CSP', "script-src 'self'" in plan_html and 'unsafe-eval' not in plan_html and 'unsafe-inline' not in plan_html)
+probe = json.loads((ROOT / 'data/observability-design-check.json').read_text())
+check('symbolic_negative_control_not_promoted', probe['cases'] == 30 and
+      probe['candidate_and_classical_total_cost_equal_cases'] == 30 and
+      probe['model_calls'] == probe['robot_episodes'] == probe['gpu_hours'] == 0)
+check('all_tied_actions_accepted', probe['rows_with_multiple_optimal_first_actions'] == 5 and
+      all(row['candidate_first_action'] in row['restricted_optimal_first_actions'] for row in probe['rows']))
+packs = json.loads((ROOT / 'data/visual-stimuli/packs.json').read_text())
+check('eight_drawn_packs_not_physical', packs['visual_packs'] == 8 and packs['paired_contexts'] == 4 and
+      packs['model_calls'] == packs['robot_episodes'] == packs['gpu_hours'] == 0)
+check('raw_visual_pairs_only_demos_change', packs['raw_pairs_only_support_images_change'])
+check('oracle_parsing_disclosed', 'oracle' in packs['shared_evidence_control'])
+for row in packs['rows']:
+    packet = row['model_input']
+    for image in packet['support_images'] + [packet['current_image']] + packet['history_images']:
+        check('stimulus_asset_exists:' + image, (ROOT / 'data/visual-stimuli' / image).is_file())
+check('new_plan_workflow_allowlist', 'cp research-plan.html research-plan.css research-plan.js _site/' in
+      (ROOT / '.github/workflows/pages.yml').read_text())
+
 # Git metadata belongs to the checkout, not the public publishing surface.
 paths = sorted(p for p in ROOT.rglob('*') if '.git' not in p.relative_to(ROOT).parts)
 files = [p for p in paths if p.is_file()]

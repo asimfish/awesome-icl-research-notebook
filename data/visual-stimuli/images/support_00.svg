@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="320" viewBox="0 0 640 320">
+<rect width="640" height="320" fill="#fcfaf4"/><text x="25" y="32" font-family="sans-serif" font-size="13" fill="#596451">PROGRAM-DRAWN STIMULUS / NOT ROBOT FOOTAGE</text>
+<text x="25" y="62" font-family="sans-serif" font-size="20" fill="#203e33">Demonstrated destination: LEFT</text>
+<path d="M220 119 L292 100 L363 140 L291 160 Z" fill="#e9d9c4" stroke="#8c846d"/>
+<path d="M220 119 L291 160 L291 239 L220 199 Z" fill="#4b74c7" stroke="#8c846d"/>
+<path d="M291 160 L363 140 L363 219 L291 239 Z" fill="#efe3cf" stroke="#8c846d"/><circle cx="326" cy="186" r="19" fill="none" stroke="#203e33" stroke-width="5"/>
+<text x="25" y="280" font-family="sans-serif" font-size="17" fill="#203e33">Front visible; side visible.</text></svg>

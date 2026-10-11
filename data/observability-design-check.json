@@ -1,0 +1,1744 @@
+{
+  "scope": "symbolic design/identifiability control only",
+  "cases": 30,
+  "paired_physical_contexts": 15,
+  "hand_authored_visibility_worlds": 5,
+  "knowledge_conditions": 3,
+  "optimality_scope": "two declared schedules only; equally cheap first actions all accepted",
+  "cost_semantics": {
+    "pre_grasp_inspection": "one symbolic extra view action",
+    "post_grasp_cost_1": "a still-available view after grasp",
+    "post_grasp_cost_2": "reposition plus view",
+    "post_grasp_cost_3": "place back, view, regrasp",
+    "costs_are_not": "measured time, verified geometry or robot execution"
+  },
+  "rows_with_multiple_optimal_first_actions": 5,
+  "candidate_restricted_cost_optimal_cases": 30,
+  "input_modality": "oracle symbolic cues, not RGB",
+  "future_visibility": "supplied hand-authored forecast; not learned or geometrically verified",
+  "robot_episodes": 0,
+  "model_calls": 0,
+  "gpu_hours": 0,
+  "cue_rule_identified_in_declared_grammar": true,
+  "candidate_and_classical_total_cost_equal_cases": 30,
+  "only_demonstrations_change_within_pairs": true,
+  "candidate_first_action_changes_with_demonstration_pairs": 4,
+  "interpretation": "The task has controllable demo-conditioned observation choices, but classical task-conditioned perception already matches the candidate cost in all constructed cases. No scheduler novelty, visual grounding, geometric visibility or robot gain is established.",
+  "rows": [
+    {
+      "case_id": "case_00",
+      "world_id": 0,
+      "knowledge_condition": "unseen",
+      "policy_packet": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "bin": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "bin": 1
+          }
+        ],
+        "past_observed_cues": {},
+        "currently_observed_cues": {},
+        "predicted_post_grasp_inspection_cost": {
+          "A": 3,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "grasp",
+          "place_back",
+          "regrasp"
+        ],
+        "recovery_allowed": true,
+        "budget_units": "extra observation/recovery cost; common grasp and transport excluded"
+      },
+      "evaluation_only": {
+        "task_rule": "A",
+        "A": 1,
+        "B": 0,
+        "correct_bin": 1
+      },
+      "candidate_first_action": "inspect_A",
+      "classical_active_perception_first_action": "inspect_A",
+      "restricted_optimal_first_actions": [
+        "inspect_A"
+      ],
+      "candidate_is_restricted_cost_optimal": true,
+      "candidate_total_inspection_cost": 1,
+      "classical_total_inspection_cost": 1,
+      "restricted_two_schedule_optimal_cost": 1,
+      "grasp_first_cost_feasible_at_budgets": {
+        "1": false,
+        "2": false,
+        "3": true
+      },
+      "always_inspect_both_cost": 2
+    },
+    {
+      "case_id": "case_01",
+      "world_id": 0,
+      "knowledge_condition": "unseen",
+      "policy_packet": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "bin": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "bin": 1
+          }
+        ],
+        "past_observed_cues": {},
+        "currently_observed_cues": {},
+        "predicted_post_grasp_inspection_cost": {
+          "A": 3,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "grasp",
+          "place_back",
+          "regrasp"
+        ],
+        "recovery_allowed": true,
+        "budget_units": "extra observation/recovery cost; common grasp and transport excluded"
+      },
+      "evaluation_only": {
+        "task_rule": "B",
+        "A": 1,
+        "B": 0,
+        "correct_bin": 0
+      },
+      "candidate_first_action": "grasp",
+      "classical_active_perception_first_action": "inspect_B",
+      "restricted_optimal_first_actions": [
+        "inspect_B",
+        "grasp"
+      ],
+      "candidate_is_restricted_cost_optimal": true,
+      "candidate_total_inspection_cost": 1,
+      "classical_total_inspection_cost": 1,
+      "restricted_two_schedule_optimal_cost": 1,
+      "grasp_first_cost_feasible_at_budgets": {
+        "1": true,
+        "2": true,
+        "3": true
+      },
+      "always_inspect_both_cost": 2
+    },
+    {
+      "case_id": "case_02",
+      "world_id": 0,
+      "knowledge_condition": "seen_in_history",
+      "policy_packet": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "bin": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "bin": 1
+          }
+        ],
+        "past_observed_cues": {
+          "A": 1,
+          "B": 0
+        },
+        "currently_observed_cues": {},
+        "predicted_post_grasp_inspection_cost": {
+          "A": 3,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "grasp",
+          "place_back",
+          "regrasp"
+        ],
+        "recovery_allowed": true,
+        "budget_units": "extra observation/recovery cost; common grasp and transport excluded"
+      },
+      "evaluation_only": {
+        "task_rule": "A",
+        "A": 1,
+        "B": 0,
+        "correct_bin": 1
+      },
+      "candidate_first_action": "grasp",
+      "classical_active_perception_first_action": "grasp",
+      "restricted_optimal_first_actions": [
+        "grasp"
+      ],
+      "candidate_is_restricted_cost_optimal": true,
+      "candidate_total_inspection_cost": 0,
+      "classical_total_inspection_cost": 0,
+      "restricted_two_schedule_optimal_cost": 0,
+      "grasp_first_cost_feasible_at_budgets": {
+        "1": true,
+        "2": true,
+        "3": true
+      },
+      "always_inspect_both_cost": 2
+    },
+    {
+      "case_id": "case_03",
+      "world_id": 0,
+      "knowledge_condition": "seen_in_history",
+      "policy_packet": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "bin": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "bin": 1
+          }
+        ],
+        "past_observed_cues": {
+          "A": 1,
+          "B": 0
+        },
+        "currently_observed_cues": {},
+        "predicted_post_grasp_inspection_cost": {
+          "A": 3,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "grasp",
+          "place_back",
+          "regrasp"
+        ],
+        "recovery_allowed": true,
+        "budget_units": "extra observation/recovery cost; common grasp and transport excluded"
+      },
+      "evaluation_only": {
+        "task_rule": "B",
+        "A": 1,
+        "B": 0,
+        "correct_bin": 0
+      },
+      "candidate_first_action": "grasp",
+      "classical_active_perception_first_action": "grasp",
+      "restricted_optimal_first_actions": [
+        "grasp"
+      ],
+      "candidate_is_restricted_cost_optimal": true,
+      "candidate_total_inspection_cost": 0,
+      "classical_total_inspection_cost": 0,
+      "restricted_two_schedule_optimal_cost": 0,
+      "grasp_first_cost_feasible_at_budgets": {
+        "1": true,
+        "2": true,
+        "3": true
+      },
+      "always_inspect_both_cost": 2
+    },
+    {
+      "case_id": "case_04",
+      "world_id": 0,
+      "knowledge_condition": "visible_now",
+      "policy_packet": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "bin": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "bin": 1
+          }
+        ],
+        "past_observed_cues": {},
+        "currently_observed_cues": {
+          "A": 1,
+          "B": 0
+        },
+        "predicted_post_grasp_inspection_cost": {
+          "A": 3,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "grasp",
+          "place_back",
+          "regrasp"
+        ],
+        "recovery_allowed": true,
+        "budget_units": "extra observation/recovery cost; common grasp and transport excluded"
+      },
+      "evaluation_only": {
+        "task_rule": "A",
+        "A": 1,
+        "B": 0,
+        "correct_bin": 1
+      },
+      "candidate_first_action": "grasp",
+      "classical_active_perception_first_action": "grasp",
+      "restricted_optimal_first_actions": [
+        "grasp"
+      ],
+      "candidate_is_restricted_cost_optimal": true,
+      "candidate_total_inspection_cost": 0,
+      "classical_total_inspection_cost": 0,
+      "restricted_two_schedule_optimal_cost": 0,
+      "grasp_first_cost_feasible_at_budgets": {
+        "1": true,
+        "2": true,
+        "3": true
+      },
+      "always_inspect_both_cost": 2
+    },
+    {
+      "case_id": "case_05",
+      "world_id": 0,
+      "knowledge_condition": "visible_now",
+      "policy_packet": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "bin": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "bin": 1
+          }
+        ],
+        "past_observed_cues": {},
+        "currently_observed_cues": {
+          "A": 1,
+          "B": 0
+        },
+        "predicted_post_grasp_inspection_cost": {
+          "A": 3,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "grasp",
+          "place_back",
+          "regrasp"
+        ],
+        "recovery_allowed": true,
+        "budget_units": "extra observation/recovery cost; common grasp and transport excluded"
+      },
+      "evaluation_only": {
+        "task_rule": "B",
+        "A": 1,
+        "B": 0,
+        "correct_bin": 0
+      },
+      "candidate_first_action": "grasp",
+      "classical_active_perception_first_action": "grasp",
+      "restricted_optimal_first_actions": [
+        "grasp"
+      ],
+      "candidate_is_restricted_cost_optimal": true,
+      "candidate_total_inspection_cost": 0,
+      "classical_total_inspection_cost": 0,
+      "restricted_two_schedule_optimal_cost": 0,
+      "grasp_first_cost_feasible_at_budgets": {
+        "1": true,
+        "2": true,
+        "3": true
+      },
+      "always_inspect_both_cost": 2
+    },
+    {
+      "case_id": "case_06",
+      "world_id": 1,
+      "knowledge_condition": "unseen",
+      "policy_packet": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "bin": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "bin": 1
+          }
+        ],
+        "past_observed_cues": {},
+        "currently_observed_cues": {},
+        "predicted_post_grasp_inspection_cost": {
+          "A": 1,
+          "B": 3
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "grasp",
+          "place_back",
+          "regrasp"
+        ],
+        "recovery_allowed": true,
+        "budget_units": "extra observation/recovery cost; common grasp and transport excluded"
+      },
+      "evaluation_only": {
+        "task_rule": "A",
+        "A": 1,
+        "B": 0,
+        "correct_bin": 1
+      },
+      "candidate_first_action": "grasp",
+      "classical_active_perception_first_action": "inspect_A",
+      "restricted_optimal_first_actions": [
+        "inspect_A",
+        "grasp"
+      ],
+      "candidate_is_restricted_cost_optimal": true,
+      "candidate_total_inspection_cost": 1,
+      "classical_total_inspection_cost": 1,
+      "restricted_two_schedule_optimal_cost": 1,
+      "grasp_first_cost_feasible_at_budgets": {
+        "1": true,
+        "2": true,
+        "3": true
+      },
+      "always_inspect_both_cost": 2
+    },
+    {
+      "case_id": "case_07",
+      "world_id": 1,
+      "knowledge_condition": "unseen",
+      "policy_packet": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "bin": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "bin": 1
+          }
+        ],
+        "past_observed_cues": {},
+        "currently_observed_cues": {},
+        "predicted_post_grasp_inspection_cost": {
+          "A": 1,
+          "B": 3
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "grasp",
+          "place_back",
+          "regrasp"
+        ],
+        "recovery_allowed": true,
+        "budget_units": "extra observation/recovery cost; common grasp and transport excluded"
+      },
+      "evaluation_only": {
+        "task_rule": "B",
+        "A": 1,
+        "B": 0,
+        "correct_bin": 0
+      },
+      "candidate_first_action": "inspect_B",
+      "classical_active_perception_first_action": "inspect_B",
+      "restricted_optimal_first_actions": [
+        "inspect_B"
+      ],
+      "candidate_is_restricted_cost_optimal": true,
+      "candidate_total_inspection_cost": 1,
+      "classical_total_inspection_cost": 1,
+      "restricted_two_schedule_optimal_cost": 1,
+      "grasp_first_cost_feasible_at_budgets": {
+        "1": false,
+        "2": false,
+        "3": true
+      },
+      "always_inspect_both_cost": 2
+    },
+    {
+      "case_id": "case_08",
+      "world_id": 1,
+      "knowledge_condition": "seen_in_history",
+      "policy_packet": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "bin": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "bin": 1
+          }
+        ],
+        "past_observed_cues": {
+          "A": 1,
+          "B": 0
+        },
+        "currently_observed_cues": {},
+        "predicted_post_grasp_inspection_cost": {
+          "A": 1,
+          "B": 3
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "grasp",
+          "place_back",
+          "regrasp"
+        ],
+        "recovery_allowed": true,
+        "budget_units": "extra observation/recovery cost; common grasp and transport excluded"
+      },
+      "evaluation_only": {
+        "task_rule": "A",
+        "A": 1,
+        "B": 0,
+        "correct_bin": 1
+      },
+      "candidate_first_action": "grasp",
+      "classical_active_perception_first_action": "grasp",
+      "restricted_optimal_first_actions": [
+        "grasp"
+      ],
+      "candidate_is_restricted_cost_optimal": true,
+      "candidate_total_inspection_cost": 0,
+      "classical_total_inspection_cost": 0,
+      "restricted_two_schedule_optimal_cost": 0,
+      "grasp_first_cost_feasible_at_budgets": {
+        "1": true,
+        "2": true,
+        "3": true
+      },
+      "always_inspect_both_cost": 2
+    },
+    {
+      "case_id": "case_09",
+      "world_id": 1,
+      "knowledge_condition": "seen_in_history",
+      "policy_packet": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "bin": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "bin": 1
+          }
+        ],
+        "past_observed_cues": {
+          "A": 1,
+          "B": 0
+        },
+        "currently_observed_cues": {},
+        "predicted_post_grasp_inspection_cost": {
+          "A": 1,
+          "B": 3
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "grasp",
+          "place_back",
+          "regrasp"
+        ],
+        "recovery_allowed": true,
+        "budget_units": "extra observation/recovery cost; common grasp and transport excluded"
+      },
+      "evaluation_only": {
+        "task_rule": "B",
+        "A": 1,
+        "B": 0,
+        "correct_bin": 0
+      },
+      "candidate_first_action": "grasp",
+      "classical_active_perception_first_action": "grasp",
+      "restricted_optimal_first_actions": [
+        "grasp"
+      ],
+      "candidate_is_restricted_cost_optimal": true,
+      "candidate_total_inspection_cost": 0,
+      "classical_total_inspection_cost": 0,
+      "restricted_two_schedule_optimal_cost": 0,
+      "grasp_first_cost_feasible_at_budgets": {
+        "1": true,
+        "2": true,
+        "3": true
+      },
+      "always_inspect_both_cost": 2
+    },
+    {
+      "case_id": "case_10",
+      "world_id": 1,
+      "knowledge_condition": "visible_now",
+      "policy_packet": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "bin": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "bin": 1
+          }
+        ],
+        "past_observed_cues": {},
+        "currently_observed_cues": {
+          "A": 1,
+          "B": 0
+        },
+        "predicted_post_grasp_inspection_cost": {
+          "A": 1,
+          "B": 3
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "grasp",
+          "place_back",
+          "regrasp"
+        ],
+        "recovery_allowed": true,
+        "budget_units": "extra observation/recovery cost; common grasp and transport excluded"
+      },
+      "evaluation_only": {
+        "task_rule": "A",
+        "A": 1,
+        "B": 0,
+        "correct_bin": 1
+      },
+      "candidate_first_action": "grasp",
+      "classical_active_perception_first_action": "grasp",
+      "restricted_optimal_first_actions": [
+        "grasp"
+      ],
+      "candidate_is_restricted_cost_optimal": true,
+      "candidate_total_inspection_cost": 0,
+      "classical_total_inspection_cost": 0,
+      "restricted_two_schedule_optimal_cost": 0,
+      "grasp_first_cost_feasible_at_budgets": {
+        "1": true,
+        "2": true,
+        "3": true
+      },
+      "always_inspect_both_cost": 2
+    },
+    {
+      "case_id": "case_11",
+      "world_id": 1,
+      "knowledge_condition": "visible_now",
+      "policy_packet": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "bin": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "bin": 1
+          }
+        ],
+        "past_observed_cues": {},
+        "currently_observed_cues": {
+          "A": 1,
+          "B": 0
+        },
+        "predicted_post_grasp_inspection_cost": {
+          "A": 1,
+          "B": 3
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "grasp",
+          "place_back",
+          "regrasp"
+        ],
+        "recovery_allowed": true,
+        "budget_units": "extra observation/recovery cost; common grasp and transport excluded"
+      },
+      "evaluation_only": {
+        "task_rule": "B",
+        "A": 1,
+        "B": 0,
+        "correct_bin": 0
+      },
+      "candidate_first_action": "grasp",
+      "classical_active_perception_first_action": "grasp",
+      "restricted_optimal_first_actions": [
+        "grasp"
+      ],
+      "candidate_is_restricted_cost_optimal": true,
+      "candidate_total_inspection_cost": 0,
+      "classical_total_inspection_cost": 0,
+      "restricted_two_schedule_optimal_cost": 0,
+      "grasp_first_cost_feasible_at_budgets": {
+        "1": true,
+        "2": true,
+        "3": true
+      },
+      "always_inspect_both_cost": 2
+    },
+    {
+      "case_id": "case_12",
+      "world_id": 2,
+      "knowledge_condition": "unseen",
+      "policy_packet": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "bin": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "bin": 1
+          }
+        ],
+        "past_observed_cues": {},
+        "currently_observed_cues": {},
+        "predicted_post_grasp_inspection_cost": {
+          "A": 3,
+          "B": 3
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "grasp",
+          "place_back",
+          "regrasp"
+        ],
+        "recovery_allowed": true,
+        "budget_units": "extra observation/recovery cost; common grasp and transport excluded"
+      },
+      "evaluation_only": {
+        "task_rule": "A",
+        "A": 1,
+        "B": 0,
+        "correct_bin": 1
+      },
+      "candidate_first_action": "inspect_A",
+      "classical_active_perception_first_action": "inspect_A",
+      "restricted_optimal_first_actions": [
+        "inspect_A"
+      ],
+      "candidate_is_restricted_cost_optimal": true,
+      "candidate_total_inspection_cost": 1,
+      "classical_total_inspection_cost": 1,
+      "restricted_two_schedule_optimal_cost": 1,
+      "grasp_first_cost_feasible_at_budgets": {
+        "1": false,
+        "2": false,
+        "3": true
+      },
+      "always_inspect_both_cost": 2
+    },
+    {
+      "case_id": "case_13",
+      "world_id": 2,
+      "knowledge_condition": "unseen",
+      "policy_packet": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "bin": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "bin": 1
+          }
+        ],
+        "past_observed_cues": {},
+        "currently_observed_cues": {},
+        "predicted_post_grasp_inspection_cost": {
+          "A": 3,
+          "B": 3
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "grasp",
+          "place_back",
+          "regrasp"
+        ],
+        "recovery_allowed": true,
+        "budget_units": "extra observation/recovery cost; common grasp and transport excluded"
+      },
+      "evaluation_only": {
+        "task_rule": "B",
+        "A": 1,
+        "B": 0,
+        "correct_bin": 0
+      },
+      "candidate_first_action": "inspect_B",
+      "classical_active_perception_first_action": "inspect_B",
+      "restricted_optimal_first_actions": [
+        "inspect_B"
+      ],
+      "candidate_is_restricted_cost_optimal": true,
+      "candidate_total_inspection_cost": 1,
+      "classical_total_inspection_cost": 1,
+      "restricted_two_schedule_optimal_cost": 1,
+      "grasp_first_cost_feasible_at_budgets": {
+        "1": false,
+        "2": false,
+        "3": true
+      },
+      "always_inspect_both_cost": 2
+    },
+    {
+      "case_id": "case_14",
+      "world_id": 2,
+      "knowledge_condition": "seen_in_history",
+      "policy_packet": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "bin": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "bin": 1
+          }
+        ],
+        "past_observed_cues": {
+          "A": 1,
+          "B": 0
+        },
+        "currently_observed_cues": {},
+        "predicted_post_grasp_inspection_cost": {
+          "A": 3,
+          "B": 3
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "grasp",
+          "place_back",
+          "regrasp"
+        ],
+        "recovery_allowed": true,
+        "budget_units": "extra observation/recovery cost; common grasp and transport excluded"
+      },
+      "evaluation_only": {
+        "task_rule": "A",
+        "A": 1,
+        "B": 0,
+        "correct_bin": 1
+      },
+      "candidate_first_action": "grasp",
+      "classical_active_perception_first_action": "grasp",
+      "restricted_optimal_first_actions": [
+        "grasp"
+      ],
+      "candidate_is_restricted_cost_optimal": true,
+      "candidate_total_inspection_cost": 0,
+      "classical_total_inspection_cost": 0,
+      "restricted_two_schedule_optimal_cost": 0,
+      "grasp_first_cost_feasible_at_budgets": {
+        "1": true,
+        "2": true,
+        "3": true
+      },
+      "always_inspect_both_cost": 2
+    },
+    {
+      "case_id": "case_15",
+      "world_id": 2,
+      "knowledge_condition": "seen_in_history",
+      "policy_packet": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "bin": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "bin": 1
+          }
+        ],
+        "past_observed_cues": {
+          "A": 1,
+          "B": 0
+        },
+        "currently_observed_cues": {},
+        "predicted_post_grasp_inspection_cost": {
+          "A": 3,
+          "B": 3
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "grasp",
+          "place_back",
+          "regrasp"
+        ],
+        "recovery_allowed": true,
+        "budget_units": "extra observation/recovery cost; common grasp and transport excluded"
+      },
+      "evaluation_only": {
+        "task_rule": "B",
+        "A": 1,
+        "B": 0,
+        "correct_bin": 0
+      },
+      "candidate_first_action": "grasp",
+      "classical_active_perception_first_action": "grasp",
+      "restricted_optimal_first_actions": [
+        "grasp"
+      ],
+      "candidate_is_restricted_cost_optimal": true,
+      "candidate_total_inspection_cost": 0,
+      "classical_total_inspection_cost": 0,
+      "restricted_two_schedule_optimal_cost": 0,
+      "grasp_first_cost_feasible_at_budgets": {
+        "1": true,
+        "2": true,
+        "3": true
+      },
+      "always_inspect_both_cost": 2
+    },
+    {
+      "case_id": "case_16",
+      "world_id": 2,
+      "knowledge_condition": "visible_now",
+      "policy_packet": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "bin": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "bin": 1
+          }
+        ],
+        "past_observed_cues": {},
+        "currently_observed_cues": {
+          "A": 1,
+          "B": 0
+        },
+        "predicted_post_grasp_inspection_cost": {
+          "A": 3,
+          "B": 3
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "grasp",
+          "place_back",
+          "regrasp"
+        ],
+        "recovery_allowed": true,
+        "budget_units": "extra observation/recovery cost; common grasp and transport excluded"
+      },
+      "evaluation_only": {
+        "task_rule": "A",
+        "A": 1,
+        "B": 0,
+        "correct_bin": 1
+      },
+      "candidate_first_action": "grasp",
+      "classical_active_perception_first_action": "grasp",
+      "restricted_optimal_first_actions": [
+        "grasp"
+      ],
+      "candidate_is_restricted_cost_optimal": true,
+      "candidate_total_inspection_cost": 0,
+      "classical_total_inspection_cost": 0,
+      "restricted_two_schedule_optimal_cost": 0,
+      "grasp_first_cost_feasible_at_budgets": {
+        "1": true,
+        "2": true,
+        "3": true
+      },
+      "always_inspect_both_cost": 2
+    },
+    {
+      "case_id": "case_17",
+      "world_id": 2,
+      "knowledge_condition": "visible_now",
+      "policy_packet": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "bin": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "bin": 1
+          }
+        ],
+        "past_observed_cues": {},
+        "currently_observed_cues": {
+          "A": 1,
+          "B": 0
+        },
+        "predicted_post_grasp_inspection_cost": {
+          "A": 3,
+          "B": 3
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "grasp",
+          "place_back",
+          "regrasp"
+        ],
+        "recovery_allowed": true,
+        "budget_units": "extra observation/recovery cost; common grasp and transport excluded"
+      },
+      "evaluation_only": {
+        "task_rule": "B",
+        "A": 1,
+        "B": 0,
+        "correct_bin": 0
+      },
+      "candidate_first_action": "grasp",
+      "classical_active_perception_first_action": "grasp",
+      "restricted_optimal_first_actions": [
+        "grasp"
+      ],
+      "candidate_is_restricted_cost_optimal": true,
+      "candidate_total_inspection_cost": 0,
+      "classical_total_inspection_cost": 0,
+      "restricted_two_schedule_optimal_cost": 0,
+      "grasp_first_cost_feasible_at_budgets": {
+        "1": true,
+        "2": true,
+        "3": true
+      },
+      "always_inspect_both_cost": 2
+    },
+    {
+      "case_id": "case_18",
+      "world_id": 3,
+      "knowledge_condition": "unseen",
+      "policy_packet": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "bin": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "bin": 1
+          }
+        ],
+        "past_observed_cues": {},
+        "currently_observed_cues": {},
+        "predicted_post_grasp_inspection_cost": {
+          "A": 1,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "grasp",
+          "place_back",
+          "regrasp"
+        ],
+        "recovery_allowed": true,
+        "budget_units": "extra observation/recovery cost; common grasp and transport excluded"
+      },
+      "evaluation_only": {
+        "task_rule": "A",
+        "A": 1,
+        "B": 0,
+        "correct_bin": 1
+      },
+      "candidate_first_action": "grasp",
+      "classical_active_perception_first_action": "inspect_A",
+      "restricted_optimal_first_actions": [
+        "inspect_A",
+        "grasp"
+      ],
+      "candidate_is_restricted_cost_optimal": true,
+      "candidate_total_inspection_cost": 1,
+      "classical_total_inspection_cost": 1,
+      "restricted_two_schedule_optimal_cost": 1,
+      "grasp_first_cost_feasible_at_budgets": {
+        "1": true,
+        "2": true,
+        "3": true
+      },
+      "always_inspect_both_cost": 2
+    },
+    {
+      "case_id": "case_19",
+      "world_id": 3,
+      "knowledge_condition": "unseen",
+      "policy_packet": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "bin": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "bin": 1
+          }
+        ],
+        "past_observed_cues": {},
+        "currently_observed_cues": {},
+        "predicted_post_grasp_inspection_cost": {
+          "A": 1,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "grasp",
+          "place_back",
+          "regrasp"
+        ],
+        "recovery_allowed": true,
+        "budget_units": "extra observation/recovery cost; common grasp and transport excluded"
+      },
+      "evaluation_only": {
+        "task_rule": "B",
+        "A": 1,
+        "B": 0,
+        "correct_bin": 0
+      },
+      "candidate_first_action": "grasp",
+      "classical_active_perception_first_action": "inspect_B",
+      "restricted_optimal_first_actions": [
+        "inspect_B",
+        "grasp"
+      ],
+      "candidate_is_restricted_cost_optimal": true,
+      "candidate_total_inspection_cost": 1,
+      "classical_total_inspection_cost": 1,
+      "restricted_two_schedule_optimal_cost": 1,
+      "grasp_first_cost_feasible_at_budgets": {
+        "1": true,
+        "2": true,
+        "3": true
+      },
+      "always_inspect_both_cost": 2
+    },
+    {
+      "case_id": "case_20",
+      "world_id": 3,
+      "knowledge_condition": "seen_in_history",
+      "policy_packet": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "bin": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "bin": 1
+          }
+        ],
+        "past_observed_cues": {
+          "A": 1,
+          "B": 0
+        },
+        "currently_observed_cues": {},
+        "predicted_post_grasp_inspection_cost": {
+          "A": 1,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "grasp",
+          "place_back",
+          "regrasp"
+        ],
+        "recovery_allowed": true,
+        "budget_units": "extra observation/recovery cost; common grasp and transport excluded"
+      },
+      "evaluation_only": {
+        "task_rule": "A",
+        "A": 1,
+        "B": 0,
+        "correct_bin": 1
+      },
+      "candidate_first_action": "grasp",
+      "classical_active_perception_first_action": "grasp",
+      "restricted_optimal_first_actions": [
+        "grasp"
+      ],
+      "candidate_is_restricted_cost_optimal": true,
+      "candidate_total_inspection_cost": 0,
+      "classical_total_inspection_cost": 0,
+      "restricted_two_schedule_optimal_cost": 0,
+      "grasp_first_cost_feasible_at_budgets": {
+        "1": true,
+        "2": true,
+        "3": true
+      },
+      "always_inspect_both_cost": 2
+    },
+    {
+      "case_id": "case_21",
+      "world_id": 3,
+      "knowledge_condition": "seen_in_history",
+      "policy_packet": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "bin": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "bin": 1
+          }
+        ],
+        "past_observed_cues": {
+          "A": 1,
+          "B": 0
+        },
+        "currently_observed_cues": {},
+        "predicted_post_grasp_inspection_cost": {
+          "A": 1,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "grasp",
+          "place_back",
+          "regrasp"
+        ],
+        "recovery_allowed": true,
+        "budget_units": "extra observation/recovery cost; common grasp and transport excluded"
+      },
+      "evaluation_only": {
+        "task_rule": "B",
+        "A": 1,
+        "B": 0,
+        "correct_bin": 0
+      },
+      "candidate_first_action": "grasp",
+      "classical_active_perception_first_action": "grasp",
+      "restricted_optimal_first_actions": [
+        "grasp"
+      ],
+      "candidate_is_restricted_cost_optimal": true,
+      "candidate_total_inspection_cost": 0,
+      "classical_total_inspection_cost": 0,
+      "restricted_two_schedule_optimal_cost": 0,
+      "grasp_first_cost_feasible_at_budgets": {
+        "1": true,
+        "2": true,
+        "3": true
+      },
+      "always_inspect_both_cost": 2
+    },
+    {
+      "case_id": "case_22",
+      "world_id": 3,
+      "knowledge_condition": "visible_now",
+      "policy_packet": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "bin": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "bin": 1
+          }
+        ],
+        "past_observed_cues": {},
+        "currently_observed_cues": {
+          "A": 1,
+          "B": 0
+        },
+        "predicted_post_grasp_inspection_cost": {
+          "A": 1,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "grasp",
+          "place_back",
+          "regrasp"
+        ],
+        "recovery_allowed": true,
+        "budget_units": "extra observation/recovery cost; common grasp and transport excluded"
+      },
+      "evaluation_only": {
+        "task_rule": "A",
+        "A": 1,
+        "B": 0,
+        "correct_bin": 1
+      },
+      "candidate_first_action": "grasp",
+      "classical_active_perception_first_action": "grasp",
+      "restricted_optimal_first_actions": [
+        "grasp"
+      ],
+      "candidate_is_restricted_cost_optimal": true,
+      "candidate_total_inspection_cost": 0,
+      "classical_total_inspection_cost": 0,
+      "restricted_two_schedule_optimal_cost": 0,
+      "grasp_first_cost_feasible_at_budgets": {
+        "1": true,
+        "2": true,
+        "3": true
+      },
+      "always_inspect_both_cost": 2
+    },
+    {
+      "case_id": "case_23",
+      "world_id": 3,
+      "knowledge_condition": "visible_now",
+      "policy_packet": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "bin": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "bin": 1
+          }
+        ],
+        "past_observed_cues": {},
+        "currently_observed_cues": {
+          "A": 1,
+          "B": 0
+        },
+        "predicted_post_grasp_inspection_cost": {
+          "A": 1,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "grasp",
+          "place_back",
+          "regrasp"
+        ],
+        "recovery_allowed": true,
+        "budget_units": "extra observation/recovery cost; common grasp and transport excluded"
+      },
+      "evaluation_only": {
+        "task_rule": "B",
+        "A": 1,
+        "B": 0,
+        "correct_bin": 0
+      },
+      "candidate_first_action": "grasp",
+      "classical_active_perception_first_action": "grasp",
+      "restricted_optimal_first_actions": [
+        "grasp"
+      ],
+      "candidate_is_restricted_cost_optimal": true,
+      "candidate_total_inspection_cost": 0,
+      "classical_total_inspection_cost": 0,
+      "restricted_two_schedule_optimal_cost": 0,
+      "grasp_first_cost_feasible_at_budgets": {
+        "1": true,
+        "2": true,
+        "3": true
+      },
+      "always_inspect_both_cost": 2
+    },
+    {
+      "case_id": "case_24",
+      "world_id": 4,
+      "knowledge_condition": "unseen",
+      "policy_packet": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "bin": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "bin": 1
+          }
+        ],
+        "past_observed_cues": {},
+        "currently_observed_cues": {},
+        "predicted_post_grasp_inspection_cost": {
+          "A": 2,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "grasp",
+          "place_back",
+          "regrasp"
+        ],
+        "recovery_allowed": true,
+        "budget_units": "extra observation/recovery cost; common grasp and transport excluded"
+      },
+      "evaluation_only": {
+        "task_rule": "A",
+        "A": 1,
+        "B": 0,
+        "correct_bin": 1
+      },
+      "candidate_first_action": "inspect_A",
+      "classical_active_perception_first_action": "inspect_A",
+      "restricted_optimal_first_actions": [
+        "inspect_A"
+      ],
+      "candidate_is_restricted_cost_optimal": true,
+      "candidate_total_inspection_cost": 1,
+      "classical_total_inspection_cost": 1,
+      "restricted_two_schedule_optimal_cost": 1,
+      "grasp_first_cost_feasible_at_budgets": {
+        "1": false,
+        "2": true,
+        "3": true
+      },
+      "always_inspect_both_cost": 2
+    },
+    {
+      "case_id": "case_25",
+      "world_id": 4,
+      "knowledge_condition": "unseen",
+      "policy_packet": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "bin": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "bin": 1
+          }
+        ],
+        "past_observed_cues": {},
+        "currently_observed_cues": {},
+        "predicted_post_grasp_inspection_cost": {
+          "A": 2,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "grasp",
+          "place_back",
+          "regrasp"
+        ],
+        "recovery_allowed": true,
+        "budget_units": "extra observation/recovery cost; common grasp and transport excluded"
+      },
+      "evaluation_only": {
+        "task_rule": "B",
+        "A": 1,
+        "B": 0,
+        "correct_bin": 0
+      },
+      "candidate_first_action": "grasp",
+      "classical_active_perception_first_action": "inspect_B",
+      "restricted_optimal_first_actions": [
+        "inspect_B",
+        "grasp"
+      ],
+      "candidate_is_restricted_cost_optimal": true,
+      "candidate_total_inspection_cost": 1,
+      "classical_total_inspection_cost": 1,
+      "restricted_two_schedule_optimal_cost": 1,
+      "grasp_first_cost_feasible_at_budgets": {
+        "1": true,
+        "2": true,
+        "3": true
+      },
+      "always_inspect_both_cost": 2
+    },
+    {
+      "case_id": "case_26",
+      "world_id": 4,
+      "knowledge_condition": "seen_in_history",
+      "policy_packet": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "bin": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "bin": 1
+          }
+        ],
+        "past_observed_cues": {
+          "A": 1,
+          "B": 0
+        },
+        "currently_observed_cues": {},
+        "predicted_post_grasp_inspection_cost": {
+          "A": 2,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "grasp",
+          "place_back",
+          "regrasp"
+        ],
+        "recovery_allowed": true,
+        "budget_units": "extra observation/recovery cost; common grasp and transport excluded"
+      },
+      "evaluation_only": {
+        "task_rule": "A",
+        "A": 1,
+        "B": 0,
+        "correct_bin": 1
+      },
+      "candidate_first_action": "grasp",
+      "classical_active_perception_first_action": "grasp",
+      "restricted_optimal_first_actions": [
+        "grasp"
+      ],
+      "candidate_is_restricted_cost_optimal": true,
+      "candidate_total_inspection_cost": 0,
+      "classical_total_inspection_cost": 0,
+      "restricted_two_schedule_optimal_cost": 0,
+      "grasp_first_cost_feasible_at_budgets": {
+        "1": true,
+        "2": true,
+        "3": true
+      },
+      "always_inspect_both_cost": 2
+    },
+    {
+      "case_id": "case_27",
+      "world_id": 4,
+      "knowledge_condition": "seen_in_history",
+      "policy_packet": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "bin": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "bin": 1
+          }
+        ],
+        "past_observed_cues": {
+          "A": 1,
+          "B": 0
+        },
+        "currently_observed_cues": {},
+        "predicted_post_grasp_inspection_cost": {
+          "A": 2,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "grasp",
+          "place_back",
+          "regrasp"
+        ],
+        "recovery_allowed": true,
+        "budget_units": "extra observation/recovery cost; common grasp and transport excluded"
+      },
+      "evaluation_only": {
+        "task_rule": "B",
+        "A": 1,
+        "B": 0,
+        "correct_bin": 0
+      },
+      "candidate_first_action": "grasp",
+      "classical_active_perception_first_action": "grasp",
+      "restricted_optimal_first_actions": [
+        "grasp"
+      ],
+      "candidate_is_restricted_cost_optimal": true,
+      "candidate_total_inspection_cost": 0,
+      "classical_total_inspection_cost": 0,
+      "restricted_two_schedule_optimal_cost": 0,
+      "grasp_first_cost_feasible_at_budgets": {
+        "1": true,
+        "2": true,
+        "3": true
+      },
+      "always_inspect_both_cost": 2
+    },
+    {
+      "case_id": "case_28",
+      "world_id": 4,
+      "knowledge_condition": "visible_now",
+      "policy_packet": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "bin": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "bin": 1
+          }
+        ],
+        "past_observed_cues": {},
+        "currently_observed_cues": {
+          "A": 1,
+          "B": 0
+        },
+        "predicted_post_grasp_inspection_cost": {
+          "A": 2,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "grasp",
+          "place_back",
+          "regrasp"
+        ],
+        "recovery_allowed": true,
+        "budget_units": "extra observation/recovery cost; common grasp and transport excluded"
+      },
+      "evaluation_only": {
+        "task_rule": "A",
+        "A": 1,
+        "B": 0,
+        "correct_bin": 1
+      },
+      "candidate_first_action": "grasp",
+      "classical_active_perception_first_action": "grasp",
+      "restricted_optimal_first_actions": [
+        "grasp"
+      ],
+      "candidate_is_restricted_cost_optimal": true,
+      "candidate_total_inspection_cost": 0,
+      "classical_total_inspection_cost": 0,
+      "restricted_two_schedule_optimal_cost": 0,
+      "grasp_first_cost_feasible_at_budgets": {
+        "1": true,
+        "2": true,
+        "3": true
+      },
+      "always_inspect_both_cost": 2
+    },
+    {
+      "case_id": "case_29",
+      "world_id": 4,
+      "knowledge_condition": "visible_now",
+      "policy_packet": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "bin": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "bin": 1
+          }
+        ],
+        "past_observed_cues": {},
+        "currently_observed_cues": {
+          "A": 1,
+          "B": 0
+        },
+        "predicted_post_grasp_inspection_cost": {
+          "A": 2,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "grasp",
+          "place_back",
+          "regrasp"
+        ],
+        "recovery_allowed": true,
+        "budget_units": "extra observation/recovery cost; common grasp and transport excluded"
+      },
+      "evaluation_only": {
+        "task_rule": "B",
+        "A": 1,
+        "B": 0,
+        "correct_bin": 0
+      },
+      "candidate_first_action": "grasp",
+      "classical_active_perception_first_action": "grasp",
+      "restricted_optimal_first_actions": [
+        "grasp"
+      ],
+      "candidate_is_restricted_cost_optimal": true,
+      "candidate_total_inspection_cost": 0,
+      "classical_total_inspection_cost": 0,
+      "restricted_two_schedule_optimal_cost": 0,
+      "grasp_first_cost_feasible_at_budgets": {
+        "1": true,
+        "2": true,
+        "3": true
+      },
+      "always_inspect_both_cost": 2
+    }
+  ]
+}
