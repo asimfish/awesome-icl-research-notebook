@@ -53,3 +53,14 @@ model/robot/GPU calls. The symbolic solver evaluates only two declared schedules
 accepting all ties; it is not a complete belief-space planner. Never serialize
 evaluation-only fields, pack IDs or context IDs to the policy. The structured
 prompt uses disclosed oracle parsing, not an implemented perception model.
+
+## Idea deepening
+
+The [deepening report](data/idea-deepening.md) narrows the question to demonstration-conditioned sensing selection. Direct priors include See2Act, ActiveUMI and CIVIL. The 144 finite decision conditions expose unnecessary observation by a global-feature coverage extension in 24 conditions; these are not model trials or failure rates. Six typed pairs contain 12 records but only 10 unique inputs, without RGB or demonstrated sensing traces. Complete rule tables and manually declared observation effects are solved by classical decision trees. This remains a bounded capability probe, not an established benchmark or new method.
+
+```sh
+python3 tools/decision_relevance_probe.py --output /tmp/decision-relevance-probe.json
+python3 tools/prepare_deepening_cases.py --output /tmp/critical-decision-cases.json
+```
+
+Compare with `data/decision-relevance-check.json` and `data/critical-decision-cases.json`. The original eight-pack / 16-call first gate and total 120-call cap remain. A subsequent crossed-rule / access-route probe is conditional on a gap at the first gate. Actual policy calls, robot episodes and GPU hours are zero.

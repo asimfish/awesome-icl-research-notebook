@@ -117,6 +117,16 @@ for row in packs['rows']:
         check('stimulus_asset_exists:' + image, (ROOT / 'data/visual-stimuli' / image).is_file())
 check('new_plan_workflow_allowlist', 'cp research-plan.html research-plan.css research-plan.js _site/' in
       (ROOT / '.github/workflows/pages.yml').read_text())
+decision = json.loads((ROOT / 'data/decision-relevance-check.json').read_text())
+check('deepening_finite_counterexample_scope', decision['cases'] == 144 and
+      decision['global_coverage_suboptimal_cases'] == 24 and
+      decision['frozen_policy_model_calls'] == decision['robot_episodes'] == decision['gpu_hours'] == 0)
+typed = json.loads((ROOT / 'data/critical-decision-cases.json').read_text())
+check('typed_cases_not_independent_samples', typed['cases'] == 12 and typed['unique_inputs'] == 10 and
+      len({json.dumps(row['input'], sort_keys=True) for row in typed['rows']}) == 10)
+check('typed_pair_and_budget_boundary', typed['pairs'] == 6 and
+      all(row['passed'] for row in typed['pair_checks']) and typed['total_model_call_cap_unchanged'] == 120 and
+      typed['frozen_policy_model_calls'] == typed['robot_episodes'] == typed['gpu_hours'] == 0)
 
 # Git metadata belongs to the checkout, not the public publishing surface.
 paths = sorted(p for p in ROOT.rglob('*') if '.git' not in p.relative_to(ROOT).parts)

@@ -1,0 +1,742 @@
+{
+  "schema": "awesome-icl.typed-deepening-cases.v1",
+  "scope": "typed conceptual inputs; no RGB or robot execution",
+  "cases": 12,
+  "pairs": 6,
+  "unique_inputs": 10,
+  "pair_checks": [
+    {
+      "pair": "task_rule",
+      "only_changed_input_field": "demonstrations",
+      "passed": true
+    },
+    {
+      "pair": "learner_history",
+      "only_changed_input_field": "legal_same_object_history",
+      "passed": true
+    },
+    {
+      "pair": "observation_route",
+      "only_changed_input_field": "learner_observation_access",
+      "passed": true
+    },
+    {
+      "pair": "conditional_relevance",
+      "only_changed_input_field": "current_observed_values",
+      "passed": true
+    },
+    {
+      "pair": "task_ambiguity",
+      "only_changed_input_field": "current_observed_values",
+      "passed": true
+    },
+    {
+      "pair": "fresh_label_binding",
+      "only_changed_input_field": "demonstrations",
+      "passed": true
+    }
+  ],
+  "demonstrator_action_is": "a diagnostic nuisance annotation, not an observed video trace",
+  "model_input_excludes": [
+    "case_id",
+    "pair_id",
+    "evaluation_only"
+  ],
+  "sampled_task_prior": "uniform over 16 Boolean functions when only partial supports are given",
+  "fresh_binding_limits": "two inverted bindings are a paired control, not a large unseen task distribution",
+  "first_model_probe_unchanged": "existing eight visual packs, two prompts, at most 16 calls",
+  "total_model_call_cap_unchanged": 120,
+  "frozen_policy_model_calls": 0,
+  "robot_episodes": 0,
+  "gpu_hours": 0,
+  "rows": [
+    {
+      "case_id": "case_00",
+      "pair_id": "task_rule",
+      "input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_observed_values": {
+          "A": 1
+        },
+        "legal_same_object_history": {},
+        "demonstrator_sensing_action": "look_left",
+        "learner_observation_access": {
+          "look_left": "A",
+          "look_right": "B"
+        },
+        "allowed_actions": [
+          "look_left",
+          "look_right",
+          "act_0",
+          "act_1",
+          "defer"
+        ],
+        "observation_action_cost": 1,
+        "objective": "Complete the task correctly for every state and rule compatible with legal evidence, with minimum expected observation cost. Defer only if no allowed world observation can resolve the current destination.",
+        "action_semantics": "look reveals one declared cue; act sorts; defer declines an unidentifiable task",
+        "visibility_origin": "manual typed contract, not visual or geometric prediction"
+      },
+      "evaluation_only": {
+        "compatible_task_count": 1,
+        "possible_destinations": [
+          1
+        ],
+        "acceptable_first_actions": [
+          "act_1"
+        ],
+        "minimum_expected_observation_cost": 0.0
+      }
+    },
+    {
+      "case_id": "case_01",
+      "pair_id": "task_rule",
+      "input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_observed_values": {
+          "A": 1
+        },
+        "legal_same_object_history": {},
+        "demonstrator_sensing_action": "look_left",
+        "learner_observation_access": {
+          "look_left": "A",
+          "look_right": "B"
+        },
+        "allowed_actions": [
+          "look_left",
+          "look_right",
+          "act_0",
+          "act_1",
+          "defer"
+        ],
+        "observation_action_cost": 1,
+        "objective": "Complete the task correctly for every state and rule compatible with legal evidence, with minimum expected observation cost. Defer only if no allowed world observation can resolve the current destination.",
+        "action_semantics": "look reveals one declared cue; act sorts; defer declines an unidentifiable task",
+        "visibility_origin": "manual typed contract, not visual or geometric prediction"
+      },
+      "evaluation_only": {
+        "compatible_task_count": 1,
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "acceptable_first_actions": [
+          "look_right"
+        ],
+        "minimum_expected_observation_cost": 1.0
+      }
+    },
+    {
+      "case_id": "case_02",
+      "pair_id": "learner_history",
+      "input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_observed_values": {
+          "A": 1
+        },
+        "legal_same_object_history": {},
+        "demonstrator_sensing_action": "look_left",
+        "learner_observation_access": {
+          "look_left": "A",
+          "look_right": "B"
+        },
+        "allowed_actions": [
+          "look_left",
+          "look_right",
+          "act_0",
+          "act_1",
+          "defer"
+        ],
+        "observation_action_cost": 1,
+        "objective": "Complete the task correctly for every state and rule compatible with legal evidence, with minimum expected observation cost. Defer only if no allowed world observation can resolve the current destination.",
+        "action_semantics": "look reveals one declared cue; act sorts; defer declines an unidentifiable task",
+        "visibility_origin": "manual typed contract, not visual or geometric prediction"
+      },
+      "evaluation_only": {
+        "compatible_task_count": 1,
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "acceptable_first_actions": [
+          "look_right"
+        ],
+        "minimum_expected_observation_cost": 1.0
+      }
+    },
+    {
+      "case_id": "case_03",
+      "pair_id": "learner_history",
+      "input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_observed_values": {
+          "A": 1
+        },
+        "legal_same_object_history": {
+          "B": 0
+        },
+        "demonstrator_sensing_action": "look_left",
+        "learner_observation_access": {
+          "look_left": "A",
+          "look_right": "B"
+        },
+        "allowed_actions": [
+          "look_left",
+          "look_right",
+          "act_0",
+          "act_1",
+          "defer"
+        ],
+        "observation_action_cost": 1,
+        "objective": "Complete the task correctly for every state and rule compatible with legal evidence, with minimum expected observation cost. Defer only if no allowed world observation can resolve the current destination.",
+        "action_semantics": "look reveals one declared cue; act sorts; defer declines an unidentifiable task",
+        "visibility_origin": "manual typed contract, not visual or geometric prediction"
+      },
+      "evaluation_only": {
+        "compatible_task_count": 1,
+        "possible_destinations": [
+          0
+        ],
+        "acceptable_first_actions": [
+          "act_0"
+        ],
+        "minimum_expected_observation_cost": 0.0
+      }
+    },
+    {
+      "case_id": "case_04",
+      "pair_id": "observation_route",
+      "input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_observed_values": {
+          "A": 1
+        },
+        "legal_same_object_history": {},
+        "demonstrator_sensing_action": "look_left",
+        "learner_observation_access": {
+          "look_left": "B",
+          "look_right": "A"
+        },
+        "allowed_actions": [
+          "look_left",
+          "look_right",
+          "act_0",
+          "act_1",
+          "defer"
+        ],
+        "observation_action_cost": 1,
+        "objective": "Complete the task correctly for every state and rule compatible with legal evidence, with minimum expected observation cost. Defer only if no allowed world observation can resolve the current destination.",
+        "action_semantics": "look reveals one declared cue; act sorts; defer declines an unidentifiable task",
+        "visibility_origin": "manual typed contract, not visual or geometric prediction"
+      },
+      "evaluation_only": {
+        "compatible_task_count": 1,
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "acceptable_first_actions": [
+          "look_left"
+        ],
+        "minimum_expected_observation_cost": 1.0
+      }
+    },
+    {
+      "case_id": "case_05",
+      "pair_id": "observation_route",
+      "input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_observed_values": {
+          "A": 1
+        },
+        "legal_same_object_history": {},
+        "demonstrator_sensing_action": "look_left",
+        "learner_observation_access": {
+          "look_left": "A",
+          "look_right": "B"
+        },
+        "allowed_actions": [
+          "look_left",
+          "look_right",
+          "act_0",
+          "act_1",
+          "defer"
+        ],
+        "observation_action_cost": 1,
+        "objective": "Complete the task correctly for every state and rule compatible with legal evidence, with minimum expected observation cost. Defer only if no allowed world observation can resolve the current destination.",
+        "action_semantics": "look reveals one declared cue; act sorts; defer declines an unidentifiable task",
+        "visibility_origin": "manual typed contract, not visual or geometric prediction"
+      },
+      "evaluation_only": {
+        "compatible_task_count": 1,
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "acceptable_first_actions": [
+          "look_right"
+        ],
+        "minimum_expected_observation_cost": 1.0
+      }
+    },
+    {
+      "case_id": "case_06",
+      "pair_id": "conditional_relevance",
+      "input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_observed_values": {
+          "A": 1
+        },
+        "legal_same_object_history": {},
+        "demonstrator_sensing_action": "look_left",
+        "learner_observation_access": {
+          "look_left": "A",
+          "look_right": "B"
+        },
+        "allowed_actions": [
+          "look_left",
+          "look_right",
+          "act_0",
+          "act_1",
+          "defer"
+        ],
+        "observation_action_cost": 1,
+        "objective": "Complete the task correctly for every state and rule compatible with legal evidence, with minimum expected observation cost. Defer only if no allowed world observation can resolve the current destination.",
+        "action_semantics": "look reveals one declared cue; act sorts; defer declines an unidentifiable task",
+        "visibility_origin": "manual typed contract, not visual or geometric prediction"
+      },
+      "evaluation_only": {
+        "compatible_task_count": 1,
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "acceptable_first_actions": [
+          "look_right"
+        ],
+        "minimum_expected_observation_cost": 1.0
+      }
+    },
+    {
+      "case_id": "case_07",
+      "pair_id": "conditional_relevance",
+      "input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_observed_values": {
+          "A": 0
+        },
+        "legal_same_object_history": {},
+        "demonstrator_sensing_action": "look_left",
+        "learner_observation_access": {
+          "look_left": "A",
+          "look_right": "B"
+        },
+        "allowed_actions": [
+          "look_left",
+          "look_right",
+          "act_0",
+          "act_1",
+          "defer"
+        ],
+        "observation_action_cost": 1,
+        "objective": "Complete the task correctly for every state and rule compatible with legal evidence, with minimum expected observation cost. Defer only if no allowed world observation can resolve the current destination.",
+        "action_semantics": "look reveals one declared cue; act sorts; defer declines an unidentifiable task",
+        "visibility_origin": "manual typed contract, not visual or geometric prediction"
+      },
+      "evaluation_only": {
+        "compatible_task_count": 1,
+        "possible_destinations": [
+          0
+        ],
+        "acceptable_first_actions": [
+          "act_0"
+        ],
+        "minimum_expected_observation_cost": 0.0
+      }
+    },
+    {
+      "case_id": "case_08",
+      "pair_id": "task_ambiguity",
+      "input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_observed_values": {
+          "A": 0,
+          "B": 1
+        },
+        "legal_same_object_history": {},
+        "demonstrator_sensing_action": "look_left",
+        "learner_observation_access": {
+          "look_left": "A",
+          "look_right": "B"
+        },
+        "allowed_actions": [
+          "look_left",
+          "look_right",
+          "act_0",
+          "act_1",
+          "defer"
+        ],
+        "observation_action_cost": 1,
+        "objective": "Complete the task correctly for every state and rule compatible with legal evidence, with minimum expected observation cost. Defer only if no allowed world observation can resolve the current destination.",
+        "action_semantics": "look reveals one declared cue; act sorts; defer declines an unidentifiable task",
+        "visibility_origin": "manual typed contract, not visual or geometric prediction"
+      },
+      "evaluation_only": {
+        "compatible_task_count": 4,
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "acceptable_first_actions": [
+          "defer"
+        ],
+        "minimum_expected_observation_cost": null
+      }
+    },
+    {
+      "case_id": "case_09",
+      "pair_id": "task_ambiguity",
+      "input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_observed_values": {
+          "A": 0,
+          "B": 0
+        },
+        "legal_same_object_history": {},
+        "demonstrator_sensing_action": "look_left",
+        "learner_observation_access": {
+          "look_left": "A",
+          "look_right": "B"
+        },
+        "allowed_actions": [
+          "look_left",
+          "look_right",
+          "act_0",
+          "act_1",
+          "defer"
+        ],
+        "observation_action_cost": 1,
+        "objective": "Complete the task correctly for every state and rule compatible with legal evidence, with minimum expected observation cost. Defer only if no allowed world observation can resolve the current destination.",
+        "action_semantics": "look reveals one declared cue; act sorts; defer declines an unidentifiable task",
+        "visibility_origin": "manual typed contract, not visual or geometric prediction"
+      },
+      "evaluation_only": {
+        "compatible_task_count": 4,
+        "possible_destinations": [
+          0
+        ],
+        "acceptable_first_actions": [
+          "act_0"
+        ],
+        "minimum_expected_observation_cost": 0.0
+      }
+    },
+    {
+      "case_id": "case_10",
+      "pair_id": "fresh_label_binding",
+      "input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_observed_values": {
+          "A": 1,
+          "B": 0
+        },
+        "legal_same_object_history": {},
+        "demonstrator_sensing_action": "look_left",
+        "learner_observation_access": {
+          "look_left": "A",
+          "look_right": "B"
+        },
+        "allowed_actions": [
+          "look_left",
+          "look_right",
+          "act_0",
+          "act_1",
+          "defer"
+        ],
+        "observation_action_cost": 1,
+        "objective": "Complete the task correctly for every state and rule compatible with legal evidence, with minimum expected observation cost. Defer only if no allowed world observation can resolve the current destination.",
+        "action_semantics": "look reveals one declared cue; act sorts; defer declines an unidentifiable task",
+        "visibility_origin": "manual typed contract, not visual or geometric prediction"
+      },
+      "evaluation_only": {
+        "compatible_task_count": 1,
+        "possible_destinations": [
+          1
+        ],
+        "acceptable_first_actions": [
+          "act_1"
+        ],
+        "minimum_expected_observation_cost": 0.0
+      }
+    },
+    {
+      "case_id": "case_11",
+      "pair_id": "fresh_label_binding",
+      "input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_observed_values": {
+          "A": 1,
+          "B": 0
+        },
+        "legal_same_object_history": {},
+        "demonstrator_sensing_action": "look_left",
+        "learner_observation_access": {
+          "look_left": "A",
+          "look_right": "B"
+        },
+        "allowed_actions": [
+          "look_left",
+          "look_right",
+          "act_0",
+          "act_1",
+          "defer"
+        ],
+        "observation_action_cost": 1,
+        "objective": "Complete the task correctly for every state and rule compatible with legal evidence, with minimum expected observation cost. Defer only if no allowed world observation can resolve the current destination.",
+        "action_semantics": "look reveals one declared cue; act sorts; defer declines an unidentifiable task",
+        "visibility_origin": "manual typed contract, not visual or geometric prediction"
+      },
+      "evaluation_only": {
+        "compatible_task_count": 1,
+        "possible_destinations": [
+          0
+        ],
+        "acceptable_first_actions": [
+          "act_0"
+        ],
+        "minimum_expected_observation_cost": 0.0
+      }
+    }
+  ]
+}

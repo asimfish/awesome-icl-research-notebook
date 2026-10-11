@@ -1,0 +1,8441 @@
+{
+  "scope": "finite symbolic counterexamples to task-design assumptions only",
+  "task_rules": 16,
+  "knowledge_patterns": 9,
+  "cases": 144,
+  "full_crossed_support_identifies_each_rule": true,
+  "global_coverage_suboptimal_cases": 24,
+  "action_already_determined_but_global_cue_unknown_cases": 16,
+  "max_global_coverage_excess": 1.0,
+  "ambiguity_support": [
+    {
+      "A": 0,
+      "B": 0,
+      "destination": 0
+    },
+    {
+      "A": 1,
+      "B": 1,
+      "destination": 1
+    }
+  ],
+  "fully_known_worlds_with_unresolved_task": 2,
+  "task_ambiguous_but_action_determined_worlds": 2,
+  "ambiguity_cases": [
+    {
+      "world_fully_known": {
+        "A": 0,
+        "B": 0
+      },
+      "compatible_task_hypotheses": 4,
+      "possible_destinations": [
+        0
+      ],
+      "world_inspection_can_resolve_task": false,
+      "correct_behavior": "act_0"
+    },
+    {
+      "world_fully_known": {
+        "A": 0,
+        "B": 1
+      },
+      "compatible_task_hypotheses": 4,
+      "possible_destinations": [
+        0,
+        1
+      ],
+      "world_inspection_can_resolve_task": false,
+      "correct_behavior": "defer_task_ambiguous"
+    },
+    {
+      "world_fully_known": {
+        "A": 1,
+        "B": 0
+      },
+      "compatible_task_hypotheses": 4,
+      "possible_destinations": [
+        0,
+        1
+      ],
+      "world_inspection_can_resolve_task": false,
+      "correct_behavior": "defer_task_ambiguous"
+    },
+    {
+      "world_fully_known": {
+        "A": 1,
+        "B": 1
+      },
+      "compatible_task_hypotheses": 4,
+      "possible_destinations": [
+        1
+      ],
+      "world_inspection_can_resolve_task": false,
+      "correct_behavior": "act_1"
+    }
+  ],
+  "access_remapping_case": [
+    {
+      "teacher_action": "look_left",
+      "teacher_reveals": "B",
+      "learner_access": {
+        "look_left": "A",
+        "look_right": "B"
+      },
+      "learner_A_known": 1,
+      "learner_B_known": null,
+      "task": [
+        {
+          "A": 0,
+          "B": 0,
+          "destination": 0
+        },
+        {
+          "A": 0,
+          "B": 1,
+          "destination": 1
+        },
+        {
+          "A": 1,
+          "B": 0,
+          "destination": 0
+        },
+        {
+          "A": 1,
+          "B": 1,
+          "destination": 1
+        }
+      ],
+      "teacher_action_replay": "look_left",
+      "correct_learner_action": "look_right"
+    }
+  ],
+  "frozen_policy_model_calls": 0,
+  "robot_episodes": 0,
+  "gpu_hours": 0,
+  "not_evidence_for": [
+    "new algorithm",
+    "frozen-model deficit",
+    "visual understanding",
+    "physical camera access"
+  ],
+  "rows": [
+    {
+      "case_id": "case_000",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 0,
+        "global_dependencies": [],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_001",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 0,
+        "global_dependencies": [],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_002",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 0,
+        "global_dependencies": [],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_003",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 0,
+        "global_dependencies": [],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_004",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 0,
+        "global_dependencies": [],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_005",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 0,
+        "global_dependencies": [],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_006",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 0,
+        "global_dependencies": [],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_007",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 0,
+        "global_dependencies": [],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_008",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 0,
+        "global_dependencies": [],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_009",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 1,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_A",
+          "inspect_B"
+        ],
+        "optimal_expected_observation_cost": 1.5,
+        "global_feature_coverage_cost": 2.0,
+        "coverage_excess": 0.5
+      }
+    },
+    {
+      "case_id": "case_010",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 1,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_B"
+        ],
+        "optimal_expected_observation_cost": 1.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_011",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 1,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 1.0
+      }
+    },
+    {
+      "case_id": "case_012",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 1,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_A"
+        ],
+        "optimal_expected_observation_cost": 1.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_013",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 1,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 1.0
+      }
+    },
+    {
+      "case_id": "case_014",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 1,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_015",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 1,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_016",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 1,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_017",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 1,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_018",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 2,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_A",
+          "inspect_B"
+        ],
+        "optimal_expected_observation_cost": 1.5,
+        "global_feature_coverage_cost": 2.0,
+        "coverage_excess": 0.5
+      }
+    },
+    {
+      "case_id": "case_019",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 2,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_B"
+        ],
+        "optimal_expected_observation_cost": 1.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_020",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 2,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 1.0
+      }
+    },
+    {
+      "case_id": "case_021",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 2,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 1.0
+      }
+    },
+    {
+      "case_id": "case_022",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 2,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_A"
+        ],
+        "optimal_expected_observation_cost": 1.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_023",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 2,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_024",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 2,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_025",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 2,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_026",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 2,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_027",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 3,
+        "global_dependencies": [
+          "A"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_A"
+        ],
+        "optimal_expected_observation_cost": 1.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_028",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 3,
+        "global_dependencies": [
+          "A"
+        ],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_029",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 3,
+        "global_dependencies": [
+          "A"
+        ],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_030",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 3,
+        "global_dependencies": [
+          "A"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_A"
+        ],
+        "optimal_expected_observation_cost": 1.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_031",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 3,
+        "global_dependencies": [
+          "A"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_A"
+        ],
+        "optimal_expected_observation_cost": 1.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_032",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 3,
+        "global_dependencies": [
+          "A"
+        ],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_033",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 3,
+        "global_dependencies": [
+          "A"
+        ],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_034",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 3,
+        "global_dependencies": [
+          "A"
+        ],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_035",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 3,
+        "global_dependencies": [
+          "A"
+        ],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_036",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 4,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_A",
+          "inspect_B"
+        ],
+        "optimal_expected_observation_cost": 1.5,
+        "global_feature_coverage_cost": 2.0,
+        "coverage_excess": 0.5
+      }
+    },
+    {
+      "case_id": "case_037",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 4,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 1.0
+      }
+    },
+    {
+      "case_id": "case_038",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 4,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_B"
+        ],
+        "optimal_expected_observation_cost": 1.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_039",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 4,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_A"
+        ],
+        "optimal_expected_observation_cost": 1.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_040",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 4,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 1.0
+      }
+    },
+    {
+      "case_id": "case_041",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 4,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_042",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 4,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_043",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 4,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_044",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 4,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_045",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 5,
+        "global_dependencies": [
+          "B"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_B"
+        ],
+        "optimal_expected_observation_cost": 1.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_046",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 5,
+        "global_dependencies": [
+          "B"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_B"
+        ],
+        "optimal_expected_observation_cost": 1.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_047",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 5,
+        "global_dependencies": [
+          "B"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_B"
+        ],
+        "optimal_expected_observation_cost": 1.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_048",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 5,
+        "global_dependencies": [
+          "B"
+        ],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_049",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 5,
+        "global_dependencies": [
+          "B"
+        ],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_050",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 5,
+        "global_dependencies": [
+          "B"
+        ],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_051",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 5,
+        "global_dependencies": [
+          "B"
+        ],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_052",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 5,
+        "global_dependencies": [
+          "B"
+        ],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_053",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 5,
+        "global_dependencies": [
+          "B"
+        ],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_054",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 6,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_A",
+          "inspect_B"
+        ],
+        "optimal_expected_observation_cost": 2.0,
+        "global_feature_coverage_cost": 2.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_055",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 6,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_B"
+        ],
+        "optimal_expected_observation_cost": 1.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_056",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 6,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_B"
+        ],
+        "optimal_expected_observation_cost": 1.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_057",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 6,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_A"
+        ],
+        "optimal_expected_observation_cost": 1.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_058",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 6,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_A"
+        ],
+        "optimal_expected_observation_cost": 1.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_059",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 6,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_060",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 6,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_061",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 6,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_062",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 6,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_063",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 7,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_A",
+          "inspect_B"
+        ],
+        "optimal_expected_observation_cost": 1.5,
+        "global_feature_coverage_cost": 2.0,
+        "coverage_excess": 0.5
+      }
+    },
+    {
+      "case_id": "case_064",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 7,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 1.0
+      }
+    },
+    {
+      "case_id": "case_065",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 7,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_B"
+        ],
+        "optimal_expected_observation_cost": 1.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_066",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 7,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 1.0
+      }
+    },
+    {
+      "case_id": "case_067",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 7,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_A"
+        ],
+        "optimal_expected_observation_cost": 1.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_068",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 7,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_069",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 7,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_070",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 7,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_071",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 0
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 7,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_072",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 8,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_A",
+          "inspect_B"
+        ],
+        "optimal_expected_observation_cost": 1.5,
+        "global_feature_coverage_cost": 2.0,
+        "coverage_excess": 0.5
+      }
+    },
+    {
+      "case_id": "case_073",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 8,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 1.0
+      }
+    },
+    {
+      "case_id": "case_074",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 8,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_B"
+        ],
+        "optimal_expected_observation_cost": 1.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_075",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 8,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 1.0
+      }
+    },
+    {
+      "case_id": "case_076",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 8,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_A"
+        ],
+        "optimal_expected_observation_cost": 1.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_077",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 8,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_078",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 8,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_079",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 8,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_080",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 8,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_081",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 9,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_A",
+          "inspect_B"
+        ],
+        "optimal_expected_observation_cost": 2.0,
+        "global_feature_coverage_cost": 2.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_082",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 9,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_B"
+        ],
+        "optimal_expected_observation_cost": 1.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_083",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 9,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_B"
+        ],
+        "optimal_expected_observation_cost": 1.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_084",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 9,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_A"
+        ],
+        "optimal_expected_observation_cost": 1.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_085",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 9,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_A"
+        ],
+        "optimal_expected_observation_cost": 1.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_086",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 9,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_087",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 9,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_088",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 9,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_089",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 9,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_090",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 10,
+        "global_dependencies": [
+          "B"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_B"
+        ],
+        "optimal_expected_observation_cost": 1.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_091",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 10,
+        "global_dependencies": [
+          "B"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_B"
+        ],
+        "optimal_expected_observation_cost": 1.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_092",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 10,
+        "global_dependencies": [
+          "B"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_B"
+        ],
+        "optimal_expected_observation_cost": 1.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_093",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 10,
+        "global_dependencies": [
+          "B"
+        ],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_094",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 10,
+        "global_dependencies": [
+          "B"
+        ],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_095",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 10,
+        "global_dependencies": [
+          "B"
+        ],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_096",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 10,
+        "global_dependencies": [
+          "B"
+        ],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_097",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 10,
+        "global_dependencies": [
+          "B"
+        ],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_098",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 10,
+        "global_dependencies": [
+          "B"
+        ],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_099",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 11,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_A",
+          "inspect_B"
+        ],
+        "optimal_expected_observation_cost": 1.5,
+        "global_feature_coverage_cost": 2.0,
+        "coverage_excess": 0.5
+      }
+    },
+    {
+      "case_id": "case_100",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 11,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 1.0
+      }
+    },
+    {
+      "case_id": "case_101",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 11,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_B"
+        ],
+        "optimal_expected_observation_cost": 1.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_102",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 11,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_A"
+        ],
+        "optimal_expected_observation_cost": 1.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_103",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 11,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 1.0
+      }
+    },
+    {
+      "case_id": "case_104",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 11,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_105",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 11,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_106",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 11,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_107",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 11,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_108",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 12,
+        "global_dependencies": [
+          "A"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_A"
+        ],
+        "optimal_expected_observation_cost": 1.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_109",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 12,
+        "global_dependencies": [
+          "A"
+        ],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_110",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 12,
+        "global_dependencies": [
+          "A"
+        ],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_111",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 12,
+        "global_dependencies": [
+          "A"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_A"
+        ],
+        "optimal_expected_observation_cost": 1.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_112",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 12,
+        "global_dependencies": [
+          "A"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_A"
+        ],
+        "optimal_expected_observation_cost": 1.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_113",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 12,
+        "global_dependencies": [
+          "A"
+        ],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_114",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 12,
+        "global_dependencies": [
+          "A"
+        ],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_115",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 12,
+        "global_dependencies": [
+          "A"
+        ],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_116",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 12,
+        "global_dependencies": [
+          "A"
+        ],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_117",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 13,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_A",
+          "inspect_B"
+        ],
+        "optimal_expected_observation_cost": 1.5,
+        "global_feature_coverage_cost": 2.0,
+        "coverage_excess": 0.5
+      }
+    },
+    {
+      "case_id": "case_118",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 13,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_B"
+        ],
+        "optimal_expected_observation_cost": 1.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_119",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 13,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 1.0
+      }
+    },
+    {
+      "case_id": "case_120",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 13,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 1.0
+      }
+    },
+    {
+      "case_id": "case_121",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 13,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_A"
+        ],
+        "optimal_expected_observation_cost": 1.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_122",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 13,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_123",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 13,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_124",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 13,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_125",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 0
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 13,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_126",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 14,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_A",
+          "inspect_B"
+        ],
+        "optimal_expected_observation_cost": 1.5,
+        "global_feature_coverage_cost": 2.0,
+        "coverage_excess": 0.5
+      }
+    },
+    {
+      "case_id": "case_127",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 14,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_B"
+        ],
+        "optimal_expected_observation_cost": 1.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_128",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 14,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 1.0
+      }
+    },
+    {
+      "case_id": "case_129",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 14,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0,
+          1
+        ],
+        "optimal_first_actions": [
+          "inspect_A"
+        ],
+        "optimal_expected_observation_cost": 1.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_130",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 14,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 1.0,
+        "coverage_excess": 1.0
+      }
+    },
+    {
+      "case_id": "case_131",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 14,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          0
+        ],
+        "optimal_first_actions": [
+          "act_0"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_132",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 14,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_133",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 14,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_134",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 0
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 14,
+        "global_dependencies": [
+          "A",
+          "B"
+        ],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_135",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 15,
+        "global_dependencies": [],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_136",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 15,
+        "global_dependencies": [],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_137",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": null
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 15,
+        "global_dependencies": [],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_138",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 15,
+        "global_dependencies": [],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_139",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": null,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 15,
+        "global_dependencies": [],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_140",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 15,
+        "global_dependencies": [],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_141",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 0,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 15,
+        "global_dependencies": [],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_142",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": 0
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 15,
+        "global_dependencies": [],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    },
+    {
+      "case_id": "case_143",
+      "policy_input": {
+        "demonstrations": [
+          {
+            "A": 0,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 0,
+            "B": 1,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 0,
+            "destination": 1
+          },
+          {
+            "A": 1,
+            "B": 1,
+            "destination": 1
+          }
+        ],
+        "current_knowledge": {
+          "A": 1,
+          "B": 1
+        },
+        "allowed_actions": [
+          "inspect_A",
+          "inspect_B",
+          "act_0",
+          "act_1"
+        ],
+        "observation_costs": {
+          "inspect_A": 1,
+          "inspect_B": 1
+        },
+        "unknown_cues": "uniform binary; inspection reveals exactly one cue"
+      },
+      "evaluation_only": {
+        "truth_table_id": 15,
+        "global_dependencies": [],
+        "possible_destinations": [
+          1
+        ],
+        "optimal_first_actions": [
+          "act_1"
+        ],
+        "optimal_expected_observation_cost": 0.0,
+        "global_feature_coverage_cost": 0.0,
+        "coverage_excess": 0.0
+      }
+    }
+  ]
+}

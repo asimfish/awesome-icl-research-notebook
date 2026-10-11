@@ -9,8 +9,8 @@
     "en": "The same box, different demonstrations: sorting by color permits a direct grasp; sorting by a side symbol calls for a view before the gripper hides it. Test a specific frozen-policy limitation before claiming a new method."
   },
   "status": {
-    "zh": "当前：符号负对照和八个程序视觉输入包完成；模型决策、真实图像验证与机器人闭环未运行。科研主张仍 REVISE。",
-    "en": "Current: symbolic negative controls and eight drawn input packs completed. Model decisions, physical-image validation and robot rollouts have not run. Scientific claims remain REVISE."
+    "zh": "当前：原30个符号控制、八个程序视觉包保留；新增144个有限决策条件检查及12条类型化反例。模型决策、真实图像与机器人闭环未运行。科研主张仍 REVISE。",
+    "en": "Current: the original 30 symbolic controls and eight drawn packs remain. Added 144 finite decision conditions and 12 typed counterexamples. No model decisions, physical images or robot rollouts. Scientific claims remain REVISE."
   },
   "metrics": [
     {
@@ -336,8 +336,8 @@
   },
   "evidence": [
     {
-      "zh": "ARIS三种lens共生成9个完整候选，未预先按质量删候选；查新与两轮研究审查选A3为受限主线，D3为条件备选。",
-      "en": "Three ARIS lenses generated nine complete candidates without quality prefiltering. Novelty review and iterative research review select A3 as a bounded main pilot, with D3 conditional."
+      "zh": "ARIS三种lens共生成9个完整候选，未预先按质量删候选；查新与三轮研究审查选A3为受限主线，D3为条件备选。",
+      "en": "Three ARIS lenses generated nine complete candidates without quality prefiltering. Novelty review and three rounds of research review select A3 as a bounded main pilot, with D3 conditional."
     },
     {
       "zh": "实际30个符号case＝15个配对上下文；5种手工未来成本×3种知识状态。两组只改变示范，经典策略与门槛30/30观察成本相同。",
@@ -358,6 +358,14 @@
     {
       "zh": "空抓方向仅准备24公开视频回合、最多48个尝试槽，完成标签0；保留为诊断资产，不是检索因果证据。",
       "en": "The empty-grasp alternative has a 24-video worklist with at most 48 attempt slots and zero completed labels. It is an audit asset, not retrieval-causality evidence."
+    },
+    {
+      "zh": "新增16种两位规则×9种知识模式＝144个有限条件；全局相关特征全覆盖的拟议扩展在24个条件下多花观察成本，其中16个条件本可直接执行。这是反例计算，不是模型失败率。",
+      "en": "Added 16 Boolean rules × nine knowledge patterns = 144 finite conditions. A proposed global-feature coverage extension wastes observation cost in 24 conditions, including 16 where action is already determined. These are counterexamples, not a model failure rate."
+    },
+    {
+      "zh": "生成六对、12条类型化记录（10个不同输入），每对只改一个输入字段；包含合法历史、取证途径、AND短路、任务歧义和标签翻转。没有RGB或老师观察轨迹，不替代原八包16-call门槛。",
+      "en": "Prepared six pairs / 12 typed records (10 unique inputs), changing one input field per pair: legal history, access route, AND short-circuit, task ambiguity and label inversion. No RGB or demonstrated sensing traces; the original eight-pack / 16-call gate remains."
     }
   ],
   "review_limit": {
@@ -379,8 +387,8 @@
     }
   },
   "novelty_summary": {
-    "zh": "新示范改变“必要线索”，自己的候选操纵改变“以后取得它的成本”：这是待检验的联合现象。主动感知、遮挡前记忆和任务规划都有直接前作；尚未查到完整等价实验不等于原创证明。",
-    "en": "A new demonstration changes the needed cue; the robot’s own manipulation changes the future cost of acquiring it. This joint phenomenon remains to be tested. Active perception, pre-occlusion memory and task planning have direct predecessors; not finding an identical experiment is not proof of novelty."
+    "zh": "示范教看哪里、任务相关特征和老师—学生传感差异都有直接前作。当前仅检验：任务规则理解正确时，冻结agent是否根据自己的信息与取证途径选择动作。完整规则加人工可见性表可由经典决策树解决；不是已成立的新机制。",
+    "en": "Learning where to look, task-relevant features and teacher–student sensor differences have direct predecessors. The bounded question is whether a frozen agent that correctly interprets the task selects actions from its own evidence and access routes. Complete task tables plus manually declared visibility are solved classically; no new mechanism is established."
   },
   "priors": [
     {
@@ -453,6 +461,42 @@
       "delta": {
         "zh": "空抓/恢复保留为审计，不能重新主张首次验证物理前提。",
         "en": "Keep empty-grasp recovery as an audit; do not reclaim first physical-precondition validation."
+      }
+    },
+    {
+      "title": "See2Act",
+      "url": "https://arxiv.org/html/2606.23625v1",
+      "covered": {
+        "zh": "从操作示范与渲染轨迹学习视角与操作的耦合。",
+        "en": "Learns coupled viewpoint and manipulation from demonstrations and rendered trajectories."
+      },
+      "delta": {
+        "zh": "示范教看哪里已有工作。当前先诊断新任务上下文中的学生信息需求，不主张新主动感知方法。",
+        "en": "Learning where to look is prior art. Here the question is a bounded diagnosis of learner evidence needs under fresh task contexts, not a new active-perception method."
+      }
+    },
+    {
+      "title": "ActiveUMI",
+      "url": "https://activeumi.github.io/",
+      "covered": {
+        "zh": "记录并学习人类主动观察与操纵。",
+        "en": "Records and learns human active observation alongside manipulation."
+      },
+      "delta": {
+        "zh": "老师的观察动作不能直接当成学生应做的动作；当前反例仍仅为类型化设计。",
+        "en": "The demonstrator’s observation need not be the learner’s correct action; current counterexamples are only typed designs."
+      }
+    },
+    {
+      "title": "CIVIL",
+      "url": "https://arxiv.org/html/2504.17959v1",
+      "covered": {
+        "zh": "人类标记和语言解释传递因果相关特征，再训练策略。",
+        "en": "Uses human markings and language explanations of causally relevant features to train a policy."
+      },
+      "delta": {
+        "zh": "任务相关性本身不是创新；未知相关特征也未必改变当前决策。",
+        "en": "Task relevance itself is not novel; an unknown relevant feature may still leave the current decision unchanged."
       }
     }
   ]
