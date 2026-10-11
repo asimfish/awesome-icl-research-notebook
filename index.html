@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Can demonstrations teach a frozen robot policy which evidence to inspect before its own grasp hides it? Concrete research plan, classical negative controls, and progress.">
+  <meta name="description" content="Can robot correction training teach reusable in-context adaptation? Revised question, direct prior work, experiment design and historical evidence.">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
   <meta name="color-scheme" content="light">
   <title>awesome ICL — Experience, under examination</title>
@@ -27,33 +27,34 @@
     <section class="hero view-section" data-views="overview">
       <div class="hero-copy">
         <div class="eyebrow"><span class="status-dot"></span><span data-i18n="eyebrow">具身智能 · 经验迁移 · 公开研究记录</span></div>
-        <h1 data-i18n="heroTitle">抓取之前，<br>应该先看哪里？</h1>
-        <p class="hero-subtitle" data-i18n="heroSubtitle">同一个箱件，只换教学示范：按颜色分拣可以直接抓；按侧面符号分拣，应在夹爪遮住线索前补看。</p>
+        <h1 data-i18n="heroTitle">任务纠正之后，<br>机器人学到了什么？</h1>
+        <p class="hero-subtitle" data-i18n="heroSubtitle">能否把自己的失败和恢复经验，用于独立重置后的另一项任务？先厘清学习对象、前作和可检验的训练差异。</p>
         <div class="hero-links"><a class="button primary" href="research-plan.html" data-latest-plan id="latest-plan-link"><span data-i18n="exploreDesign">阅读研究方案</span><span aria-hidden="true">↗</span></a><a class="text-link" href="?view=evidence" data-view="evidence" data-i18n="inspectEvidence">查看现有证据 →</a></div>
-        <p class="hero-footnote" data-i18n="heroFootnote">当前只有符号设计负对照和离散视觉输入包；模型和机器人试点未运行。</p>
+        <p class="hero-footnote" data-i18n="heroFootnote">16个候选已逐项审查；当前没有新方向的学得策略结果。旧探针归档。</p>
       </div>
       <figure class="hero-figure">
-        <div class="figure-top"><span data-i18n="figureTitle">示范改变必要线索</span><span class="mono">DEMO → CUE → ACTION</span></div>
+        <div class="figure-top"><span data-i18n="figureTitle">同一经验，两种能力</span><span class="mono">ACT → FEEDBACK → LEARN</span></div>
         <svg viewBox="0 0 580 390" role="img" aria-labelledby="diagram-title diagram-desc">
-          <title id="diagram-title">Demonstrations bind a cue before a grasp hides it</title><desc id="diagram-desc">A box has a red front and a circular side cue. Color teaching permits grasping; symbol teaching calls for side inspection. Conceptual, not physical validation.</desc>
+          <title id="diagram-title">Current recovery and reusable adaptation are separate tests</title><desc id="diagram-desc">Self-generated actions and observed feedback form history. Test both current recovery and a different goal after resetting physical state, while retaining history and freezing parameters. This is a proposed experiment, not a result.</desc>
           <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,1 L6,4 L0,7" fill="none" stroke="#8c846d"/></marker></defs>
           <rect x="20" y="25" width="540" height="340" rx="12" fill="#fffdf8" stroke="#d7cbb5"/>
-          <text x="290" y="60" text-anchor="middle" class="diagram-label">SAME SCENE · DIFFERENT DEMONSTRATIONS</text>
-          <path d="M240 126 L320 105 L362 133 L283 157 Z" fill="#e9d9c4" stroke="#8c846d"/><path d="M240 126 L283 157 L283 235 L240 205 Z" fill="#c76652" stroke="#8c846d"/><path d="M283 157 L362 133 L362 211 L283 235 Z" fill="#f2e6d4" stroke="#8c846d"/>
-          <ellipse cx="325" cy="183" rx="16" ry="21" fill="none" stroke="#354d43" stroke-width="5"/>
-          <text x="86" y="120" class="diagram-label">COLOR DEMOS</text><text x="86" y="150" class="diagram-strong">A</text><path d="M140 160 L228 172" fill="none" stroke="#8c846d" marker-end="url(#arrow)"/>
-          <text x="385" y="120" class="diagram-label">SYMBOL DEMOS</text><text x="405" y="150" class="diagram-strong">B</text><path d="M401 160 L368 180" fill="none" stroke="#8c846d" marker-end="url(#arrow)"/>
-          <rect x="58" y="276" width="185" height="45" rx="7" fill="#e6ebdf" stroke="#b5c0a6"/><text x="150" y="303" text-anchor="middle" class="diagram-label">KNOWN → GRASP</text>
-          <rect x="310" y="276" width="218" height="45" rx="7" fill="#f2dcc9" stroke="#d4b698"/><text x="419" y="303" text-anchor="middle" class="diagram-label">UNKNOWN → INSPECT</text>
-          <path d="M242 239 L180 270 M360 239 L410 270" fill="none" stroke="#8c846d" marker-end="url(#arrow)"/>
+          <text x="290" y="59" text-anchor="middle" class="diagram-label">SELF-GENERATED EXPERIENCE</text>
+          <rect x="74" y="83" width="185" height="62" rx="7" fill="#e6ebdf" stroke="#b5c0a6"/><text x="166" y="110" text-anchor="middle" class="diagram-label">ATTEMPT</text><text x="166" y="131" text-anchor="middle" class="diagram-label">OBSERVE CONSEQUENCES</text>
+          <path d="M264 114 L319 114" fill="none" stroke="#8c846d" marker-end="url(#arrow)"/>
+          <rect x="326" y="83" width="185" height="62" rx="7" fill="#f2dcc9" stroke="#d4b698"/><text x="418" y="121" text-anchor="middle" class="diagram-label">CONTEXT HISTORY</text>
+          <path d="M418 151 L418 182 L170 182 L170 208 M418 182 L418 208" fill="none" stroke="#8c846d" marker-end="url(#arrow)"/>
+          <rect x="74" y="215" width="185" height="70" rx="7" fill="#e6ebdf" stroke="#b5c0a6"/><text x="166" y="244" text-anchor="middle" class="diagram-label">CURRENT RECOVERY</text><text x="166" y="266" text-anchor="middle" class="diagram-label">CONTINUE THIS TASK</text>
+          <rect x="326" y="215" width="185" height="70" rx="7" fill="#f2dcc9" stroke="#d4b698"/><text x="418" y="244" text-anchor="middle" class="diagram-label">RESET + NEW GOAL</text><text x="418" y="266" text-anchor="middle" class="diagram-label">REUSE WHAT WAS LEARNED</text>
+          <text x="290" y="324" text-anchor="middle" class="diagram-label">FROZEN PARAMETERS · TEACHER REMOVED</text>
+          <text x="290" y="346" text-anchor="middle" class="diagram-label">PROPOSED TESTS · NO POLICY RESULTS YET</text>
         </svg>
-        <figcaption data-i18n="figureCaption">概念示意 · 场景相同，只换示范；真实遮挡与补看仍待验证。</figcaption>
+        <figcaption data-i18n="figureCaption">实验示意 · 相同经验下区分当前恢复与新目标迁移；性能尚未验证。</figcaption>
       </figure>
     </section>
     <section class="metrics view-section" data-views="overview" aria-label="Research scope">
       <div><strong>0</strong><span data-i18n="metricFormal">已完成正式 query</span><small data-i18n="metricFormalSub">尚未授予物理与信息资格</small></div>
-      <div><strong>9</strong><span data-i18n="metricTasks">已审查完整候选</span><small data-i18n="metricTasksSub">ARIS三种lens × 三个候选</small></div>
-      <div><strong>15</strong><span data-i18n="metricCells">符号配对上下文</span><small data-i18n="metricCellsSub">任务匹配 × 执行增益匹配</small></div>
+      <div><strong>16</strong><span data-i18n="metricTasks">已审查完整候选</span><small data-i18n="metricTasksSub">ARIS三种lens × 三个候选</small></div>
+      <div><strong>0</strong><span data-i18n="metricCells">符号配对上下文</span><small data-i18n="metricCellsSub">任务匹配 × 执行增益匹配</small></div>
       <div><strong>0</strong><span data-i18n="metricSmoke">机器人新回合</span><small data-i18n="metricSmokeSub">4 worlds × 12 条件 · 未运行</small></div>
     </section>
     <section class="current-strip view-section" data-views="overview proposal evidence timeline"><div><span class="eyebrow" data-i18n="currentLabel">当前进展</span><p id="current-summary">正在加载保存的进展…</p></div><span class="snapshot-date mono" id="snapshot-date"></span></section>

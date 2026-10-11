@@ -1,16 +1,16 @@
 {
   "schema": "awesome-icl.research-plan.v1",
   "title": {
-    "zh": "示范教机器人：抓取前，先看什么？",
-    "en": "What should a demonstration teach a robot to inspect?"
+    "zh": "机器人恢复了任务，是否也学会了适应？",
+    "en": "Does recovering a robot task also teach adaptation?"
   },
   "intro": {
-    "zh": "同一个箱件，只换示范：按颜色分拣可以直接抓；按侧面符号分拣，应在夹爪遮住符号前补看。先检验冻结模型的具体能力缺口，再判断是否需要新方法。",
-    "en": "The same box, different demonstrations: sorting by color permits a direct grasp; sorting by a side symbol calls for a view before the gripper hides it. Test a specific frozen-policy limitation before claiming a new method."
+    "zh": "重新研究自己的失败与恢复经验如何支持后续新目标。A3取证选择题已归档；当前推荐方向是需要学得策略实验证明的研究假设。",
+    "en": "Reconsidering how self-generated failures and recoveries support later goals. The A3 sensing probe is archived. The revised direction is a research hypothesis requiring learned-policy evidence."
   },
   "status": {
-    "zh": "当前：原30个符号控制、八个程序视觉包保留；新增144个有限决策条件检查及12条类型化反例。模型决策、真实图像与机器人闭环未运行。科研主张仍 REVISE。",
-    "en": "Current: the original 30 symbolic controls and eight drawn packs remain. Added 144 finite decision conditions and 12 typed counterexamples. No model decisions, physical images or robot rollouts. Scientific claims remain REVISE."
+    "zh": "2026-10-11：16个原始候选经ARIS新一轮审查；当前定位为研究发现，未确立新算法贡献。模型评估、训练与新机器人回合均为0，科学状态REVISE。",
+    "en": "2026-10-11: 16 raw candidates considered in a fresh ARIS review. Positioned as a research-finding question; new algorithm novelty is unestablished. Zero policy evaluations, training runs or new robot episodes. Scientific status: REVISE."
   },
   "metrics": [
     {

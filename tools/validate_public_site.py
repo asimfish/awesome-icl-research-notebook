@@ -100,6 +100,20 @@ for name in plan_parser.paths:
     resource = (ROOT / path).resolve()
     check('plan_resource:' + path, not path.startswith('/') and ROOT in resource.parents and resource.is_file())
 check('plan_CSP', "script-src 'self'" in plan_html and 'unsafe-eval' not in plan_html and 'unsafe-inline' not in plan_html)
+active = data['active_research']
+check('reframe_review_without_scientific_promotion', active['candidate_count'] == 16 and
+      active['scientific_status'] == 'REVISE' and active['review_independence'] == 'same-family' and
+      active['acceptance_status'] == 'provisional')
+check('reframe_no_training_or_policy_results', active['learned_policy_evaluation_episodes'] ==
+      active['training_runs'] == active['robot_episodes'] == 0)
+check('old_primary_explicitly_archived', active['previous_primary'] == 'A3' and
+      active['previous_primary_archived'] and
+      '<details class="section" id="archived-probe">' in plan_html)
+story = (ROOT / 'data/research-reframe.md').read_text()
+check('standard_objective_novelty_boundary', '不是新损失' in story and '差分沿历史相消' in story)
+check('independent_query_and_information_boundary', '核心查询采样器不依赖隐藏z' in story and
+      '知情行为不能伪装' in story and '不进入测试输入' in story)
+check('revised_documents_have_strong_priors', all(name in story for name in ['DPT', 'DREAM', 'E-RL²']))
 probe = json.loads((ROOT / 'data/observability-design-check.json').read_text())
 check('symbolic_negative_control_not_promoted', probe['cases'] == 30 and
       probe['candidate_and_classical_total_cost_equal_cases'] == 30 and

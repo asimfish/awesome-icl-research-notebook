@@ -1,6 +1,6 @@
 # awesome ICL — public research notebook
 
-Static, bilingual research website for a demonstration-conditioned pre-grasp inspection pilot. Earlier frozen-PIM audit records remain available as historical designs. No build dependencies, external fonts, trackers, embedded policy weights, or private experiment payloads.
+Static, bilingual research website examining whether robot correction training teaches reusable in-context adaptation. Earlier A3 sensing probes and frozen-PIM audits remain historical. No build dependencies, external fonts, trackers, embedded policy weights, or private experiment payloads.
 
 Repository: [asimfish/awesome-icl-research-notebook](https://github.com/asimfish/awesome-icl-research-notebook).
 
@@ -18,7 +18,9 @@ Open `http://127.0.0.1:8765/?lang=en&view=overview`. Supported views: `overview`
 
 Edit `data/progress.json` using verified saved reports. Preserve the distinction between planned formal experiments, diagnostic executions, incomplete records, and qualified evidence. Review counts are not sample sizes. `updated_at` is the public snapshot time. An unknown count stays unknown. Never export raw `.aris`, `results`, machine paths, credentials, process addresses, or private arrays. Set `repository_url` only after the actual public repository is known.
 
-The current plan is at `research-plan.html?lang=en`: crossed demonstrations bind a color or side-symbol rule for the same object. All 30 symbolic cases match classical observation cost; eight program-drawn input packs are prepared. No frozen-model or robot pilot has run. The six controls include an explicit same-evidence prompt. The first model probe is at most 16 requests, included in the total 120-call cap. Drawn inputs and hand-authored future costs do not validate physical occlusion or view feasibility.
+The revised plan is at `research-plan.html?lang=en`. Sixteen complete candidates received individual review. The current hypothesis asks whether correction experience teaches reusable adaptation after a physical reset and changed goal. [Full story](data/research-reframe.md), [direct priors](data/literature-reframe.md), and [experiment design](data/experiment-reframe.md) distinguish standard meta-RL/DPT objectives from an untested training finding. No learned-policy, training or robot result has been produced for this direction. Reviews are same-family/provisional.
+
+The A3 sensing pilot is archived inside an expandable section on that page; its earlier 16-call first probe and 120-call cap are historical constraints, not an active execution plan. Symbolic results remain analytical controls, not adaptation evidence.
 
 The historical proposal remains at `?view=proposal`; its frozen parameters, nominal calibration R₀, memory-transplantation scope and disabled success replay remain unchanged. Full restoration B, physical C, matched-observation C and formal query evaluation are still unqualified.
 
@@ -54,7 +56,7 @@ accepting all ties; it is not a complete belief-space planner. Never serialize
 evaluation-only fields, pack IDs or context IDs to the policy. The structured
 prompt uses disclosed oracle parsing, not an implemented perception model.
 
-## Idea deepening
+## Archived A3 idea deepening
 
 The [deepening report](data/idea-deepening.md) narrows the question to demonstration-conditioned sensing selection. Direct priors include See2Act, ActiveUMI and CIVIL. The 144 finite decision conditions expose unnecessary observation by a global-feature coverage extension in 24 conditions; these are not model trials or failure rates. Six typed pairs contain 12 records but only 10 unique inputs, without RGB or demonstrated sensing traces. Complete rule tables and manually declared observation effects are solved by classical decision trees. This remains a bounded capability probe, not an established benchmark or new method.
 
@@ -63,4 +65,4 @@ python3 tools/decision_relevance_probe.py --output /tmp/decision-relevance-probe
 python3 tools/prepare_deepening_cases.py --output /tmp/critical-decision-cases.json
 ```
 
-Compare with `data/decision-relevance-check.json` and `data/critical-decision-cases.json`. The original eight-pack / 16-call first gate and total 120-call cap remain. A subsequent crossed-rule / access-route probe is conditional on a gap at the first gate. Actual policy calls, robot episodes and GPU hours are zero.
+Compare with `data/decision-relevance-check.json` and `data/critical-decision-cases.json`. The original eight-pack / 16-call first gate and total 120-call cap are preserved as historical records; neither probe is the current plan. Actual policy calls, robot episodes and GPU hours are zero.

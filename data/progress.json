@@ -1,64 +1,54 @@
 {
   "schema": "awesome-icl.public-progress.v1",
-  "updated_at": "2026-10-11T04:24:54.940155+00:00",
+  "updated_at": "2026-10-11T12:56:40.062838+00:00",
   "repository_url": "https://github.com/asimfish/awesome-icl-research-notebook",
   "scope": {
-    "zh": "冻结 PIM 策略的经验内容与迁移边界",
-    "en": "Experience content and transfer boundaries in a frozen PIM policy"
+    "zh": "从机器人纠正经验到可复用的上下文适应；历史U3/A3审计保留",
+    "en": "Reusable in-context adaptation from robot correction experience; historical U3/A3 audits preserved"
   },
   "current": {
-    "zh": "主线已改为：示范指定必要线索，机器人在抓取遮住它前补看。30个符号案例与经典策略成本相同；模型和机器人试点均未运行。旧U3保留历史记录，正式query仍0。",
-    "en": "The main pilot now asks which cue demonstrations require a robot to inspect before a grasp hides it. Classical cost matches in 30 symbolic cases; model and robot pilots have not run. Earlier U3 records remain historical, with zero formal queries."
+    "zh": "A3探针已归档。当前问题是：当前纠正训练能否把自己的尝试转化为下一项不同任务可用的知识？16候选已逐项审查，科学状态REVISE；新方向训练与策略评测均0。",
+    "en": "A3 is archived. The revised question asks whether correction training turns self-generated attempts into knowledge usable on a different task. Sixteen candidates received individual review; scientific status is REVISE. Training and policy evaluation remain at zero."
   },
   "next": {
     "title": {
-      "zh": "先检验具体能力缺口",
-      "en": "Test a concrete capability gap first"
+      "zh": "先区分经验利用与经验获取",
+      "en": "Separate evidence use from acquisition"
     },
     "description": {
-      "zh": "锁定六组同信息对照，制备可读的视觉刺激；若模型可用，最多120次离线决策。没有差距或同证据prompt已修复，就停止外部门槛扩张。完整任务与停止条件见最新方案。",
-      "en": "Fix six equal-information controls and prepare readable visual stimuli. If a model is available, cap offline decisions at 120 calls. Stop expanding an external gate if no deficit appears or a same-evidence prompt resolves it. See the latest plan for the task and stop rules."
+      "zh": "确认共同可运行操作任务与小型历史条件策略；用相同历史比较当前纠正、同目标查询与不同目标查询，再与E-RL²/DREAM比较自主采集。模型、标签和总交互成本匹配，教师撤出，测试权重冻结。",
+      "en": "Confirm a shared executable manipulation task and small history-conditioned policy. Compare correction, same-goal and changed-goal queries on identical histories, then test autonomous acquisition against E-RL²/DREAM. Match models, labels and total interaction costs; remove teachers and freeze test-time parameters."
     }
   },
   "gates": [
     {
       "label": {
-        "zh": "完整恢复与原生记忆一致性 B",
-        "en": "Full restoration and native-memory consistency B"
+        "zh": "共同任务与训练资源",
+        "en": "Shared task and training resources"
       },
       "status": {
-        "zh": "未通过",
-        "en": "Not qualified"
+        "zh": "待核实",
+        "en": "Unconfirmed"
       }
     },
     {
       "label": {
-        "zh": "合法来源与物理干预 C_physical",
-        "en": "Legal sources and physical intervention C_physical"
+        "zh": "相同历史的学得策略对照",
+        "en": "Learned-policy comparison on identical histories"
       },
       "status": {
-        "zh": "未通过",
-        "en": "Not qualified"
+        "zh": "未运行",
+        "en": "Not run"
       }
     },
     {
       "label": {
-        "zh": "共享 R₀ 与同观察估计 C_matched",
-        "en": "Shared R₀ and matched-observation C_matched"
+        "zh": "自主采集与新目标迁移",
+        "en": "Autonomous acquisition and changed-goal transfer"
       },
       "status": {
-        "zh": "未通过",
-        "en": "Not qualified"
-      }
-    },
-    {
-      "label": {
-        "zh": "正式 query 评估",
-        "en": "Formal query evaluation"
-      },
-      "status": {
-        "zh": "0 / 未开始",
-        "en": "0 / Not started"
+        "zh": "未运行",
+        "en": "Not run"
       }
     }
   ],
@@ -724,6 +714,18 @@
         "zh": "9个完整候选经查新与研究审查，选示范线索×自致遮挡为受限试点。30个符号案例中经典成本与拟议门槛相同，取消该设计内的新调度器主张。视觉、模型、机器人均未验证。",
         "en": "Nine complete candidates underwent novelty and research review. A bounded demo-cue × self-occlusion pilot was selected. Classical control matches gate cost in all 30 symbolic cases, ending scheduler novelty for this design. Visual, model and robot validation remain absent."
       }
+    },
+    {
+      "date": "2026-10-11",
+      "status": "in_progress",
+      "title": {
+        "zh": "撤回A3主线，重审经验学习问题",
+        "en": "Archive A3 and reconsider learning from experience"
+      },
+      "text": {
+        "zh": "16候选全部经逐项查新，选择纠正训练到可复用适应的研究假设。明确DPT、DREAM和E-RL²前作边界及配对查询定义，尚无策略结果。",
+        "en": "All sixteen candidates received individual novelty review. The selected hypothesis concerns correction training and reusable adaptation. DPT, DREAM and E-RL² boundaries and paired-query definitions are explicit; policy results are absent."
+      }
     }
   ],
   "references": [
@@ -813,5 +815,16 @@
     "matched_C_qualified": false,
     "reviewer_fresh": false,
     "reviewer_provider": "UNATTESTED"
+  },
+  "active_research": {
+    "candidate_count": 16,
+    "scientific_status": "REVISE",
+    "review_independence": "same-family",
+    "acceptance_status": "provisional",
+    "learned_policy_evaluation_episodes": 0,
+    "training_runs": 0,
+    "robot_episodes": 0,
+    "previous_primary": "A3",
+    "previous_primary_archived": true
   }
 }
