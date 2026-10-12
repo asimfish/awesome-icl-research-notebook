@@ -104,8 +104,10 @@ active = data['active_research']
 check('reframe_review_without_scientific_promotion', active['candidate_count'] == 16 and
       active['scientific_status'] == 'REVISE' and active['review_independence'] == 'same-family' and
       active['acceptance_status'] == 'provisional')
-check('reframe_no_training_or_policy_results', active['learned_policy_evaluation_episodes'] ==
-      active['training_runs'] == active['robot_episodes'] == 0)
+pilot = json.loads((ROOT / 'data/learned-pilot.json').read_text())
+check('learned_pilot_counts_match_evidence', active['learned_policy_evaluation_episodes'] == pilot['main_evaluation_branches'] and active['training_runs'] == pilot['training_runs'] == 15 and active['robot_episodes'] == pilot['robot_episodes'] == 0)
+check('learned_pilot_not_promoted', pilot['original_primary_completion_support_gate'] == 'FAILED' and pilot['GPU_hours'] == 0 and 'symbolic' in pilot['scope'])
+check('learned_pilot_novelty_and_collection_limits', '不是' in (ROOT / 'data/paper-story-zh.md').read_text() and pilot['fresh_cost_confirmation']['cost_excludes_initial_collection'])
 check('old_primary_explicitly_archived', active['previous_primary'] == 'A3' and
       active['previous_primary_archived'] and
       '<details class="section" id="archived-probe">' in plan_html)
@@ -148,7 +150,9 @@ files = [p for p in paths if p.is_file()]
 check('no_symlinks', not any(p.is_symlink() for p in paths))
 secret = re.compile(r'Bearer\s+[A-Za-z0-9_-]{12,}|gh[pousr]_[A-Za-z0-9]{15,}|github_pat_[A-Za-z0-9_]{15,}|ct-[a-f0-9]{24,}|-----BEGIN (?:RSA |OPENSSH |EC )?PRIVATE KEY-----')
 for path in files:
-    if path.suffix not in ['.png']:
+    if path.suffix == '.pdf':
+        check('PDF_signature:' + str(path.relative_to(ROOT)), path.read_bytes().startswith(b'%PDF-'))
+    if path.suffix not in ['.png', '.pdf']:
         text = path.read_text()
         check('no_credentials:' + str(path.relative_to(ROOT)), secret.search(text) is None)
         # The validator's own patterns are not deployed; do not mistake them for payloads.

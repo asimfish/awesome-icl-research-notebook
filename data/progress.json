@@ -1,23 +1,23 @@
 {
   "schema": "awesome-icl.public-progress.v1",
-  "updated_at": "2026-10-11T12:56:40.062838+00:00",
+  "updated_at": "2026-10-12T08:21:36.872990+00:00",
   "repository_url": "https://github.com/asimfish/awesome-icl-research-notebook",
   "scope": {
     "zh": "从机器人纠正经验到可复用的上下文适应；历史U3/A3审计保留",
     "en": "Reusable in-context adaptation from robot correction experience; historical U3/A3 audits preserved"
   },
   "current": {
-    "zh": "A3探针已归档。当前问题是：当前纠正训练能否把自己的尝试转化为下一项不同任务可用的知识？16候选已逐项审查，科学状态REVISE；新方向训练与策略评测均0。",
-    "en": "A3 is archived. The revised question asks whether correction training turns self-generated attempts into knowledge usable on a different task. Sixteen candidates received individual review; scientific status is REVISE. Training and policy evaluation remain at zero."
+    "zh": "15个策略训练运行已完成。发现零状态查询监督造成闭环控制缺口；覆盖进度状态后达到98.18%符号任务完成率，但清空旧经验仍有97.79%，主完成率增益门槛失败。旧经验节省约1.02次命令；科学状态REVISE，机器人回合0。 256个新规则的冻结模型复核确认节省1.011次命令；采集成本未计入。",
+    "en": "Fifteen policy checkpoints completed. Zero-state query supervision caused a control-coverage defect. Covered queries achieve98.18% symbolic completion, versus97.79% with initially empty support; the primary retention-completion criterion failed. Existing experience saves about1.02 commands. Scientific statusREVISE; zero robot episodes. A frozen-policy confirmation on 256 fresh rules finds 1.011 commands saved, excluding initial collection."
   },
   "next": {
     "title": {
-      "zh": "先区分经验利用与经验获取",
-      "en": "Separate evidence use from acquisition"
+      "zh": "验证真实任务流的净收益",
+      "en": "Test net utility in a task stream"
     },
     "description": {
-      "zh": "确认共同可运行操作任务与小型历史条件策略；用相同历史比较当前纠正、同目标查询与不同目标查询，再与E-RL²/DREAM比较自主采集。模型、标签和总交互成本匹配，教师撤出，测试权重冻结。",
-      "en": "Confirm a shared executable manipulation task and small history-conditioned policy. Compare correction, same-goal and changed-goal queries on identical histories, then test autonomous acquisition against E-RL²/DREAM. Match models, labels and total interaction costs; remove teachers and freeze test-time parameters."
+      "zh": "固定普通查询监督强基线，核算全部经验采集、失败、复位与未来任务成本；用采集者×共同消费者拆分获取和利用。再进入具身执行与依赖变化，并给E-RL²/DREAM相同未来目标。",
+      "en": "Freeze the ordinary query-supervision baseline and account for collection, failures, resets and subsequent tasks. Cross collectors with a shared consumer, then test embodiment and dependency changes against E-RL²/DREAM under the same future objectives."
     }
   },
   "gates": [
@@ -27,8 +27,8 @@
         "en": "Shared task and training resources"
       },
       "status": {
-        "zh": "待核实",
-        "en": "Unconfirmed"
+        "zh": "CPU符号环境可运行；具身/GPU未取得资格",
+        "en": "CPU symbolic runtime ready; embodiment/GPU unqualified"
       }
     },
     {
@@ -37,8 +37,8 @@
         "en": "Learned-policy comparison on identical histories"
       },
       "status": {
-        "zh": "未运行",
-        "en": "Not run"
+        "zh": "15训练完成；主经验完成率门槛失败",
+        "en": "15 runs complete; primary support-completion gate failed"
       }
     },
     {
@@ -821,10 +821,32 @@
     "scientific_status": "REVISE",
     "review_independence": "same-family",
     "acceptance_status": "provisional",
-    "learned_policy_evaluation_episodes": 0,
-    "training_runs": 0,
+    "learned_policy_evaluation_episodes": 104448,
+    "training_runs": 15,
     "robot_episodes": 0,
     "previous_primary": "A3",
-    "previous_primary_archived": true
+    "previous_primary_archived": true,
+    "evaluation_scope": "paired symbolic rollout branches, not independent robot trials",
+    "mask_diagnostic_branches": 36864,
+    "primary_completion_support_gate": "FAILED",
+    "cost_confirmation_gate": true,
+    "evaluation_cohorts": [
+      {
+        "name": "original",
+        "adjacency_graphs": 128,
+        "closure_classes": 126,
+        "adjacency_graphs_sharing_training_closure": 4
+      },
+      {
+        "name": "D2",
+        "closure_classes": 128,
+        "prior_closure_overlap": 0
+      },
+      {
+        "name": "confirmation",
+        "closure_classes": 256,
+        "prior_closure_overlap": 0
+      }
+    ]
   }
 }

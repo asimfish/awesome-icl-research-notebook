@@ -5,12 +5,12 @@
     "en": "Does recovering a robot task also teach adaptation?"
   },
   "intro": {
-    "zh": "重新研究自己的失败与恢复经验如何支持后续新目标。A3取证选择题已归档；当前推荐方向是需要学得策略实验证明的研究假设。",
-    "en": "Reconsidering how self-generated failures and recoveries support later goals. The A3 sensing probe is archived. The revised direction is a research hypothesis requiring learned-policy evidence."
+    "zh": "研究自己的失败与恢复经验如何支持后续新目标。已完成15个符号策略训练运行，发现控制覆盖缺口并确认已有历史的执行成本收益；机器人结果与新算法优势尚未建立。A3取证选择探针归档。",
+    "en": "Studying how interaction experience helps later goals. Fifteen symbolic policy checkpoints expose a control-coverage defect and confirm a conditional command-cost benefit. Robot results and algorithmic novelty remain unestablished. The A3 sensing probe is archived."
   },
   "status": {
-    "zh": "2026-10-11：16个原始候选经ARIS新一轮审查；当前定位为研究发现，未确立新算法贡献。模型评估、训练与新机器人回合均为0，科学状态REVISE。",
-    "en": "2026-10-11: 16 raw candidates considered in a fresh ARIS review. Positioned as a research-finding question; new algorithm novelty is unestablished. Zero policy evaluations, training runs or new robot episodes. Scientific status: REVISE."
+    "zh": "REVISE · 15策略训练完成 · 符号机制实测 · 主经验完成率检验失败 · 机器人回合0",
+    "en": "REVISE · 15policy training runs · symbolic mechanism evidence · primary retention-completion criterion failed ·0robot episodes"
   },
   "metrics": [
     {

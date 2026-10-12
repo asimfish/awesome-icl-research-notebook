@@ -18,7 +18,7 @@ Open `http://127.0.0.1:8765/?lang=en&view=overview`. Supported views: `overview`
 
 Edit `data/progress.json` using verified saved reports. Preserve the distinction between planned formal experiments, diagnostic executions, incomplete records, and qualified evidence. Review counts are not sample sizes. `updated_at` is the public snapshot time. An unknown count stays unknown. Never export raw `.aris`, `results`, machine paths, credentials, process addresses, or private arrays. Set `repository_url` only after the actual public repository is known.
 
-The revised plan is at `research-plan.html?lang=en`. Sixteen complete candidates received individual review. The current hypothesis asks whether correction experience teaches reusable adaptation after a physical reset and changed goal. [Full story](data/research-reframe.md), [direct priors](data/literature-reframe.md), and [experiment design](data/experiment-reframe.md) distinguish standard meta-RL/DPT objectives from an untested training finding. No learned-policy, training or robot result has been produced for this direction. Reviews are same-family/provisional.
+The revised plan is at `research-plan.html?lang=en`. Sixteen complete candidates received individual review. The current hypothesis asks whether correction experience teaches reusable adaptation after a physical reset and changed goal. [Full story](data/research-reframe.md), [direct priors](data/literature-reframe.md), and [experiment design](data/experiment-reframe.md) distinguish standard meta-RL/DPT objectives from an untested training finding. 15 CPU policy checkpoints have now completed. Symbolic control and conditional command costs are measured; robot episodes remain zero and the primary retention-completion criterion failed. See [results](data/pilot-results.md), [paper PDF](assets/paper-draft.pdf), and [paper draft](data/paper-draft.md). Reviews are same-family/provisional.
 
 The A3 sensing pilot is archived inside an expandable section on that page; its earlier 16-call first probe and 120-call cap are historical constraints, not an active execution plan. Symbolic results remain analytical controls, not adaptation evidence.
 
@@ -65,4 +65,16 @@ python3 tools/decision_relevance_probe.py --output /tmp/decision-relevance-probe
 python3 tools/prepare_deepening_cases.py --output /tmp/critical-decision-cases.json
 ```
 
-Compare with `data/decision-relevance-check.json` and `data/critical-decision-cases.json`. The original eight-pack / 16-call first gate and total 120-call cap are preserved as historical records; neither probe is the current plan. Actual policy calls, robot episodes and GPU hours are zero.
+Compare with `data/decision-relevance-check.json` and `data/critical-decision-cases.json`. The original eight-pack / 16-call first gate and total 120-call cap are preserved as historical records; neither probe is the current plan. These archived probes used zero policy calls, robot episodes and GPU hours.
+
+## Learned-policy reproduction
+
+The repository includes `experiments/adaptation/` and `tests/test_adaptation_pilot.py`. The local evidence used Python 3.10, Torch 2.13.0+cu130 on CPU and NumPy 2.2.6; 2 Torch threads. Training needs Torch/NumPy. No pretrained model or GPU is required.
+
+```sh
+python3 -m pytest -q tests/test_adaptation_pilot.py
+python3 -m experiments.adaptation.run_pilot --output results/current-s11 --variant current-correction --seed 11
+python3 -m experiments.adaptation.train_query_prefix --output results/covered-query-s11 --condition covered-query --seed 11
+```
+
+Use seeds 11/29/47, original variants `current-correction`, `same-goal-reset`, `different-goal-reset`, and revised conditions `covered-query`, `zero-query`. Both main queues evaluate `full,empty` support; the original checkpoints each evaluate all three query arrangements. Main counts exclude diagnostic mask replays and reviewer replays. Output directories must be new. Aggregate source arrays, private traces and trained weights are not published. Public summaries distinguish support collection from query execution; existing-history efficiency is not net autonomous acquisition benefit.
