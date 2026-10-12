@@ -1,0 +1,702 @@
+{
+  "diagnostic": "SCOPE0",
+  "rows": [
+    {
+      "prior": "independent_uniform",
+      "history": "empty",
+      "events": [],
+      "compatible_model_count": 8,
+      "unexecuted_a2_requires_clamp": "1/2",
+      "unexecuted_a2_requires_clamp_decimal": 0.5,
+      "joint_posterior": [
+        {
+          "rule": [
+            0,
+            0,
+            0
+          ],
+          "probability": "1/8"
+        },
+        {
+          "rule": [
+            0,
+            0,
+            1
+          ],
+          "probability": "1/8"
+        },
+        {
+          "rule": [
+            0,
+            1,
+            0
+          ],
+          "probability": "1/8"
+        },
+        {
+          "rule": [
+            0,
+            1,
+            1
+          ],
+          "probability": "1/8"
+        },
+        {
+          "rule": [
+            1,
+            0,
+            0
+          ],
+          "probability": "1/8"
+        },
+        {
+          "rule": [
+            1,
+            0,
+            1
+          ],
+          "probability": "1/8"
+        },
+        {
+          "rule": [
+            1,
+            1,
+            0
+          ],
+          "probability": "1/8"
+        },
+        {
+          "rule": [
+            1,
+            1,
+            1
+          ],
+          "probability": "1/8"
+        }
+      ]
+    },
+    {
+      "prior": "independent_uniform",
+      "history": "source_correction",
+      "events": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ]
+      ],
+      "compatible_model_count": 4,
+      "unexecuted_a2_requires_clamp": "1/2",
+      "unexecuted_a2_requires_clamp_decimal": 0.5,
+      "joint_posterior": [
+        {
+          "rule": [
+            0,
+            0,
+            0
+          ],
+          "probability": "0"
+        },
+        {
+          "rule": [
+            0,
+            0,
+            1
+          ],
+          "probability": "0"
+        },
+        {
+          "rule": [
+            0,
+            1,
+            0
+          ],
+          "probability": "0"
+        },
+        {
+          "rule": [
+            0,
+            1,
+            1
+          ],
+          "probability": "0"
+        },
+        {
+          "rule": [
+            1,
+            0,
+            0
+          ],
+          "probability": "1/4"
+        },
+        {
+          "rule": [
+            1,
+            0,
+            1
+          ],
+          "probability": "1/4"
+        },
+        {
+          "rule": [
+            1,
+            1,
+            0
+          ],
+          "probability": "1/4"
+        },
+        {
+          "rule": [
+            1,
+            1,
+            1
+          ],
+          "probability": "1/4"
+        }
+      ]
+    },
+    {
+      "prior": "independent_uniform",
+      "history": "second_agrees",
+      "events": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "compatible_model_count": 2,
+      "unexecuted_a2_requires_clamp": "1/2",
+      "unexecuted_a2_requires_clamp_decimal": 0.5,
+      "joint_posterior": [
+        {
+          "rule": [
+            0,
+            0,
+            0
+          ],
+          "probability": "0"
+        },
+        {
+          "rule": [
+            0,
+            0,
+            1
+          ],
+          "probability": "0"
+        },
+        {
+          "rule": [
+            0,
+            1,
+            0
+          ],
+          "probability": "0"
+        },
+        {
+          "rule": [
+            0,
+            1,
+            1
+          ],
+          "probability": "0"
+        },
+        {
+          "rule": [
+            1,
+            0,
+            0
+          ],
+          "probability": "0"
+        },
+        {
+          "rule": [
+            1,
+            0,
+            1
+          ],
+          "probability": "0"
+        },
+        {
+          "rule": [
+            1,
+            1,
+            0
+          ],
+          "probability": "1/2"
+        },
+        {
+          "rule": [
+            1,
+            1,
+            1
+          ],
+          "probability": "1/2"
+        }
+      ]
+    },
+    {
+      "prior": "independent_uniform",
+      "history": "second_differs",
+      "events": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "compatible_model_count": 2,
+      "unexecuted_a2_requires_clamp": "1/2",
+      "unexecuted_a2_requires_clamp_decimal": 0.5,
+      "joint_posterior": [
+        {
+          "rule": [
+            0,
+            0,
+            0
+          ],
+          "probability": "0"
+        },
+        {
+          "rule": [
+            0,
+            0,
+            1
+          ],
+          "probability": "0"
+        },
+        {
+          "rule": [
+            0,
+            1,
+            0
+          ],
+          "probability": "0"
+        },
+        {
+          "rule": [
+            0,
+            1,
+            1
+          ],
+          "probability": "0"
+        },
+        {
+          "rule": [
+            1,
+            0,
+            0
+          ],
+          "probability": "1/2"
+        },
+        {
+          "rule": [
+            1,
+            0,
+            1
+          ],
+          "probability": "1/2"
+        },
+        {
+          "rule": [
+            1,
+            1,
+            0
+          ],
+          "probability": "0"
+        },
+        {
+          "rule": [
+            1,
+            1,
+            1
+          ],
+          "probability": "0"
+        }
+      ]
+    },
+    {
+      "prior": "hierarchical_0.9_agreement",
+      "history": "empty",
+      "events": [],
+      "compatible_model_count": 8,
+      "unexecuted_a2_requires_clamp": "1/2",
+      "unexecuted_a2_requires_clamp_decimal": 0.5,
+      "joint_posterior": [
+        {
+          "rule": [
+            0,
+            0,
+            0
+          ],
+          "probability": "73/200"
+        },
+        {
+          "rule": [
+            0,
+            0,
+            1
+          ],
+          "probability": "9/200"
+        },
+        {
+          "rule": [
+            0,
+            1,
+            0
+          ],
+          "probability": "9/200"
+        },
+        {
+          "rule": [
+            0,
+            1,
+            1
+          ],
+          "probability": "9/200"
+        },
+        {
+          "rule": [
+            1,
+            0,
+            0
+          ],
+          "probability": "9/200"
+        },
+        {
+          "rule": [
+            1,
+            0,
+            1
+          ],
+          "probability": "9/200"
+        },
+        {
+          "rule": [
+            1,
+            1,
+            0
+          ],
+          "probability": "9/200"
+        },
+        {
+          "rule": [
+            1,
+            1,
+            1
+          ],
+          "probability": "73/200"
+        }
+      ]
+    },
+    {
+      "prior": "hierarchical_0.9_agreement",
+      "history": "source_correction",
+      "events": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ]
+      ],
+      "compatible_model_count": 4,
+      "unexecuted_a2_requires_clamp": "41/50",
+      "unexecuted_a2_requires_clamp_decimal": 0.82,
+      "joint_posterior": [
+        {
+          "rule": [
+            0,
+            0,
+            0
+          ],
+          "probability": "0"
+        },
+        {
+          "rule": [
+            0,
+            0,
+            1
+          ],
+          "probability": "0"
+        },
+        {
+          "rule": [
+            0,
+            1,
+            0
+          ],
+          "probability": "0"
+        },
+        {
+          "rule": [
+            0,
+            1,
+            1
+          ],
+          "probability": "0"
+        },
+        {
+          "rule": [
+            1,
+            0,
+            0
+          ],
+          "probability": "9/100"
+        },
+        {
+          "rule": [
+            1,
+            0,
+            1
+          ],
+          "probability": "9/100"
+        },
+        {
+          "rule": [
+            1,
+            1,
+            0
+          ],
+          "probability": "9/100"
+        },
+        {
+          "rule": [
+            1,
+            1,
+            1
+          ],
+          "probability": "73/100"
+        }
+      ]
+    },
+    {
+      "prior": "hierarchical_0.9_agreement",
+      "history": "second_agrees",
+      "events": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "compatible_model_count": 2,
+      "unexecuted_a2_requires_clamp": "73/82",
+      "unexecuted_a2_requires_clamp_decimal": 0.8902439024390244,
+      "joint_posterior": [
+        {
+          "rule": [
+            0,
+            0,
+            0
+          ],
+          "probability": "0"
+        },
+        {
+          "rule": [
+            0,
+            0,
+            1
+          ],
+          "probability": "0"
+        },
+        {
+          "rule": [
+            0,
+            1,
+            0
+          ],
+          "probability": "0"
+        },
+        {
+          "rule": [
+            0,
+            1,
+            1
+          ],
+          "probability": "0"
+        },
+        {
+          "rule": [
+            1,
+            0,
+            0
+          ],
+          "probability": "0"
+        },
+        {
+          "rule": [
+            1,
+            0,
+            1
+          ],
+          "probability": "0"
+        },
+        {
+          "rule": [
+            1,
+            1,
+            0
+          ],
+          "probability": "9/82"
+        },
+        {
+          "rule": [
+            1,
+            1,
+            1
+          ],
+          "probability": "73/82"
+        }
+      ]
+    },
+    {
+      "prior": "hierarchical_0.9_agreement",
+      "history": "second_differs",
+      "events": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "compatible_model_count": 2,
+      "unexecuted_a2_requires_clamp": "1/2",
+      "unexecuted_a2_requires_clamp_decimal": 0.5,
+      "joint_posterior": [
+        {
+          "rule": [
+            0,
+            0,
+            0
+          ],
+          "probability": "0"
+        },
+        {
+          "rule": [
+            0,
+            0,
+            1
+          ],
+          "probability": "0"
+        },
+        {
+          "rule": [
+            0,
+            1,
+            0
+          ],
+          "probability": "0"
+        },
+        {
+          "rule": [
+            0,
+            1,
+            1
+          ],
+          "probability": "0"
+        },
+        {
+          "rule": [
+            1,
+            0,
+            0
+          ],
+          "probability": "1/2"
+        },
+        {
+          "rule": [
+            1,
+            0,
+            1
+          ],
+          "probability": "1/2"
+        },
+        {
+          "rule": [
+            1,
+            1,
+            0
+          ],
+          "probability": "0"
+        },
+        {
+          "rule": [
+            1,
+            1,
+            1
+          ],
+          "probability": "0"
+        }
+      ]
+    }
+  ],
+  "enumerated_models": 8,
+  "model_history_prior_scores": 64,
+  "posterior_weight_entries": 64,
+  "reference_model_only": true,
+  "neural_training_runs": 0,
+  "policy_rollouts": 0,
+  "physics_executions": 0,
+  "robot_episodes": 0,
+  "new_algorithm_established": false
+}

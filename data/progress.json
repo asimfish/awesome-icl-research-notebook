@@ -12,12 +12,12 @@
   },
   "next": {
     "title": {
-      "zh": "实现有效、经济的执行对照",
-      "en": "Construct valid, affordable execution controls"
+      "zh": "先说明纠正传播需要什么新算法",
+      "en": "Identify the necessary operation for correction scope"
     },
     "description": {
-      "zh": "先证明对照的物理匹配、迁移范围与全成本，再比较同数据原始历史、联合模型和普通条件模型。E-RL²/DREAM与第二任务族仍待完成；不把现有条件似然改名当创新。",
-      "en": "Establish physical matching, transfer scope and total cost before comparing same-data raw history, joint models and ordinary conditional models. E-RL²/DREAM and a second task family remain pending; the known conditional likelihood is not a novelty claim."
+      "zh": "精确参考检查已完成，普通层级Bayes已给出传播与保留不确定性的行为；当前要明确与共享规则推断的操作差异和计算节省，再决定是否训练。E-RL²/DREAM、自主采集和物理任务仍是后续对照，尚未执行。",
+      "en": "The exact reference check is complete; ordinary hierarchical Bayes already supports sharing and uncertainty. Identify an operation and cost difference from shared rule inference before new training. E-RL²/DREAM, autonomous collection and physical tasks remain later controls, not completed results."
     }
   },
   "gates": [
@@ -859,6 +859,18 @@
     "own_stream_development_branches": 73728,
     "physics_primitive_executions": 12000,
     "new_algorithm_established": false,
-    "physical_control_parallelism": "unresolved; both coordinate-wise posterior intervals include zero"
+    "physical_control_parallelism": "unresolved; both coordinate-wise posterior intervals include zero",
+    "rethink_20261013": {
+      "candidate_count": 11,
+      "selected_problem": "scope of corrective updates",
+      "method_necessity": "unestablished",
+      "source_interchange_method": "RETHINK",
+      "exact_reference_models": 8,
+      "exact_reference_model_scores": 64,
+      "training_runs_added": 0,
+      "policy_rollouts_added": 0,
+      "physics_executions_added": 0,
+      "robot_episodes_added": 0
+    }
   }
 }
