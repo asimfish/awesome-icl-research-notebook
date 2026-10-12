@@ -1,0 +1,20 @@
+[
+  {
+    "path": "data/algorithm-cycle/checkpoints/covered-query-s11/policy.pt",
+    "seed": 11,
+    "bytes": 183935,
+    "sha256": "6a3d9b52598ca1daa988778ab56db40792c9656ae24609e99b36d2c9f6ba5480"
+  },
+  {
+    "path": "data/algorithm-cycle/checkpoints/covered-query-s29/policy.pt",
+    "seed": 29,
+    "bytes": 183935,
+    "sha256": "92b0cfe572fc240849db8cfd0d152b1dc744b56b490b61113b002aa186af4998"
+  },
+  {
+    "path": "data/algorithm-cycle/checkpoints/covered-query-s47/policy.pt",
+    "seed": 47,
+    "bytes": 183935,
+    "sha256": "32fe1bcbaf22d580a4ad1a00a2ea5f78ceb43aa44128a6da6c6f5a19b7b357ad"
+  }
+]

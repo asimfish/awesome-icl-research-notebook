@@ -1,0 +1,15 @@
+# Motor-only physical control falsification — locked before scientific run
+
+2026-10-12. This is an X0-P assumption diagnostic, NOT promotion to X1 relation learning or X2 goal transfer. MuJoCo3.3.7 locally installed; headless CPU smoke20steps passed without rendering/GPU/packages. One process,2numpy/OpenBLASthreads; no robot weights, control model, real hardware or online training.
+
+Question: do two identical physical force primitives with different public completion distances share a preparation-induced LOGIT success shift when the same floor/body friction changes? No prerequisite, task compatibility or intended relation changes anywhere; only motor conditions change. This can disqualify the chosen control pair, not establish that every possible control is invalid or that the proposed statistical identity fails.
+
+Both primitives apply a constant positive horizontal force to the SAME1kg0.1m cube for100steps with timestep.005s, after20gravity/contact settling steps. All models use the same geometry, gravity, reset, force distribution, integration and contact options. Target distance=.20m, task-inert control distance=.02m; only success predicate differs. Floor AND body sliding friction change together from.6 to.3, so contact mixing cannot erase the intended intervention. Models are constructed once per friction and data reset before every trial. No action depends on simulated outcomes.
+
+Fixed2force regimes: independent per-trial Gaussian(mean6N,sd2N), Gaussian(mean8N,sd2N), clamp negative force to0. Record sampled force.1500trials per force/option/friction cell,8cells=12,000primitive executions,120steps each=1,440,000MuJoCosteps. All forces sampled in advance withseed6651. No post-outcome grid/threshold changes; retain saturating or inconclusive cases.
+
+Records: final displacement, force, option, friction state, outcome, reset, driven/settling step counts, and trial IDs. Count12,000resets, no preparation costs because friction is directly configured by the falsification experiment (not a claimed realizable preparation). Robot episodes=0; physics primitive trials=12,000. This is body-force sliding, not robot manipulation or a learned policy benchmark.
+
+Analyze each force regime independently: target and control success rates, target and control logit shift, difference-in-differences. FixedJeffreysBeta(.5,.5) prior for each of4independentbinomial rates;10,000posterior draws withseed6652 produce95%posterior intervals. No claim these are frequentistconfidenceintervals or a simultaneousfamilygate. Also report raw counts and all8rates. Finite probabilities from the prior do not alter raw successcounts or artificially create outcome support for the conditionalfour-cornerestimator. Any full crossedconditionalreadout uses raw observedquadruples, not these pseudocounts.
+
+Freshcodegate and minimal deterministicreset/finitephysics/budgettests precede fullrun. The reviewer may rununitphysics but not the12,000trial science grid. Aftergate, one CPU run, savecompleteCSV+JSON, actualwalltimeandversion. No algorithm/new-goal claim and no speculative promotion to neural training.

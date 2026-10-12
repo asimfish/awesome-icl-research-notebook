@@ -1,0 +1,514 @@
+{
+  "scope": "arbitrary categorical marginal diagnostic; NOT learned adaptation",
+  "training_runs": 0,
+  "robot_episodes": 0,
+  "data_seed": 6512,
+  "sampling_base_seed": 6513,
+  "matrices": 24,
+  "draws_per_matrix_method": 2000,
+  "bootstrap_seed": 6521,
+  "bootstrap_unit": "independent marginal matrix",
+  "methods": [
+    "independent",
+    "uniform",
+    "ordered-uniform",
+    "gumbel",
+    "list",
+    "subset-lp"
+  ],
+  "threads": 2,
+  "summaries": [
+    {
+      "goals": 4,
+      "method": "independent",
+      "mean_distinct": 2.9883749999999996,
+      "exact_optimum": 2.019678869369006,
+      "single_draw_value_variance": 0.19295146434921112,
+      "squared_mean_error": 4.275138994849748e-05,
+      "construction_seconds": 0.0,
+      "sampling_seconds": 0.00023888275609351695,
+      "seconds_per_draw_amortized": 1.1944137804675848e-07,
+      "mean_distinct_matrix_bootstrap_95ci": [
+        2.8195687499999997,
+        3.1369406250000003
+      ],
+      "single_draw_value_variance_matrix_bootstrap_95ci": [
+        0.1455140862929484,
+        0.2401685925064679
+      ],
+      "squared_mean_error_matrix_bootstrap_95ci": [
+        1.852514727438368e-05,
+        7.156645236513485e-05
+      ],
+      "seconds_per_draw_amortized_matrix_bootstrap_95ci": [
+        1.1631654961092863e-07,
+        1.2301996684982443e-07
+      ]
+    },
+    {
+      "goals": 4,
+      "method": "uniform",
+      "mean_distinct": 2.3526875,
+      "exact_optimum": 2.019678869369006,
+      "single_draw_value_variance": 0.1333763511121008,
+      "squared_mean_error": 7.367771261849116e-05,
+      "construction_seconds": 0.0,
+      "sampling_seconds": 0.00016712615615688264,
+      "seconds_per_draw_amortized": 8.356307807844132e-08,
+      "mean_distinct_matrix_bootstrap_95ci": [
+        2.0860546875,
+        2.6555218750000003
+      ],
+      "single_draw_value_variance_matrix_bootstrap_95ci": [
+        0.07978333369201947,
+        0.18694060862130948
+      ],
+      "squared_mean_error_matrix_bootstrap_95ci": [
+        3.0590439974810786e-05,
+        0.00012370935998781842
+      ],
+      "seconds_per_draw_amortized_matrix_bootstrap_95ci": [
+        8.004768460523337e-08,
+        8.652043652546126e-08
+      ]
+    },
+    {
+      "goals": 4,
+      "method": "ordered-uniform",
+      "mean_distinct": 2.0713749999999997,
+      "exact_optimum": 2.019678869369006,
+      "single_draw_value_variance": 0.15346123566513295,
+      "squared_mean_error": 9.060009380285338e-05,
+      "construction_seconds": 0.02412245378945954,
+      "sampling_seconds": 0.0002883963461499661,
+      "seconds_per_draw_amortized": 1.2205425067804754e-05,
+      "mean_distinct_matrix_bootstrap_95ci": [
+        1.7931249999999999,
+        2.3777515625000003
+      ],
+      "single_draw_value_variance_matrix_bootstrap_95ci": [
+        0.10944326100550564,
+        0.201368519889617
+      ],
+      "squared_mean_error_matrix_bootstrap_95ci": [
+        2.0032285219648122e-05,
+        0.00019782387973338037
+      ],
+      "seconds_per_draw_amortized_matrix_bootstrap_95ci": [
+        1.1906112587894314e-05,
+        1.252369675785303e-05
+      ]
+    },
+    {
+      "goals": 4,
+      "method": "gumbel",
+      "mean_distinct": 2.1332500000000003,
+      "exact_optimum": 2.019678869369006,
+      "single_draw_value_variance": 0.16960335533306134,
+      "squared_mean_error": 4.6247303355251746e-05,
+      "construction_seconds": 0.0,
+      "sampling_seconds": 0.0003913070831913501,
+      "seconds_per_draw_amortized": 1.9565354159567504e-07,
+      "mean_distinct_matrix_bootstrap_95ci": [
+        1.8485390625,
+        2.4383765625000002
+      ],
+      "single_draw_value_variance_matrix_bootstrap_95ci": [
+        0.12856663909427332,
+        0.2198955369348073
+      ],
+      "squared_mean_error_matrix_bootstrap_95ci": [
+        7.234250498564481e-06,
+        8.785063934459623e-05
+      ],
+      "seconds_per_draw_amortized_matrix_bootstrap_95ci": [
+        1.8301021154911724e-07,
+        2.148634874174604e-07
+      ]
+    },
+    {
+      "goals": 4,
+      "method": "list",
+      "mean_distinct": 2.3505000000000003,
+      "exact_optimum": 2.019678869369006,
+      "single_draw_value_variance": 0.18557765352522385,
+      "squared_mean_error": 4.446391378053987e-05,
+      "construction_seconds": 0.0,
+      "sampling_seconds": 0.12115438346518204,
+      "seconds_per_draw_amortized": 6.057719173259102e-05,
+      "mean_distinct_matrix_bootstrap_95ci": [
+        2.1751249999999995,
+        2.55875
+      ],
+      "single_draw_value_variance_matrix_bootstrap_95ci": [
+        0.14067877963315775,
+        0.23860477702361466
+      ],
+      "squared_mean_error_matrix_bootstrap_95ci": [
+        1.2197346867382387e-05,
+        9.238350574588968e-05
+      ],
+      "seconds_per_draw_amortized_matrix_bootstrap_95ci": [
+        5.886621797108092e-05,
+        6.243452593189431e-05
+      ]
+    },
+    {
+      "goals": 4,
+      "method": "subset-lp",
+      "mean_distinct": 2.0224375,
+      "exact_optimum": 2.019678869369006,
+      "single_draw_value_variance": 0.16619165953822818,
+      "squared_mean_error": 4.4868835373209766e-05,
+      "construction_seconds": 0.001547153719002381,
+      "sampling_seconds": 0.00038969458546489477,
+      "seconds_per_draw_amortized": 9.684241522336378e-07,
+      "mean_distinct_matrix_bootstrap_95ci": [
+        1.737625,
+        2.3270937500000004
+      ],
+      "single_draw_value_variance_matrix_bootstrap_95ci": [
+        0.09499649698120896,
+        0.2732876278858918
+      ],
+      "squared_mean_error_matrix_bootstrap_95ci": [
+        1.2960522344279134e-05,
+        8.217120317415634e-05
+      ],
+      "seconds_per_draw_amortized_matrix_bootstrap_95ci": [
+        8.587598564190557e-07,
+        1.1613348284299718e-06
+      ]
+    },
+    {
+      "goals": 16,
+      "method": "independent",
+      "mean_distinct": 5.6423749999999995,
+      "exact_optimum": 3.425539913713723,
+      "single_draw_value_variance": 0.03367711170209006,
+      "squared_mean_error": 6.920200263674121e-06,
+      "construction_seconds": 0.0,
+      "sampling_seconds": 0.000816377520095557,
+      "seconds_per_draw_amortized": 4.081887600477785e-07,
+      "mean_distinct_matrix_bootstrap_95ci": [
+        5.519,
+        5.7290656250000005
+      ],
+      "single_draw_value_variance_matrix_bootstrap_95ci": [
+        0.02627470396251186,
+        0.040929060147929894
+      ],
+      "squared_mean_error_matrix_bootstrap_95ci": [
+        2.997765856022781e-06,
+        1.1114117745488497e-05
+      ],
+      "seconds_per_draw_amortized_matrix_bootstrap_95ci": [
+        3.6505642310658005e-07,
+        4.612022963556228e-07
+      ]
+    },
+    {
+      "goals": 16,
+      "method": "uniform",
+      "mean_distinct": 4.2185,
+      "exact_optimum": 3.425539913713723,
+      "single_draw_value_variance": 0.03240293067468269,
+      "squared_mean_error": 6.062877432533107e-06,
+      "construction_seconds": 0.0,
+      "sampling_seconds": 0.0007011303096078336,
+      "seconds_per_draw_amortized": 3.505651548039168e-07,
+      "mean_distinct_matrix_bootstrap_95ci": [
+        3.4986875000000004,
+        4.90270625
+      ],
+      "single_draw_value_variance_matrix_bootstrap_95ci": [
+        0.02202164277787441,
+        0.044541464087242535
+      ],
+      "squared_mean_error_matrix_bootstrap_95ci": [
+        1.6268618039470467e-06,
+        1.2468054319578646e-05
+      ],
+      "seconds_per_draw_amortized_matrix_bootstrap_95ci": [
+        3.029219988093246e-07,
+        4.0278316664625894e-07
+      ]
+    },
+    {
+      "goals": 16,
+      "method": "ordered-uniform",
+      "mean_distinct": 3.621,
+      "exact_optimum": 3.425539913713723,
+      "single_draw_value_variance": 0.04458173912923301,
+      "squared_mean_error": 2.2501834140038797e-05,
+      "construction_seconds": 0.08662938009365462,
+      "sampling_seconds": 0.0005077224341221154,
+      "seconds_per_draw_amortized": 4.3568551263888365e-05,
+      "mean_distinct_matrix_bootstrap_95ci": [
+        2.901,
+        4.3159109375
+      ],
+      "single_draw_value_variance_matrix_bootstrap_95ci": [
+        0.03294245509966509,
+        0.05502039240354683
+      ],
+      "squared_mean_error_matrix_bootstrap_95ci": [
+        5.917238093420097e-06,
+        4.8177255560794535e-05
+      ],
+      "seconds_per_draw_amortized_matrix_bootstrap_95ci": [
+        4.234501815517433e-05,
+        4.492035827388464e-05
+      ]
+    },
+    {
+      "goals": 16,
+      "method": "gumbel",
+      "mean_distinct": 3.8389999999999995,
+      "exact_optimum": 3.425539913713723,
+      "single_draw_value_variance": 0.031456326105022005,
+      "squared_mean_error": 2.163359378337495e-05,
+      "construction_seconds": 0.0,
+      "sampling_seconds": 0.0013676751405000687,
+      "seconds_per_draw_amortized": 6.838375702500343e-07,
+      "mean_distinct_matrix_bootstrap_95ci": [
+        3.0476734375000003,
+        4.6484109375
+      ],
+      "single_draw_value_variance_matrix_bootstrap_95ci": [
+        0.0269666506175193,
+        0.036077804778994756
+      ],
+      "squared_mean_error_matrix_bootstrap_95ci": [
+        1.2235618786093934e-05,
+        3.2067899571878505e-05
+      ],
+      "seconds_per_draw_amortized_matrix_bootstrap_95ci": [
+        6.62276943330653e-07,
+        7.072191048791865e-07
+      ]
+    },
+    {
+      "goals": 16,
+      "method": "list",
+      "mean_distinct": 5.0455000000000005,
+      "exact_optimum": 3.425539913713723,
+      "single_draw_value_variance": 0.03460992777383311,
+      "squared_mean_error": 9.679450657353432e-06,
+      "construction_seconds": 0.0,
+      "sampling_seconds": 0.5557274269522168,
+      "seconds_per_draw_amortized": 0.00027786371347610837,
+      "mean_distinct_matrix_bootstrap_95ci": [
+        4.8710609375,
+        5.2779375
+      ],
+      "single_draw_value_variance_matrix_bootstrap_95ci": [
+        0.026961142064874197,
+        0.04132076820063517
+      ],
+      "squared_mean_error_matrix_bootstrap_95ci": [
+        2.38817319308621e-06,
+        1.9370886262745588e-05
+      ],
+      "seconds_per_draw_amortized_matrix_bootstrap_95ci": [
+        0.0002703676512755919,
+        0.00028644571335171345
+      ]
+    },
+    {
+      "goals": 16,
+      "method": "subset-lp",
+      "mean_distinct": 3.426625,
+      "exact_optimum": 3.425539913713723,
+      "single_draw_value_variance": 0.026004783097008693,
+      "squared_mean_error": 1.51024736315727e-05,
+      "construction_seconds": 0.004129495704546571,
+      "sampling_seconds": 0.0015776931832078844,
+      "seconds_per_draw_amortized": 2.8535944438772275e-06,
+      "mean_distinct_matrix_bootstrap_95ci": [
+        2.610675,
+        4.176499999999999
+      ],
+      "single_draw_value_variance_matrix_bootstrap_95ci": [
+        0.019036234765756086,
+        0.034534373510251265
+      ],
+      "squared_mean_error_matrix_bootstrap_95ci": [
+        6.1238053079197435e-06,
+        2.4904890156103522e-05
+      ],
+      "seconds_per_draw_amortized_matrix_bootstrap_95ci": [
+        2.432929912538384e-06,
+        3.3780622983613296e-06
+      ]
+    },
+    {
+      "goals": 31,
+      "method": "independent",
+      "mean_distinct": 5.97175,
+      "exact_optimum": 3.690287381639619,
+      "single_draw_value_variance": 0.018548058177594667,
+      "squared_mean_error": 6.234988121064303e-06,
+      "construction_seconds": 0.0,
+      "sampling_seconds": 0.0014730837137904018,
+      "seconds_per_draw_amortized": 7.365418568952009e-07,
+      "mean_distinct_matrix_bootstrap_95ci": [
+        5.95125,
+        5.98525
+      ],
+      "single_draw_value_variance_matrix_bootstrap_95ci": [
+        0.014356828919645499,
+        0.02273304180856303
+      ],
+      "squared_mean_error_matrix_bootstrap_95ci": [
+        2.0551833014550707e-06,
+        1.1527326138208631e-05
+      ],
+      "seconds_per_draw_amortized_matrix_bootstrap_95ci": [
+        6.825278396718204e-07,
+        7.981486476637655e-07
+      ]
+    },
+    {
+      "goals": 31,
+      "method": "uniform",
+      "mean_distinct": 4.4519375,
+      "exact_optimum": 3.690287381639619,
+      "single_draw_value_variance": 0.016253065776255675,
+      "squared_mean_error": 1.1462039718252164e-06,
+      "construction_seconds": 0.0,
+      "sampling_seconds": 0.0012816076632589102,
+      "seconds_per_draw_amortized": 6.408038316294551e-07,
+      "mean_distinct_matrix_bootstrap_95ci": [
+        3.6834999999999996,
+        5.2045625
+      ],
+      "single_draw_value_variance_matrix_bootstrap_95ci": [
+        0.011340170480200609,
+        0.02099639845327388
+      ],
+      "squared_mean_error_matrix_bootstrap_95ci": [
+        3.318745083663342e-07,
+        2.212517778044083e-06
+      ],
+      "seconds_per_draw_amortized_matrix_bootstrap_95ci": [
+        5.660887545673177e-07,
+        7.134720217436552e-07
+      ]
+    },
+    {
+      "goals": 31,
+      "method": "ordered-uniform",
+      "mean_distinct": 3.9823125,
+      "exact_optimum": 3.690287381639619,
+      "single_draw_value_variance": 0.016775470216662435,
+      "squared_mean_error": 1.55961342376661e-05,
+      "construction_seconds": 0.24056351682520472,
+      "sampling_seconds": 0.0007708179182372987,
+      "seconds_per_draw_amortized": 0.000120667167371721,
+      "mean_distinct_matrix_bootstrap_95ci": [
+        3.1798046875,
+        4.764676562500001
+      ],
+      "single_draw_value_variance_matrix_bootstrap_95ci": [
+        0.01093803628024578,
+        0.02262144667280407
+      ],
+      "squared_mean_error_matrix_bootstrap_95ci": [
+        2.252965822709496e-06,
+        3.123399497037575e-05
+      ],
+      "seconds_per_draw_amortized_matrix_bootstrap_95ci": [
+        0.00011747909363402869,
+        0.00012462210084704565
+      ]
+    },
+    {
+      "goals": 31,
+      "method": "gumbel",
+      "mean_distinct": 4.1870625,
+      "exact_optimum": 3.690287381639619,
+      "single_draw_value_variance": 0.016797204157928014,
+      "squared_mean_error": 1.1749379778805587e-05,
+      "construction_seconds": 0.0,
+      "sampling_seconds": 0.002504605072317645,
+      "seconds_per_draw_amortized": 1.2523025361588224e-06,
+      "mean_distinct_matrix_bootstrap_95ci": [
+        3.2820140625000005,
+        5.0781265625000005
+      ],
+      "single_draw_value_variance_matrix_bootstrap_95ci": [
+        0.013090190740216534,
+        0.02080349359195058
+      ],
+      "squared_mean_error_matrix_bootstrap_95ci": [
+        2.9722247044484255e-06,
+        2.2311302626685427e-05
+      ],
+      "seconds_per_draw_amortized_matrix_bootstrap_95ci": [
+        1.1818330956884893e-06,
+        1.3267224010633074e-06
+      ]
+    },
+    {
+      "goals": 31,
+      "method": "list",
+      "mean_distinct": 5.7889375,
+      "exact_optimum": 3.690287381639619,
+      "single_draw_value_variance": 0.018772017897567585,
+      "squared_mean_error": 1.1245120882108016e-05,
+      "construction_seconds": 0.0,
+      "sampling_seconds": 1.1450790010567289,
+      "seconds_per_draw_amortized": 0.0005725395005283645,
+      "mean_distinct_matrix_bootstrap_95ci": [
+        5.728553125,
+        5.8531875
+      ],
+      "single_draw_value_variance_matrix_bootstrap_95ci": [
+        0.014437299424696471,
+        0.023130493141181714
+      ],
+      "squared_mean_error_matrix_bootstrap_95ci": [
+        5.698772561291541e-06,
+        1.6684106815294282e-05
+      ],
+      "seconds_per_draw_amortized_matrix_bootstrap_95ci": [
+        0.0005632329129632126,
+        0.0005819251222328603
+      ]
+    },
+    {
+      "goals": 31,
+      "method": "subset-lp",
+      "mean_distinct": 3.6944375000000003,
+      "exact_optimum": 3.690287381639619,
+      "single_draw_value_variance": 0.01603583682830531,
+      "squared_mean_error": 1.6142346149365128e-05,
+      "construction_seconds": 0.007743539084913209,
+      "sampling_seconds": 0.0028882670449092984,
+      "seconds_per_draw_amortized": 5.3159030649112545e-06,
+      "mean_distinct_matrix_bootstrap_95ci": [
+        2.7968125,
+        4.586507812500001
+      ],
+      "single_draw_value_variance_matrix_bootstrap_95ci": [
+        0.012957134233022522,
+        0.019486211026311512
+      ],
+      "squared_mean_error_matrix_bootstrap_95ci": [
+        4.922188402810462e-06,
+        2.863538939550947e-05
+      ],
+      "seconds_per_draw_amortized_matrix_bootstrap_95ci": [
+        4.601318514687591e-06,
+        6.124620436457918e-06
+      ]
+    }
+  ],
+  "scientific_limits": [
+    "No transition cache or policy inference in this marginal diagnostic",
+    "Construction is amortized over 2000 fixed-marginal draws; rollout marginals change",
+    "Independent scores test a counterexample risk, not the actual training objective",
+    "Distinct-outcome objective is established prior work; solver priority pending"
+  ]
+}

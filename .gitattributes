@@ -1,0 +1,2 @@
+# Preserve the Python csv writer's audited CRLF bytes in development results.
+data/algorithm-cycle/**/*.csv -text whitespace=cr-at-eol

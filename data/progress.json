@@ -1,23 +1,23 @@
 {
   "schema": "awesome-icl.public-progress.v1",
-  "updated_at": "2026-10-12T08:21:36.872990+00:00",
+  "updated_at": "2026-10-12T15:37:33.353891+00:00",
   "repository_url": "https://github.com/asimfish/awesome-icl-research-notebook",
   "scope": {
     "zh": "从机器人纠正经验到可复用的上下文适应；历史U3/A3审计保留",
     "en": "Reusable in-context adaptation from robot correction experience; historical U3/A3 audits preserved"
   },
   "current": {
-    "zh": "15个策略训练运行已完成。发现零状态查询监督造成闭环控制缺口；覆盖进度状态后达到98.18%符号任务完成率，但清空旧经验仍有97.79%，主完成率增益门槛失败。旧经验节省约1.02次命令；科学状态REVISE，机器人回合0。 256个新规则的冻结模型复核确认节省1.011次命令；采集成本未计入。",
-    "en": "Fifteen policy checkpoints completed. Zero-state query supervision caused a control-coverage defect. Covered queries achieve98.18% symbolic completion, versus97.79% with initially empty support; the primary retention-completion criterion failed. Existing experience saves about1.02 commands. Scientific statusREVISE; zero robot episodes. A frozen-policy confirmation on 256 fresh rules finds 1.011 commands saved, excluding initial collection."
+    "zh": "自身必做任务流中，复用旧反馈节省8.080次指令/六任务，完成率提高1.959个百分点。新增73,728条冻结策略分支，无新训练。任务/执行作用分离候选已查新并完成12,000次滑块物理检查；有效性未确认，新算法尚未建立。REVISE，机器人回合0。",
+    "en": "Own required-task streams save8.080 commands per six goals and improve completion1.959pp. 73,728 additional frozen-policy branches, no new training. Task/execution separation audited;12,000 sliding-physics primitives completed, control validity unresolved. No established new algorithm. REVISE;0robot episodes."
   },
   "next": {
     "title": {
-      "zh": "验证真实任务流的净收益",
-      "en": "Test net utility in a task stream"
+      "zh": "实现有效、经济的执行对照",
+      "en": "Construct valid, affordable execution controls"
     },
     "description": {
-      "zh": "固定普通查询监督强基线，核算全部经验采集、失败、复位与未来任务成本；用采集者×共同消费者拆分获取和利用。再进入具身执行与依赖变化，并给E-RL²/DREAM相同未来目标。",
-      "en": "Freeze the ordinary query-supervision baseline and account for collection, failures, resets and subsequent tasks. Cross collectors with a shared consumer, then test embodiment and dependency changes against E-RL²/DREAM under the same future objectives."
+      "zh": "先证明对照的物理匹配、迁移范围与全成本，再比较同数据原始历史、联合模型和普通条件模型。E-RL²/DREAM与第二任务族仍待完成；不把现有条件似然改名当创新。",
+      "en": "Establish physical matching, transfer scope and total cost before comparing same-data raw history, joint models and ordinary conditional models. E-RL²/DREAM and a second task family remain pending; the known conditional likelihood is not a novelty claim."
     }
   },
   "gates": [
@@ -821,7 +821,7 @@
     "scientific_status": "REVISE",
     "review_independence": "same-family",
     "acceptance_status": "provisional",
-    "learned_policy_evaluation_episodes": 104448,
+    "learned_policy_evaluation_episodes": 178176,
     "training_runs": 15,
     "robot_episodes": 0,
     "previous_primary": "A3",
@@ -846,7 +846,19 @@
         "name": "confirmation",
         "closure_classes": 256,
         "prior_closure_overlap": 0
+      },
+      {
+        "name": "own-required-task-stream-development",
+        "closure_classes": 256,
+        "prior_closure_overlap": 0,
+        "evaluation_branches": 73728,
+        "future_final_test_eligible": false
       }
-    ]
+    ],
+    "prior_paper_cycle_branches": 104448,
+    "own_stream_development_branches": 73728,
+    "physics_primitive_executions": 12000,
+    "new_algorithm_established": false,
+    "physical_control_parallelism": "unresolved; both coordinate-wise posterior intervals include zero"
   }
 }

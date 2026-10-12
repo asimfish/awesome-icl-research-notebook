@@ -1,0 +1,152 @@
+{
+  "scope": "motor-only parallel-logit control falsification; headless sliding physics",
+  "simulator": "MuJoCo",
+  "version": "3.3.7",
+  "device": "CPU",
+  "rendering": false,
+  "data_seed": 6651,
+  "posterior_seed": 6652,
+  "cells": [
+    {
+      "force_mean": 6.0,
+      "option": "target",
+      "motor_state": 0,
+      "friction": 0.6,
+      "successes": 371,
+      "trials": 1500,
+      "rate": 0.24733333333333332
+    },
+    {
+      "force_mean": 6.0,
+      "option": "target",
+      "motor_state": 1,
+      "friction": 0.3,
+      "successes": 1163,
+      "trials": 1500,
+      "rate": 0.7753333333333333
+    },
+    {
+      "force_mean": 6.0,
+      "option": "control",
+      "motor_state": 0,
+      "friction": 0.6,
+      "successes": 755,
+      "trials": 1500,
+      "rate": 0.5033333333333333
+    },
+    {
+      "force_mean": 6.0,
+      "option": "control",
+      "motor_state": 1,
+      "friction": 0.3,
+      "successes": 1392,
+      "trials": 1500,
+      "rate": 0.928
+    },
+    {
+      "force_mean": 8.0,
+      "option": "target",
+      "motor_state": 0,
+      "friction": 0.6,
+      "successes": 937,
+      "trials": 1500,
+      "rate": 0.6246666666666667
+    },
+    {
+      "force_mean": 8.0,
+      "option": "target",
+      "motor_state": 1,
+      "friction": 0.3,
+      "successes": 1436,
+      "trials": 1500,
+      "rate": 0.9573333333333334
+    },
+    {
+      "force_mean": 8.0,
+      "option": "control",
+      "motor_state": 0,
+      "friction": 0.6,
+      "successes": 1284,
+      "trials": 1500,
+      "rate": 0.856
+    },
+    {
+      "force_mean": 8.0,
+      "option": "control",
+      "motor_state": 1,
+      "friction": 0.3,
+      "successes": 1486,
+      "trials": 1500,
+      "rate": 0.9906666666666667
+    }
+  ],
+  "analysis": {
+    "6.0": {
+      "target_logit_shift": {
+        "posterior_mean": 2.3513669721258355,
+        "posterior_95_interval": [
+          2.1825054462583653,
+          2.518243890465121
+        ]
+      },
+      "control_logit_shift": {
+        "posterior_mean": 2.544852149909475,
+        "posterior_95_interval": [
+          2.326468224099354,
+          2.7645141864430323
+        ]
+      },
+      "logit_shift_difference": {
+        "posterior_mean": -0.19348517778363936,
+        "posterior_95_interval": [
+          -0.47361529817451553,
+          0.08364545555202656
+        ]
+      }
+    },
+    "8.0": {
+      "target_logit_shift": {
+        "posterior_mean": 2.601144191307266,
+        "posterior_95_interval": [
+          2.3310924971866505,
+          2.8782536185541985
+        ]
+      },
+      "control_logit_shift": {
+        "posterior_mean": 2.881694038197674,
+        "posterior_95_interval": [
+          2.361855509633895,
+          3.463911036457065
+        ]
+      },
+      "logit_shift_difference": {
+        "posterior_mean": -0.2805498468904076,
+        "posterior_95_interval": [
+          -0.9176916641694877,
+          0.31848619608146117
+        ]
+      }
+    }
+  },
+  "uncertainty": "coordinate-wise 95% Jeffreys-binomial posterior intervals, not frequentist or simultaneous",
+  "beta_prior": [
+    0.5,
+    0.5
+  ],
+  "posterior_draws": 10000,
+  "primitive_executions": 12000,
+  "resets": 12000,
+  "mujoco_steps": 1440000,
+  "new_policy_training_runs": 0,
+  "robot_episodes": 0,
+  "real_hardware_episodes": 0,
+  "runtime_seconds": 5.726264613913372,
+  "limits": [
+    "No learned policy, robot controller, prerequisite changes or new-goal result",
+    "No claim of a realizable physical preparation: friction is directly configured",
+    "Can disqualify this chosen control pair; cannot refute all control constructions",
+    "No hidden task relation label or eligibility inference in this run",
+    "Both probability and completion predicate shape the measured logit response",
+    "Prior smoothing for descriptive rate uncertainty is not outcome-support creation"
+  ]
+}

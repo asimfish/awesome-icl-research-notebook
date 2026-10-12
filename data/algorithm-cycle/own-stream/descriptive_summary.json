@@ -1,0 +1,156 @@
+{
+  "scope": "descriptive aggregation; no additional selection or test",
+  "unit": "whole six-required-task stream except success is per task",
+  "arms": {
+    "0": {
+      "success": 0.9667154947916666,
+      "capped_commands": 38.89990234375,
+      "actual_commands": 38.89990234375,
+      "blocked_commands": 15.193684895833334,
+      "repeated_completed_commands": 0.4638671875,
+      "premature_stop": 0.0
+    },
+    "1": {
+      "success": 0.986300998263889,
+      "capped_commands": 30.819986979166664,
+      "actual_commands": 30.819986979166664,
+      "blocked_commands": 7.621256510416666,
+      "repeated_completed_commands": 0.10563151041666667,
+      "premature_stop": 0.0
+    }
+  },
+  "by_task": [
+    {
+      "retain": 0,
+      "task_index": 0,
+      "count": 6144,
+      "success": 0.9671223958333334,
+      "capped_commands": 6.455403645833333,
+      "actual_commands": 6.455403645833333,
+      "blocked_commands": 2.5089518229166665,
+      "repeated_completed_commands": 0.07177734375,
+      "premature_stop": 0.0
+    },
+    {
+      "retain": 0,
+      "task_index": 1,
+      "count": 6144,
+      "success": 0.96142578125,
+      "capped_commands": 6.588216145833333,
+      "actual_commands": 6.588216145833333,
+      "blocked_commands": 2.6023763020833335,
+      "repeated_completed_commands": 0.07975260416666667,
+      "premature_stop": 0.0
+    },
+    {
+      "retain": 0,
+      "task_index": 2,
+      "count": 6144,
+      "success": 0.9669596354166666,
+      "capped_commands": 6.452962239583333,
+      "actual_commands": 6.452962239583333,
+      "blocked_commands": 2.5338541666666665,
+      "repeated_completed_commands": 0.08479817708333333,
+      "premature_stop": 0.0
+    },
+    {
+      "retain": 0,
+      "task_index": 3,
+      "count": 6144,
+      "success": 0.9698893229166666,
+      "capped_commands": 6.479329427083333,
+      "actual_commands": 6.479329427083333,
+      "blocked_commands": 2.5166015625,
+      "repeated_completed_commands": 0.08040364583333333,
+      "premature_stop": 0.0
+    },
+    {
+      "retain": 0,
+      "task_index": 4,
+      "count": 6144,
+      "success": 0.9661458333333334,
+      "capped_commands": 6.409016927083333,
+      "actual_commands": 6.409016927083333,
+      "blocked_commands": 2.4866536458333335,
+      "repeated_completed_commands": 0.0703125,
+      "premature_stop": 0.0
+    },
+    {
+      "retain": 0,
+      "task_index": 5,
+      "count": 6144,
+      "success": 0.96875,
+      "capped_commands": 6.514973958333333,
+      "actual_commands": 6.514973958333333,
+      "blocked_commands": 2.5452473958333335,
+      "repeated_completed_commands": 0.07682291666666667,
+      "premature_stop": 0.0
+    },
+    {
+      "retain": 1,
+      "task_index": 0,
+      "count": 6144,
+      "success": 0.9671223958333334,
+      "capped_commands": 6.455403645833333,
+      "actual_commands": 6.455403645833333,
+      "blocked_commands": 2.5089518229166665,
+      "repeated_completed_commands": 0.07177734375,
+      "premature_stop": 0.0
+    },
+    {
+      "retain": 1,
+      "task_index": 1,
+      "count": 6144,
+      "success": 0.9871419270833334,
+      "capped_commands": 4.978190104166667,
+      "actual_commands": 4.978190104166667,
+      "blocked_commands": 1.0535481770833333,
+      "repeated_completed_commands": 0.01513671875,
+      "premature_stop": 0.0
+    },
+    {
+      "retain": 1,
+      "task_index": 2,
+      "count": 6144,
+      "success": 0.9921875,
+      "capped_commands": 4.755696614583333,
+      "actual_commands": 4.755696614583333,
+      "blocked_commands": 0.9309895833333334,
+      "repeated_completed_commands": 0.007486979166666667,
+      "premature_stop": 0.0
+    },
+    {
+      "retain": 1,
+      "task_index": 3,
+      "count": 6144,
+      "success": 0.9925130208333334,
+      "capped_commands": 4.8095703125,
+      "actual_commands": 4.8095703125,
+      "blocked_commands": 0.9638671875,
+      "repeated_completed_commands": 0.00341796875,
+      "premature_stop": 0.0
+    },
+    {
+      "retain": 1,
+      "task_index": 4,
+      "count": 6144,
+      "success": 0.9881184895833334,
+      "capped_commands": 4.89453125,
+      "actual_commands": 4.89453125,
+      "blocked_commands": 1.08642578125,
+      "repeated_completed_commands": 0.004069010416666667,
+      "premature_stop": 0.0
+    },
+    {
+      "retain": 1,
+      "task_index": 5,
+      "count": 6144,
+      "success": 0.99072265625,
+      "capped_commands": 4.926595052083333,
+      "actual_commands": 4.926595052083333,
+      "blocked_commands": 1.0774739583333333,
+      "repeated_completed_commands": 0.0037434895833333335,
+      "premature_stop": 0.0
+    }
+  ]
+}
