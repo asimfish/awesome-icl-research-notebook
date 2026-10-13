@@ -1,0 +1,226 @@
+{
+  "title": "Exploratory Response-Preserving Particle Allocation for Reusing Correction Evidence",
+  "topic_relevance": {
+    "sub_topic": [
+      "Frozen deployed controllers learning from their own consequences",
+      "Finite-memory causal task inference",
+      "Correction transfer to an unexecuted goal"
+    ],
+    "primary_focus": [
+      "C15: allocate an existing particle population according to possible feedback-conditioned goal readouts",
+      "REFINE: test a contested approximation target, with no accepted novel algorithm or empirical efficacy claim",
+      "Compare total inference cost against established methods given the identical response features"
+    ]
+  },
+  "one_sentence_thesis": "A bounded controller may preserve useful correction evidence by allocating particles to possible future responses, but an advantage over established allocation methods remains unproven.",
+  "core_problem": {
+    "problem_statement": "An approximate causal posterior can preserve a controller's present choice while discarding an explanation needed after its next consequence to answer another goal. CML retains learned gating, hidden states and ancestry [3], but this project has not established that its finite population exhibits this failure; G5/G6 identify a conditional approximation question.",
+    "why_it_matters": [
+      "A robot should reuse evidence from an executed command when a later goal requires the same relations, rather than repeat a failure to recover discarded information.",
+      "Bounded memory and inference work create practical tradeoffs. Evidence retention alone does not establish reusable relation learning, and exact joint inference already supplies the relevant Bayesian update.",
+      "Decision-relative model fidelity and future-predictive representations already address related information requirements [13][20][21]. The unresolved question is a useful total-cost tradeoff within a finite deployed inference system."
+    ],
+    "concrete_example": "A command fails, leaving both a missing prerequisite and an execution slip plausible under the observed channel. Both explanations currently recommend the same recovery. A later ordinary command can produce an observable consequence that separates them; before executing a new preparation-and-placement goal, its best first command may then depend on the retained explanation. This is a proposed finite reference scenario, not an observed robot failure."
+  },
+  "key_novelty": {
+    "main_idea": "Contested C15 target: response-preserving particle allocation; exploratory REFINE status",
+    "explanation": [
+      "Preserve predictions needed jointly by a possible next consequence and a later goal. This target is narrower than generic particle diversity, but its practical advantage has not been established.",
+      "Likelihood-weighted fingerprints, stratification, mass correction and variance allocation are established operations [16][17][19]. A proposal-blind derivation reconstructs their combination; the report does not certify a new algorithm.",
+      "A contribution would require an identified operation and total-cost advantage beyond strong methods using the same response features. No such residual difference is currently demonstrated."
+    ]
+  },
+  "problem_definition": {
+    "formal_setting": "A world has reusable relation parameters Theta and execution/observation nuisance eta_t. The only factual deployment history is H_t=(o_0,a_0,y_0,...,o_t). Frozen parameters phi implement causal inference and decisions; external numerical memory may change. The exact finite reference is b_t=p(Theta,eta_t|H_t) under the same legally observed channel. The approximation stores E_t={(S_i,w_i)} with sum_i w_i=1, where S_i is a hypothesized causal state, not the true latent state. For a possible legal next event e=(u,y,o_next), define L_i(e)=p_phi(e|S_i,H_t,u) and a bounded utility Q_i(g,a;e) from the common frozen planner after that modeled event. The approximate post-event readout is V_E(g,a|e)=sum_i w_i L_i(e) Q_i(g,a;e)/sum_i w_i L_i(e), when the denominator is positive. The proposed target is lower post-event new-goal decision regret to exact Bayes at matched total peak bytes B and likelihood, proposal and planning budget F; exact Bayes is a correctness reference, not expected to lose in decision quality.",
+    "inputs": "Actual observations, the controller's executed commands and observed consequences, public goal descriptions, a disclosed frozen causal likelihood/planning model, the current weighted particle state, and a predeclared bounded feedback/query catalogue. No true relation, eligibility vector, failure-cause label, future realized event, target-goal outcome, hindsight trajectory or deployment neural optimization is available. Predicted branches consume computation and supply no factual evidence.",
+    "outputs": "A weighted population of K complete causal particle states, its catalogue and allocation metadata within B, and an action distribution or declared unresolved prediction for a public goal. A later goal g_prime is queried before executing it or receiving its feedback. Goals outside the declared readout family receive no response-preservation guarantee."
+  },
+  "key_terms": {
+    "response feature": "A particle's likelihood for a possible observable consequence together with that likelihood multiplied by its subsequent goal-action utility.",
+    "response catalogue": "A finite, declared bank of legal command, observable-feedback and public goal-action tests predicted by the frozen model; it is not a collection of observed alternative outcomes.",
+    "stratum": "A group of particles with equal or explicitly quantized response features.",
+    "mass-preserving resampling": "Assigning offspring weights so that a group's total weight is retained, rather than treating a protected rare group as equally probable.",
+    "prefeedback new-goal decision": "The first decision for a later goal before any execution or outcome of that goal.",
+    "total inference budget": "Peak particle, ancestry, catalogue and workspace bytes, plus every likelihood, modeled branch, proposal, planning, replay and fallback operation."
+  },
+  "related_work": [
+    {
+      "sub_area": "Learned compositional causal filtering",
+      "what_it_does": "Compositional meta-learning through probabilistic task inference uses a learned non-Markovian gating RNN, module RNN states, ancestry and target-likelihood weighting with particle resampling. Training-only guided proposals can use future observations; deployed bootstrap inference cannot [3].",
+      "open_gap": "Its target-output likelihood cannot silently become a robot's own-consequence likelihood. This proposal assumes a disclosed common causal channel and examines allocation only; it does not solve grounding or identify a new computation.",
+      "citations": ["3"]
+    },
+    {
+      "sub_area": "Optimized proposals and integrand-sensitive resampling",
+      "what_it_does": "Optimized Auxiliary Particle Filters optimizes mixture proposals and applies importance-correct weights, while ordinary auxiliary filtering can delay selection until the next actual observation [16]. Stratification and Optimal Resampling for Sequential Monte Carlo explicitly sorts particles by a target integrand before stratified resampling [17].",
+      "open_gap": "Preserving a family of normalized post-feedback decision readouts is a proposed target choice. Changing the integrands to likelihood and likelihood-times-value is not by itself a new operation; both references must receive those same features.",
+      "citations": ["16", "17"]
+    },
+    {
+      "sub_area": "Preservation for subsequent inference operations",
+      "what_it_does": "Preserving Modes and Messages via Diverse Particle Selection selects hypotheses to preserve later max-product messages, rather than only parameter-space separation. It does not use sum-product Bayesian importance weights [19].",
+      "open_gap": "The present target uses likelihood-weighted expected utilities and normalized sums. That interface differs from max-product, but transferring message preservation to a sum-product filter remains a narrow, contested adaptation.",
+      "citations": ["19"]
+    },
+    {
+      "sub_area": "Memory-aware sequential Monte Carlo",
+      "what_it_does": "Sequential core-set Monte Carlo combines sparse weighted likelihood memory, ESS resampling and approximate rejuvenation [22]. Memory (and Time) Efficient Sequential Monte Carlo uses a two-pass stream and expected distinct survivors to control implicit population memory [23].",
+      "open_gap": "A response catalogue is additional storage and work. Allocation must show a tradeoff beyond these existing memory operations and cannot hide receipts, ancestry or test tables outside the budget.",
+      "citations": ["22", "23"]
+    },
+    {
+      "sub_area": "Decision and update sufficient representations",
+      "what_it_does": "Value equivalence constrains Bellman updates over selected policy/function sets [13]. Compressed predictive states recursively update predictions from observable histories [20], and self-predictive RL studies next-latent prediction and history abstractions [21]. RAD trains recurrent compression from learning histories [1]; DICP trains dynamics and return prediction for frozen model-predictive control [2].",
+      "open_gap": "Present-choice agreement does not alone establish agreement after the same next feedback. This is a useful test of bounded representations, already motivated by predictive-state and equivalence mechanisms, rather than a new sufficiency principle.",
+      "citations": ["13", "20", "21", "1", "2"]
+    }
+  ],
+  "method": {
+    "high_level_flow": [
+      "Step 1: actual causal history -> unchanged frozen gate, module states and likelihood update -> weighted input population",
+      "Step 2: declared legal feedback/query catalogue -> likelihood and likelihood-times-utility features -> response strata",
+      "Step 3: standard bounded allocation -> within-stratum weighted sampling -> offspring with original stratum mass",
+      "Step 4: actual next consequence -> ordinary causal reweighting -> first decision for the unexecuted public goal"
+    ],
+    "modules": [
+      {
+        "module": "Existing frozen causal particle filter",
+        "role": "Maintain the common composition hypotheses and causal hidden state; the proposed change is confined to resampling allocation.",
+        "model": "CML-compatible gating RNN G_phi and module RNNs M_phi^z with the original non-Markovian gate. For input x_t from the declared causal interface: gamma_t=G_phi(x_t,gamma_previous,z_previous), z_t is sampled from its categorical gate, and mu_t=M_phi^{z_t}(x_t,mu_previous). Keep module identity, gate/module hidden states, weights and required ancestry [3].",
+        "inputs": ["Current actual observation/action/consequence tokens", "Previous complete particle state", "Common frozen likelihood model"],
+        "outputs": ["Weighted complete causal particle population"],
+        "notes": "Robot observation/action/consequence tokens and a public goal decoder are an explicitly proposed interface adaptation supplied identically to every learned comparator. The CML digest supplies target-output filtering, not a calibrated physical failure channel. No new gate, proposal network or learned relation module is introduced here."
+      },
+      {
+        "module": "Declared response-feature calculation",
+        "role": "Calculate the functions needed by a possible next causal update and subsequent goal readout.",
+        "model": "No new neural architecture. Use the identical frozen causal model and finite-horizon planner supplied to all allocation methods. For each catalogued e and (g,a), f_i contains L_i(e) and L_i(e)Q_i(g,a;e).",
+        "inputs": ["Weighted particle states", "Catalogue C_t of at most J command/observable-event entries", "Declared public goal family G_design and finite action/readout set A"],
+        "outputs": ["Response feature vectors and response strata"],
+        "notes": "Catalogue rules are fixed before evaluation: legal ordinary commands at the observed state, a predefined tokenizer of observable consequences including missing/other outcomes, and a public design-goal family selected without knowing the future realized goal or feedback. Continuous-event bins are an approximation. Use exact equal-feature strata in the finite reference, or fixed coordinate bins floor(f/delta) with delta selected only on development data. The ordinary input population has K particles, hence at most K occupied strata. With an augmented support larger than K, universal protection is infeasible when occupied strata exceed K; such a configuration fails the declared protection target rather than acquiring an uncharged archive. A modeled branch never updates factual belief."
+      },
+      {
+        "module": "Known weighted stratified resampling rule",
+        "role": "Allocate the existing K slots to response strata while retaining their posterior mass.",
+        "model": "For stratum c, W_c=sum_{i in c}w_i and sigma_cf^2 is its weighted feature variance. Reserve n_c=1 for each positive-mass occupied stratum. Distribute the remaining K-C slots by largest remainders proportional to r_c=W_c sqrt(sum_f rho_f sigma_cf^2), with predeclared nonnegative feature weights rho_f. If all r_c vanish, allocate the remainder by W_c; use a fixed index tie-break. Draw each child independently with probability w_i/W_c inside c and assign its weight W_c/n_c.",
+        "inputs": ["Strata, weights and feature variances", "Fixed particle capacity K and feature weights"],
+        "outputs": ["Exactly K weighted offspring with complete copied causal states"],
+        "notes": "This is standard minimum-allocation stratification with a variance/Neyman criterion, not a novel solver [17]. For an actual subsequent event e, reweight w_j_next proportional to w_j L_j(e) using the unchanged causal model. Optional posterior-invariant suffix moves are the identical standard move kernel and budget in every comparator; no suffix-only move is claimed to recover an extinct prefix."
+      },
+      {
+        "module": "Common goal readout and cost accounting",
+        "role": "Answer the public goal and expose the complete resource tradeoff.",
+        "model": "The common frozen planner chooses argmax_a sum_j w_j_next Q_j(g_prime,a;e_actual). Its horizon, utility, candidate actions and branch budget are identical for all filters.",
+        "inputs": ["Posterior after the actual event", "Public unexecuted goal", "Declared total budget"],
+        "outputs": ["First goal decision", "Inference-byte and operation counts", "Unresolved/out-of-catalogue status where applicable"],
+        "notes": "Measure decision regret against exact finite Bayes under the same model, with realized physical command costs accounted separately. Count K-state storage, ancestry/suffix, catalogue, feature vectors, cluster metadata and peak workspace. With d=|C_t|(1+|G_design||A|), feature storage is O(Kd); construction uses up to K|C_t| likelihood predictions and K|C_t||G_design||A| planner readouts, plus all gate transitions/model branches they require. Report actual operations and wall time rather than treating readouts as constant-cost. If construction cannot fit B or F, report capacity failure; silently spending a larger budget is disallowed."
+      }
+    ],
+    "novel_architectural_elements": [
+      "No architectural novelty is established. The proposed arrangement places a response-feature allocation step at the existing filter's resampling boundary while retaining its learned gate, modules, likelihood, planner and factual data path.",
+      "Predicted events reach allocation only; observed events reach causal likelihood updates. This connection enforces the information boundary and is protocol design, not a new learning principle."
+    ],
+    "pseudocode": "Exploratory specification, not executed code:\nInput: K complete weighted states after ordinary actual-history filtering; B,F; a predeclared catalogue and goal/readout family.\n1. Compute each L and LQ feature with the common frozen causal model/planner; count all work and peak storage.\n2. Form exact or fixed-bin strata; compute W_c and within-stratum feature variances. If the declared protection/cost constraints fail, record failure.\n3. Reserve one slot per occupied positive-mass stratum and allocate remaining slots by the stated standard variance rule.\n4. Sample within c with w_i/W_c, copy complete state/required ancestry, and assign W_c/n_c to each child.\n5. On the next actual command consequence, use the original causal transition/likelihood update, then answer the unexecuted public goal with the common readout. Rebuild the next catalogue only from currently available causal information.",
+    "design_choices": [
+      "Retain both L and LQ because the normalized post-feedback readout depends on their joint moments; preserving separate current actions, E[L] and E[Q] is insufficient. This is ordinary Bayesian algebra, also reconstructed in the proposal-blind artifact.",
+      "Use original stratum masses for offspring weights so a rare protected explanation remains rare. Equal weights across protected strata would change the inferred posterior.",
+      "Restrict protection to a declared one-feedback query family and finite planner horizon. No indefinite future-update sufficiency or unseen-computation claim follows.",
+      "Give integrand-sensitive stratification, OAPF and predictive-moment selection the exact same L/LQ feature bank; compare complete cost frontiers rather than only ESS resampling [16][17].",
+      "When exact signatures are all distinct, reserving one slot each can reduce to retaining the original weighted particles. It does not solve weight degeneracy, generate lost support or establish a benefit."
+    ],
+    "theoretical_grounding": "Standard conditional resampling algebra only: conditional on the input population, fixed strata and allocations, E[sum_children w_j f(S_j)]=sum_i w_i f(S_i), and Var[sum_children w_j f(S_j)]=sum_c W_c^2 Var_c(f)/n_c for independent within-stratum draws. Each stratum's total offspring mass is exactly W_c. If every catalogued L and LQ is constant within an exact stratum, their resampled sums and positive-denominator one-event ratios equal those of the input ensemble. This is not equality to the true posterior. Quantized strata add approximation error; general ratios are not unbiased merely because their numerator and denominator estimates are. Rare-event denominators can amplify error. No new theorem, learned-model calibration guarantee or stability proof is claimed [17]."
+  },
+  "model_details": {
+    "base_model": "A proposed CML-compatible learned non-Markovian gating RNN and fixed module RNN collection [3], with a common observable consequence model and goal-conditioned finite-horizon readout. No pretrained robot instantiation, trained adapter or original-paper reproduction is claimed. The first conditional check would instead use a disclosed finite causal model as a CPU inference reference.",
+    "training": {
+      "method": "The allocation rule itself requires no neural training. Any later learned-control study requires actual predeployment training of the common gate/modules and observable consequence interface, followed by frozen deployment weights and teacher exit. No training has been performed for this proposal.",
+      "objective_functions": [
+        "Purpose: common likelihood learning for reusable computations. Formally: the CML-derived predeployment objective is -sum_t log(K_train^{-1} sum_k l_t^{(k)}) with its training procedure disclosed [3]. This does not supply a robot consequence channel automatically.",
+        "Purpose: compare the proposed allocation under the declared response family. Formally: the standard surrogate is sum_f rho_f sum_c W_c^2 sigma_cf^2/n_c subject to sum_c n_c=K and n_c>=1. It targets feature-estimation variance, not a guaranteed minimum decision regret [17]."
+      ],
+      "adaptation": "Only external particle states, weights and declared inference memory change at deployment. No gradient step, parameter fitting, privileged teacher output or hindsight proposal is available. Offline supervision, model capacity, public goal information and training work must be matched across learned controls.",
+      "key_hyperparameters": {
+        "particle_capacity": "K is fixed by the total byte and operation budgets, not enlarged for the proposed method.",
+        "catalogue_limit": "J legal command/observable-event entries, with the design-goal family and event bins fixed before evaluation.",
+        "signature_resolution": "Exact signatures in the finite check; a declared delta fixed on development data for approximate bins.",
+        "allocation_weights": "Nonnegative rho_f fixed on development data and provided to feature-matched controls.",
+        "planning_and_moves": "Common finite horizon, action candidates and any posterior-invariant move budget; all branch and replay work charged."
+      }
+    }
+  },
+  "comparison_to_sota": {
+    "related_methods": [
+      "CML [3]: retain its full learned non-Markovian gate, module states, ancestry and causal likelihood schedule while changing only allocation.",
+      "Optimized Auxiliary Particle Filters [16]: optimized mixture proposals with importance correction; include the observation-aware timing of the ordinary APF reference.",
+      "Stratification and Optimal Resampling for Sequential Monte Carlo [17]: target-integrand ordering and valid weighted resampling, given the same response features.",
+      "Preserving Modes and Messages via Diverse Particle Selection [19]: preserve downstream max-product messages; distinguish its mode objective from this normalized sum-product target.",
+      "Sequential core-set Monte Carlo [22] and Memory (and Time) Efficient Sequential Monte Carlo [23]: established evidence-memory and particle-stream tradeoffs.",
+      "Full-history and equal-memory RAD/AD [1], full DICP-IDT dynamics plus MPC [2], and same-data multi-goal/predictive-state distillation [13][20][21]: later learned controls where their adapted interfaces apply."
+    ],
+    "key_differences": [
+      "vs. ESS-only resampling: allocation considers possible subsequent feedback-conditioned readouts. This is the candidate's intended change, but ESS-only success or failure cannot settle novelty.",
+      "vs. target-integrand stratification [17]: the feature family is L and LQ for several normalized readouts. The cited method already makes resampling integrand-sensitive; no additional allocation operation is established.",
+      "vs. OAPF [16]: this allocation occurs before an unknown future event to retain several potential responses; APF can use the actual incoming observation and OAPF can optimize general mixture discrepancy. Different timing/targets do not establish superiority, incompatibility or a novel algorithm.",
+      "vs. D-PMP [19]: posterior mass and expected utility use sums and normalization rather than max-product messages. The broader preserve-for-later-inference intuition is occupied.",
+      "vs. predictive-state or moment compression [13][20][21]: retaining complete weighted particle states is a different representation, but update-relevant sufficiency is already established. Any contribution must appear in the matched byte/work versus decision-error frontier.",
+      "vs. exact joint Bayes: this is an approximation/cost proposal. It cannot claim a new ability to share evidence or higher decision quality from the same correct modeled posterior."
+    ]
+  },
+  "proposed_evaluation": {
+    "evaluation_setting": "Conditional first gates only. Before running a pilot, complete the operation-level prior comparison and identify a residual difference plus an allowed-information failure of a strong practical baseline. If none remains, select no algorithm. Only then use one small finite partially observed action-model family with uncertain prerequisites/destructive effects and noisy legally observed command consequences. Query a held-out composition before its execution. Exact joint finite Bayes is visible only to evaluation as a reference; the deployment methods never receive the generating rule or failure cause. A positive finite result would be an inference-allocation tradeoff, not robot validation or evidence of a learned relation updater.",
+    "benchmarks": [
+      {
+        "name": "Conditional finite causal action-model reference: present-choice agreement, a reachable noisy distinguishing consequence, then an unexecuted goal; include no-disagreement and held-out-event cases in the same family",
+        "task_type": "Causal inference allocation and first goal-action decision under fixed memory/work",
+        "newly_constructed": true
+      }
+    ],
+    "baselines": [
+      "Exact joint finite Bayes and the common finite-horizon planner with identical observation likelihood and actual history; report its full cost as the correctness reference.",
+      "Unmodified full-gating CML-compatible filter [3], ordinary ESS resample-move, and generic diversity/stratified resampling with identical proposals and move kernels.",
+      "Target-integrand stratification [17], direct L/LQ predictive-moment allocation/coreset selection, and an OAPF/observation-aware APF control [16] supplied the same event/readout bank and charged all construction work.",
+      "Applicable sequential coreset and particle-stream memory controls [22][23]; label adaptations instead of calling small reference code paper reproductions.",
+      "If a later learned study becomes justified: full-history and equal-memory RAD/AD [1], full DICP-IDT with dynamics/MPC [2], unchanged full-gating CML [3], and same-branch multi-goal/predictive-state decision distillation [13][20][21], all trained on the same legal data and supervision."
+    ],
+    "main_metrics": [
+      "Post-feedback first-action decision regret to the exact causal reference, before any target-goal execution; include the unaffected-goal and reset-memory controls.",
+      "Errors in the joint LQ moments and positive-denominator normalized readouts, separated for common, rare and uncatalogued actual events.",
+      "Peak total stored bytes and counts of likelihood, proposal, gate/branch, planner, resampling and replay operations; report wall time separately.",
+      "For any later own-policy closed loop: total preparation, diagnostic, failed, restoration and reset commands, plus first-attempt goal outcome. Keep this estimate separate from matched-record inference comparisons."
+    ],
+    "ablations": [
+      "Within the same feature-construction budget, compare current-action-only, L-only and joint L/LQ stratification; the last must also beat a direct same-feature standard allocation control.",
+      "Compare exact and declared quantized strata, and test a legally reachable event withheld from catalogue selection without using its outcome to select the catalogue.",
+      "Use the identical standard move kernel with and without the allocation change; retain and charge ancestry/suffix in both. These checks cannot revive an already absent prefix hypothesis."
+    ]
+  },
+  "falsifiable_predictions": [
+    {
+      "pillar": "Residual operation before efficacy",
+      "prediction": "An operation-level comparison leaves a concrete difference beyond integrand-sensitive stratification, optimized auxiliary proposals and downstream-message preservation [16][17][19]. This is presently an unresolved requirement, not a positive novelty prediction.",
+      "kill_condition": "A prior or the proposal-blind standard derivation already implements the complete stated operation. Retain the mechanism as a baseline and select no novel algorithm; do not add a new module merely to rescue its verdict."
+    },
+    {
+      "pillar": "Total-cost approximation benefit",
+      "prediction": "Conditional on a surviving difference and a demonstrated strong-baseline failure, the allocation improves the post-feedback new-goal regret versus total-byte/work frontier within the declared response family.",
+      "kill_condition": "Same-feature target-integrand, moment-preserving, resample-move or auxiliary-filter controls match the frontier, or catalogue/planner overhead consumes any benefit. A gain only over ESS-only or deliberately independent marginals is insufficient."
+    },
+    {
+      "pillar": "Legal evidence and catalogue limits",
+      "prediction": "Any conditional benefit persists when the method sees only causal observation/action/consequence records and catalogue selection excludes the future realized event and target outcome.",
+      "kill_condition": "Protection requires a true cause, eligibility label, restored simulator branch, hindsight evidence, uncharged support archive, or hand-picked catalogue containing the held-out diagnostic event. Failure outside the declared family must be reported rather than generalized away."
+    },
+    {
+      "pillar": "Relation reuse beyond a finite calculation",
+      "prediction": "Only a later actually trained, frozen controller could establish that its own correction improves a different unexecuted goal under held-out relation instances and irrelevant-goal controls.",
+      "kill_condition": "The baseline has no observed failure, the effect is only within-catalogue particle arithmetic or extra supervised branches, or equal-data multi-goal/full-history controls explain it. A finite reference cannot satisfy this prediction."
+    }
+  ],
+  "limitations": [
+    "REFINE only: no candidate-specific failure, empirical result, training run, physical validation or accepted novel operation is supplied. Same-family proposal-blind reconstruction weakens the novelty case; the bounded prior audit is not an independent novelty certificate.",
+    "A robot's own-consequence likelihood and public goal readout remain substantial assumptions. CML's target-output interface [3] does not establish those channels, and hidden simulator state may not supply them at deployment.",
+    "Protection covers only the input population and declared one-feedback tests. Extinct prefix hypotheses, uncatalogued events/goals, misspecified channels and repeated future corrections are outside its exact algebraic scope.",
+    "Quantized grouping and rare-event normalization can introduce large errors. Reserving a representative does not guarantee calibration, effective sample size, exact posterior inference or better decisions.",
+    "Catalogue, planner, ancestry and workspace costs may dominate or violate the fixed budget. Existing same-feature resampling, auxiliary proposals, coresets or predictive states may implement or outperform the complete proposal [16][17][20][22][23]."
+  ]
+}

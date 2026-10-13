@@ -1,16 +1,16 @@
 {
   "schema": "awesome-icl.research-plan.v1",
   "title": {
-    "zh": "机器人恢复了任务，是否也学会了适应？",
-    "en": "Does recovering a robot task also teach adaptation?"
+    "zh": "从纠正经验到可复用关系：算法选题扩展",
+    "en": "Reusable relations from correction: expanding algorithm candidates"
   },
   "intro": {
-    "zh": "自己的任务流经验已有明确收益：73,728条新增冻结策略分支。算法候选聚焦任务作用与执行作用的分离；物理对照仍未验证，新颖性尚未建立。保留此前诊断论文与A3归档。",
-    "en": "Own-task experience shows a reuse benefit across73,728 new frozen-policy branches. The candidate separates task and execution effects; physical controls and novelty remain unestablished. Earlier diagnostic paper and A3 archive are retained."
+    "zh": "40个机制候选、完整评审和直接前作核查。优先修订3个操作，尚未找到足以接受的算法差异。",
+    "en": "40 mechanism candidates, full-pool review and direct-prior audits. Three operations merit refinement; no algorithmic difference is accepted."
   },
   "status": {
-    "zh": "REVISE · 自身经验流实测 · 15已有训练模型 · 新算法未建立 · 机器人回合0",
-    "en": "REVISE · own-history stream measured ·15 existing checkpoints · novelty unestablished ·0robot episodes"
+    "zh": "RETHINK · 同模型家族暂定评审 · 本轮新训练／机器人实验：0",
+    "en": "RETHINK · same-family provisional review · new training/robot experiments this cycle:0"
   },
   "metrics": [
     {

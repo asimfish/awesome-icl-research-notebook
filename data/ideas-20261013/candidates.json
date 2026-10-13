@@ -1,0 +1,878 @@
+{
+  "schema": "awesome-icl.ideas.v1",
+  "date": "2026-10-13",
+  "generated": 40,
+  "reviewed": 40,
+  "refinement_priorities": [
+    "C15",
+    "C21",
+    "C12"
+  ],
+  "pilot_ready": 0,
+  "new_training_runs": 0,
+  "robot_episodes": 0,
+  "status": "RETHINK",
+  "review_independence": "same-family provisional",
+  "native_runtime": "Adapted role orchestration; native gap/candidate parsers actually executed; no native LLMloop/vault/adapters",
+  "candidate_language": "Original method/annotation text is English; display titles and page labels are bilingual.",
+  "operation_clusters": [
+    {
+      "id": "uncertain_feedback",
+      "members": [
+        "C1",
+        "C2",
+        "C10",
+        "C12",
+        "C13",
+        "C14",
+        "C34"
+      ],
+      "operation": "Interpret or revise uncertain feedback likelihoods",
+      "aliases": "C10/C12 share retrospective evidence; C34 overlaps the earlier scope/Bayes direction."
+    },
+    {
+      "id": "joint_inference",
+      "members": [
+        "C3",
+        "C4",
+        "C15",
+        "C20"
+      ],
+      "operation": "Preserve joint explanations and allocate approximate inference",
+      "aliases": "Representation, planning, resampling and proposal learning are different operations; do not merge their costs."
+    },
+    {
+      "id": "predictive_interface",
+      "members": [
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C11",
+        "C35"
+      ],
+      "operation": "Learn state/test/memory interfaces",
+      "aliases": "C9/C11 share history-state refinement; C35 is future-test distillation; C6 is decision-test refinement."
+    },
+    {
+      "id": "dependence_constrained_reuse",
+      "members": [
+        "C5",
+        "C16",
+        "C22",
+        "C26",
+        "C31",
+        "C33"
+      ],
+      "operation": "Reuse records under dependence or collection-policy constraints",
+      "aliases": "C16/C31 share commuting-pair construction; C22 repeats local validity checks; C33 changes sampler histories."
+    },
+    {
+      "id": "incremental_model_repair",
+      "members": [
+        "C17",
+        "C18",
+        "C19",
+        "C32",
+        "C36"
+      ],
+      "operation": "Propagate corrected dynamics, guards or cached plans",
+      "aliases": "C17/C18/C32 update different downstream caches; C19 is contextual identification; C36 adds goal automata."
+    },
+    {
+      "id": "composition_interactions",
+      "members": [
+        "C21",
+        "C23"
+      ],
+      "operation": "Retain conjunction or order interactions",
+      "aliases": "C21 adapts the query basis; C23 caches conditional order restrictions."
+    },
+    {
+      "id": "consequence_teaching",
+      "members": [
+        "C24",
+        "C25",
+        "C27",
+        "C38",
+        "C39"
+      ],
+      "operation": "Teach effect/decision targets or verifier weights",
+      "aliases": "C24/C25/C38 alter consequence supervision; C27 relabels goals; C39 projects teacher information."
+    },
+    {
+      "id": "reachable_acquisition",
+      "members": [
+        "C28",
+        "C29",
+        "C30",
+        "C37",
+        "C40"
+      ],
+      "operation": "Acquire reachable evidence under state and preparation cost",
+      "aliases": "C28-C30 are caches/search restrictions; C37/C40 mostly restate existing objectives."
+    }
+  ],
+  "cards": [
+    {
+      "id": "C1",
+      "title": {
+        "zh": "区分任务关系失败与执行失误",
+        "en": "Marginalize the cause before updating the relation"
+      },
+      "initial_rank": 34,
+      "status": "rethink_as_written",
+      "cluster": "uncertain_feedback",
+      "hypothesis": "Marginalizing calibrated execution and observation causes prevents a failed command from producing a false reusable prerequisite more often than treating failure as a logical applicability label.",
+      "method_steps": [
+        "Maintain a small joint table of relation hypotheses and execution/sensing causes using frozen observable features.",
+        "Compute each recorded command consequence likelihood under every joint explanation and integrate the nuisance causes.",
+        "Use the updated relation distribution for the first query on an unexecuted goal."
+      ],
+      "closest_prior": "Digest prior: OHCAM [5] and CML [3]. Latent-cause Bayesian filtering and probabilistic robot fault isolation are established. The candidate must add a defensible observation-to-likelihood interface; a posterior formula alone is insufficient. Search metadata signals Probabilistic Failure Isolation for Cognitive Robots and learned DBN execution models; bodies unread.",
+      "falsification": "Construct two legal-feedback histories with the same failed-command marker but different visible execution evidence. Replay both into equal-information OHCAM-style updates, an exact latent-cause Bayesian reference, and the candidate; failure to separate their new-goal decisions falsifies attribution. Matching the Bayesian reference establishes an application, not a new algorithm.",
+      "evidence": "Proposal only. No candidate-specific learned-policy or robot experiment. No established new algorithm."
+    },
+    {
+      "id": "C2",
+      "title": {
+        "zh": "区分暂时扰动与持久规则变化",
+        "en": "Separate a shared disturbance from a persistent rule change"
+      },
+      "initial_rank": 19,
+      "status": "rethink_as_written",
+      "cluster": "uncertain_feedback",
+      "hypothesis": "A shared transient-failure variable plus relation-regime hypotheses avoids false persistent relation changes after correlated disturbances while detecting actual lasting changes.",
+      "method_steps": [
+        "Extend a finite run-length filter with one shared transient execution/sensing cause across recent commands.",
+        "Update growth, reset, and disturbance explanations from their predicted observable consequences.",
+        "Predict the new-goal relation using surviving regimes and discard no old evidence through a hard change declaration."
+      ],
+      "closest_prior": "BOCPD [12] supplies known growth/reset inference, not a new algorithm. Robust and multivariate BOCPD are occupied according to primary-source metadata. Remaining delta is the coupled physical cause interface; it can be observationally unidentifiable.",
+      "falsification": "Replay a matched command stream with either a transient common disturbance or a persistent prerequisite change. Compare exact joint inference, independent robust BOCPD, global BOCPD, and the candidate at the same memory limit; if the shared branch changes no held-out relation decision or only exploits supplied regime labels, its proposed benefit fails.",
+      "evidence": "Proposal only. No candidate-specific learned-policy or robot experiment. No established new algorithm."
+    },
+    {
+      "id": "C3",
+      "title": {
+        "zh": "联合保存纠正约束",
+        "en": "Compile ambiguous corrections into joint constraints"
+      },
+      "initial_rank": 20,
+      "status": "rethink_as_written",
+      "cluster": "joint_inference",
+      "hypothesis": "A joint evidence-constraint store answers composed relation queries more faithfully than marginal scores under shared ambiguous corrections at equal memory.",
+      "method_steps": [
+        "Enumerate a bounded relation vocabulary and the alternative physical explanations allowed by each real correction.",
+        "Compile their soft consistency constraints incrementally into a small weighted logical representation.",
+        "Query conjunctions by summing or checking complete consistent models, retaining the original correction once."
+      ],
+      "closest_prior": "OHCAM [5] motivates the factorization boundary. Exact logical version spaces of action models are old: the new search hit Learning Partially Observable Action Models: Efficient Algorithms explicitly signals propositional representations of possible models. Weighted MAX-SAT action-model learning is also prior. No hard novelty claim.",
+      "falsification": "Use a finite ambiguous correction that allows either of two explanations but forbids their conjunction. Compare identical evidence in a logical version-space learner, exact joint Bayes, factorized scores, and the candidate; if the candidate admits the forbidden plan or offers no cost advantage over the existing compiler, the claimed operation has no additional contribution.",
+      "evidence": "Proposal only. No candidate-specific learned-policy or robot experiment. No established new algorithm."
+    },
+    {
+      "id": "C4",
+      "title": {
+        "zh": "整条计划使用一致的关系解释",
+        "en": "Score a whole plan within each surviving explanation"
+      },
+      "initial_rank": 35,
+      "status": "rethink_as_written",
+      "cluster": "joint_inference",
+      "hypothesis": "Keeping one relation-model identity across all steps avoids falsely feasible composed plans produced by independently optimistic relation sampling.",
+      "method_steps": [
+        "Maintain weighted complete relation explanations from legal correction records.",
+        "Roll out each candidate command sequence within each explanation, keeping that identity fixed for the whole sequence.",
+        "Aggregate complete-sequence predicted outcomes and execute the chosen first command."
+      ],
+      "closest_prior": "CML [3] already preserves joint ancestry; DICP [2] already searches futures; MTSGI [10] is the named graph-policy mixture comparison. This candidate is likely ordinary Bayesian/robust planning. Primary search signals direct uncertain-action-model and weighted-model-count planning priors.",
+      "falsification": "Use the same two correlated models, proposals, likelihoods, and planning budget for independent-step sampling, persistent-identity planning, and an exact uncertain-model planner. If the candidate combines incompatible explanations it fails; if existing uncertain-model planning reproduces the operation and costs, retain it as an established control.",
+      "evidence": "Proposal only. No candidate-specific learned-policy or robot experiment. No established new algorithm."
+    },
+    {
+      "id": "C5",
+      "title": {
+        "zh": "用有效因果替换选择关系特征",
+        "en": "Discover relation variables through valid local substitutions"
+      },
+      "initial_rank": 16,
+      "status": "rethink_as_written",
+      "cluster": "dependence_constrained_reuse",
+      "hypothesis": "Selecting observable interface distinctions through valid local component substitutions reduces appearance confounds without supplying logical predicate labels.",
+      "method_steps": [
+        "Form observable object-feature candidates from a frozen encoder and retain the legal source transition records.",
+        "Estimate and independently validate local dependency masks before making component substitutions.",
+        "Select discrete feature distinctions whose command-consequence predictions remain reliable under valid substitutions; fit relation rules from actual records."
+      ],
+      "closest_prior": "CoDA [11] already owns local causal recombination. OHCAM [5] starts with supplied predicates. Primary search signals RoCoDA, CAIAC, and Act-to-Ground; causal substitution and weak grounding are crowded mechanisms, with body-level overlap unresolved.",
+      "falsification": "Give same-data CoDA, causal invariant feature selection, no augmentation, and the candidate the same object decomposition and mask evidence. Include a contact-change case where a substitution must be refused. A benefit that disappears under ordinary CoDA plus feature selection, or that counts synthetic records as new physical evidence, does not support the proposed delta.",
+      "evidence": "Proposal only. No candidate-specific learned-policy or robot experiment. No established new algorithm."
+    },
+    {
+      "id": "C6",
+      "title": {
+        "zh": "按规划分歧精化任务接口",
+        "en": "Split the interface when its decision operators disagree"
+      },
+      "initial_rank": 11,
+      "status": "rethink_as_written",
+      "cluster": "predictive_interface",
+      "hypothesis": "Refining interface partitions on observable planning-test disagreement preserves needed applicability distinctions with less irrelevant reconstruction than a full observation model.",
+      "method_steps": [
+        "Start with a finite partition of observable history features and a declared set of planning tests.",
+        "Estimate each class's command-conditioned test predictions from real consequences.",
+        "Split a class only when an accessible feature/history distinction explains reproducible test disagreement, then rerun relation inference."
+      ],
+      "closest_prior": "VE [13] is an explicit known control. PACTS [6] uses supplied predicate channels. Bisimulation and counterexample-guided abstraction refinement are established; primary hits reinforce this. The proposed contribution would need a justified consequence-derived test basis, beyond merely renaming state splitting.",
+      "falsification": "Compare equal-memory bisimulation/abstraction refinement, value-equivalent modeling, and the candidate with the same test basis and histories. Hold out a goal requiring a distinction absent from the initial basis. If splitting works only after receiving that goal's outcome or is reproduced by expanding the baseline basis, the claimed extra mechanism fails.",
+      "evidence": "Proposal only. No candidate-specific learned-policy or robot experiment. No established new algorithm."
+    },
+    {
+      "id": "C7",
+      "title": {
+        "zh": "从后续占用发现关系坐标",
+        "en": "Turn successor-occupancy contrasts into interface coordinates"
+      },
+      "initial_rank": 22,
+      "status": "rethink_as_written",
+      "cluster": "predictive_interface",
+      "hypothesis": "Future consequence-occupancy contrasts reveal interface distinctions missed by one-step appearance prediction, provided policy and observable feature coverage are matched.",
+      "method_steps": [
+        "Estimate small successor-occupancy tables under each frozen skill from identical own-action histories and frozen observable features.",
+        "Extract a bounded basis of reproducible occupancy contrasts between currently merged histories.",
+        "Use the contrast coordinates as candidate relation inputs and revise occupancy statistics after actual corrections."
+      ],
+      "closest_prior": "SF [14] is both source and direct prior; ordinary TD/SR updates are explicitly not claimed new. PSGI [9] learns attributes with logical channels. New primary signals connect successor features to learned abstractions and robot compositional instruction following, making this a particularly contested candidate.",
+      "falsification": "Compare same-feature successor representation learning, one-step feature selection, and the candidate with matched skills and histories. Include two histories with identical current images but different observed future resource use. If ordinary successor representation learning yields the same split or the effect comes from unmatched policy visits, the delta is unsupported.",
+      "evidence": "Proposal only. No candidate-specific learned-policy or robot experiment. No established new algorithm."
+    },
+    {
+      "id": "C8",
+      "title": {
+        "zh": "以可执行诊断测试定义关系变量",
+        "en": "Ground a variable by the test that distinguishes histories"
+      },
+      "initial_rank": 23,
+      "status": "rethink_as_written",
+      "cluster": "predictive_interface",
+      "hypothesis": "Selecting reachable distinguishing tests can identify useful predictive relation variables from consequences when no logical labels exist.",
+      "method_steps": [
+        "Maintain finite competing interface hypotheses with explicit legal observation/outcome likelihoods.",
+        "Choose a short reachable command test using contrastive likelihood separation and its total preparation/reset cost.",
+        "Use its actual observed outcome to ground a predictive variable and update its relation interpretation."
+      ],
+      "closest_prior": "DAD [15] already amortizes likelihood-based sequential design. OHCAM [5] already probes model disagreement. Predictive-state representations and active grounding are prior families; new search hits show expert-based embodied relational grounding and PSR tests. Removing experts alone is an interface constraint, not novelty.",
+      "falsification": "Give predictive-state test learning, cost-aware DAD-style design, OHCAM-style rule probing, and the candidate the same legal tests and likelihoods. If the candidate's variable requires an expert predicate answer or is reproduced by ordinary predictive-state test selection at the same cost, its proposed distinction fails.",
+      "evidence": "Proposal only. No candidate-specific learned-policy or robot experiment. No established new algorithm."
+    },
+    {
+      "id": "C9",
+      "title": {
+        "zh": "用已观测反例精化历史状态",
+        "en": "Refine a history-state machine from consequence counterexamples"
+      },
+      "initial_rank": 37,
+      "status": "rethink_as_written",
+      "cluster": "predictive_interface",
+      "hypothesis": "Consequence-counterexample splitting can retain compact history distinctions needed by reusable applicability/effects without supplied latent-state labels.",
+      "method_steps": [
+        "Track a finite state machine whose transitions read legal action and consequence symbols from frozen observable features.",
+        "Find pairs of stored histories mapped to one state but followed by incompatible observed command consequences.",
+        "Refine the discrete history state using a supported distinguishing suffix and update affected relation tables."
+      ],
+      "closest_prior": "RAD [1] owns learned persistent history; VE [13] constrains decision-relevant distinctions; OpenWAM [8] supplies the local/history omission boundary. The core split is already active automata learning. The IJCAI primary abstract for Markov Abstractions for PAC RL explicitly includes preserving non-Markov dynamics, so changing rewards to prerequisites does not protect novelty.",
+      "falsification": "Compare equal-record active automata/Markov-abstraction learning, finite recurrent memory, and the candidate without free reset or membership-query oracles. If the candidate cannot resolve a consumed-resource alias from actual records, it fails; if standard automata refinement resolves it with equal resources, retain it as established transfer.",
+      "evidence": "Proposal only. No candidate-specific learned-policy or robot experiment. No established new algorithm."
+    },
+    {
+      "id": "C10",
+      "title": {
+        "zh": "用后续证据修正过去失败的含义",
+        "en": "Revise past failure attribution with newly arrived own evidence"
+      },
+      "initial_rank": 24,
+      "status": "rethink_as_written",
+      "cluster": "uncertain_feedback",
+      "hypothesis": "Replacing an earlier ambiguous contribution after genuinely new own evidence improves later relation queries without duplicate counts or target-feedback leakage.",
+      "method_steps": [
+        "Retain bounded ancestry and event identifiers for uncertain recent failure causes and their relation-likelihood contributions.",
+        "Use newly observed ordinary consequences to reweight the past-cause explanations within the retained lag.",
+        "Replace affected contributions and replay to the present before answering an unexecuted goal, leaving each event counted once."
+      ],
+      "closest_prior": "CML [3] supports retained ancestry but its digested deployment algorithm is filtering, not this proposed smoother. BOCPD [12] supplies temporal alternatives. Smoothing and retrospective failure diagnosis are old. Logical Circuit Filtering and DeFault/Goalie primary search signals explicitly include past questions/failure diagnosis; no new source ID is assigned.",
+      "falsification": "Use a failed command followed by a legally observed delayed consequence that disambiguates sensing versus prerequisite failure. Compare causal filtering, exact fixed-lag smoothing, full-history replay, and the candidate with equal evidence. If it improves only by using queried-goal outcomes or differs from the reference because it counted an event twice, the claimed benefit fails.",
+      "evidence": "Proposal only. No candidate-specific learned-policy or robot experiment. No established new algorithm."
+    },
+    {
+      "id": "C11",
+      "title": {
+        "zh": "保持更新封闭的历史分区",
+        "en": "Counterexample-guided memory state splitting"
+      },
+      "initial_rank": 4,
+      "status": "rethink_as_written",
+      "cluster": "predictive_interface",
+      "hypothesis": "A memory partition closed under recorded evidence transitions preserves later correction decisions better than equal-byte action-based compression.",
+      "method_steps": [
+        "Initialize history cells from current predictive/decision equivalence, without latent rule labels.",
+        "Use recorded legal continuations as counterexamples; split cells and propagate successor distinctions backward.",
+        "Compile a bounded transition table; merge only empirically update-equivalent cells and mark unobserved edges uncertain."
+      ],
+      "closest_prior": "RAD and value equivalence supply the local sources. Predictive state/history abstractions and CEGAR already cover successor-preserving refinements. Search signals below make any broad claim of new update-sufficient memory untenable; only the bounded continuation construction/cost is contestable.",
+      "falsification": "Use pairs with identical current decisions and different recorded next-feedback implications. Hold training/data/bytes fixed. If equal-budget predictive-state or multi-goal RAD matches future decisions, or the table needs more bytes than full-history alternatives, the claimed gain fails.",
+      "evidence": "Proposal only. No candidate-specific learned-policy or robot experiment. No established new algorithm."
+    },
+    {
+      "id": "C12",
+      "title": {
+        "zh": "延迟提交含义不明的证据",
+        "en": "Provisional evidence escrow with bounded replay"
+      },
+      "initial_rank": 3,
+      "status": "revise",
+      "cluster": "uncertain_feedback",
+      "hypothesis": "A bounded pending-event buffer reduces persistent wrong updates from initially ambiguous feedback at equal total memory.",
+      "method_steps": [
+        "Reserve committed checkpoint state and a fixed-byte pending evidence queue.",
+        "Maintain likelihood-weighted interpretations; replay pending events when later legal evidence revises their weights.",
+        "Commit events under an explicit stability rule, recording eviction and replay costs."
+      ],
+      "closest_prior": "BOCPD alternatives and RAD overwrite motivate escrow. Delayed-observation filtering and retrospective measurement assimilation are close priors; this is not novel belief revision. Bounded searches found a delay-filtering signal, but no exact confidence-based commit mechanism was established from a body.",
+      "falsification": "Reveal a later legal observation that separates slip from prerequisite change. Compare immediate compression, fixed-window replay and exact full-history filtering with identical evidence. Failure to beat fixed-window replay at equal bytes/cost removes the proposed delta.",
+      "evidence": "Proposal only. No candidate-specific learned-policy or robot experiment. No established new algorithm."
+    },
+    {
+      "id": "C13",
+      "title": {
+        "zh": "显式建模反馈缺失过程",
+        "en": "Joint filtering of outcomes and their observation process"
+      },
+      "initial_rank": 27,
+      "status": "rethink_as_written",
+      "cluster": "uncertain_feedback",
+      "hypothesis": "Explicit outcome-dependent observation likelihoods avoid systematically wrong evidence updates when student feedback is informatively censored.",
+      "method_steps": [
+        "Fit the joint consequence/observation-indicator model with observed-data marginal likelihood.",
+        "Condition on observed outcomes or integrate missing outcomes when computing each relation-hypothesis likelihood.",
+        "Update causal belief state and plan from its predictions with frozen model parameters."
+      ],
+      "closest_prior": "CML intermittent targets and DICP consequence modeling are direct source mechanisms. MNAR selection models and observation-aware POMDP filtering already occupy the operation. Missingness-aware OPE is a targeted novelty warning, not proof of the same robot updater.",
+      "falsification": "Replay identical commands under independent and outcome-dependent censoring. Compare exact joint Bayes, ordinary missing-at-random filtering and DICP given identical masks. If correct-interface Bayes matches the candidate, claim only an implementation/interface application, not a new inferential algorithm.",
+      "evidence": "Proposal only. No candidate-specific learned-policy or robot experiment. No established new algorithm."
+    },
+    {
+      "id": "C14",
+      "title": {
+        "zh": "保留观测通道不确定性",
+        "en": "Likelihood-set updating when censoring is unidentified"
+      },
+      "initial_rank": 25,
+      "status": "rethink_as_written",
+      "cluster": "uncertain_feedback",
+      "hypothesis": "A joint likelihood set supports more reliable correction transfer than a falsely identified point channel at tolerable decision conservatism.",
+      "method_steps": [
+        "Construct bounded channel families from legal calibration evidence and declared censoring/noise assumptions.",
+        "Apply every surviving channel to joint relation hypotheses, retaining shared nuisance dependence.",
+        "Choose minimax-cost goal actions over the belief set; disclose pruning approximations."
+      ],
+      "closest_prior": "CML and OHCAM retain hypotheses, but set-valued likelihood robustness is established separately. Robust Bayesian RL and multi-set policy learning are strong signals against generic novelty; retaining shared observation-channel uncertainty is the proposed narrow representation choice.",
+      "falsification": "Use a finite unidentified-channel case and an exact credal reference. Measure mistaken transfer and abstention/cost against point Bayes and robust POMDP planning. Equal-set robust Bayes matching the result means the mechanism is an application; conservatism cancelling all useful transfer falsifies practical benefit.",
+      "evidence": "Proposal only. No candidate-specific learned-policy or robot experiment. No established new algorithm."
+    },
+    {
+      "id": "C15",
+      "title": {
+        "zh": "按未来反馈响应分配粒子",
+        "en": "Particle preservation by update-response diversity"
+      },
+      "initial_rank": 1,
+      "status": "revise",
+      "cluster": "joint_inference",
+      "hypothesis": "At fixed particle/memory budget, preserving distinct predicted update responses avoids damaging ancestry collapse better than ESS-only resampling.",
+      "method_steps": [
+        "Fingerprint particles by predicted responses to a bounded modeled legal-feedback catalogue.",
+        "Stratify resampling over response clusters, keeping correct cluster-mass weights.",
+        "Run posterior-invariant suffix move kernels when distinct response capacity is lost; count all catalogue/replay work."
+      ],
+      "closest_prior": "CML already preserves ancestry. Resample-move SMC, adaptive population sizes and sequential coresets directly cover rejuvenation/memory tradeoffs. Only scheduling by update-response rather than current weight/action diversity remains contestable; suffix moves do not revive discarded prefixes.",
+      "falsification": "Use finite hypotheses that initially agree but diverge after a later visible correction. Compare equal-likelihood-budget ESS resample-move, diverse SMC and exact Bayes. If fingerprint overhead dominates or ordinary rejuvenation retains the same hypotheses, the allocation criterion adds no value.",
+      "evidence": "Proposal only. No candidate-specific learned-policy or robot experiment. No established new algorithm."
+    },
+    {
+      "id": "C16",
+      "title": {
+        "zh": "重排有独立性支持的历史",
+        "en": "Dependency-valid ordering of correction histories"
+      },
+      "initial_rank": 18,
+      "status": "rethink_as_written",
+      "cluster": "dependence_constrained_reuse",
+      "hypothesis": "Valid independent-evidence reorderings improve updater robustness to source/student history ordering without extra labels or interactions.",
+      "method_steps": [
+        "Infer a conservative dependency DAG including state, resource and feedback-selection causes.",
+        "Accept only locally valid, record-supported topological reorderings of evidence blocks.",
+        "Train the unchanged updater with its existing targets at matched update counts; deploy on actual chronology."
+      ],
+      "closest_prior": "CoDA already creates causally valid augmented transitions. Reordering mechanism evidence is at most a narrower history operation; extending the state with history may make it ordinary CoDA. New counterfactual state-editing signals further weaken broad causal-augmentation claims.",
+      "falsification": "First check every accepted reordering against an exact finite likelihood/transition reference. Compare same-compute ordinary replay, unrestricted shuffle and same-information CoDA. Invalid swaps falsify correctness; CoDA or replay matching robustness removes the algorithmic delta.",
+      "evidence": "Proposal only. No candidate-specific learned-policy or robot experiment. No established new algorithm."
+    },
+    {
+      "id": "C17",
+      "title": {
+        "zh": "修复变化动力学的后继预测",
+        "en": "Low-rank successor resolvent correction"
+      },
+      "initial_rank": 21,
+      "status": "rethink_as_written",
+      "cluster": "incremental_model_repair",
+      "hypothesis": "Inferred low-rank transition patches permit exact fixed-policy occupancy repair at lower cost than rebuilding all successor predictions.",
+      "method_steps": [
+        "Cache each frozen policy's successor resolvent and shared feature map.",
+        "Infer DeltaP=UV^T from the same visible transitions and update the resolvent with Woodbury.",
+        "Refresh all goal values/GPI using the repaired occupancy, with full rebuild fallback for invalid rank or conditioning."
+      ],
+      "closest_prior": "SF Bellman equations and low-rank inverse updates already supply the mathematical core. Search found changing-dynamics SF priors but did not establish the exact Woodbury variant; this absence proves nothing. Inferential patch scope, not matrix identity, would need substantive evidence.",
+      "falsification": "Compare patched matrices against full inversion after a finite local transition correction, then count end-to-end costs versus SF-TD and prioritized sweeping. Numerical disagreement, globally changed dynamics or no cost advantage defeats the mechanism. Reward-only changes must be a separate control.",
+      "evidence": "Proposal only. No candidate-specific learned-policy or robot experiment. No established new algorithm."
+    },
+    {
+      "id": "C18",
+      "title": {
+        "zh": "向前置接口传播技能修正",
+        "en": "Backward closure of corrected handoff contracts"
+      },
+      "initial_rank": 12,
+      "status": "rethink_as_written",
+      "cluster": "incremental_model_repair",
+      "hypothesis": "Backward preimage propagation repairs cached skill compositions after a relation correction more cheaply than recomputing every plan.",
+      "method_steps": [
+        "Keep the same learned relation posterior and attach entry/handoff guards to cached compositions.",
+        "Mark edges depending on a revised requirement dirty and propagate transition preimages backward.",
+        "Share guard formulas and iterate to closure, explicitly handling uncertain effects and unrelated plans."
+      ],
+      "closest_prior": "APPL interfaces, PACTS operators and OHCAM refinement are direct sources. Weakest preconditions, assume-guarantee repair and robotic symbolic repair occupy the basic operation. Abstract signals show broad persistent world/plan repair is already active; cached uncertain preimages remain a narrow, contested detail.",
+      "falsification": "Inject only a learned requirement change from shared visible evidence, holding the relation learner fixed. Compare full replanning and incremental planning/truth maintenance for guard correctness and total work. If those methods implement the same closure/cost, retain as known-method application.",
+      "evidence": "Proposal only. No candidate-specific learned-policy or robot experiment. No established new algorithm."
+    },
+    {
+      "id": "C19",
+      "title": {
+        "zh": "从自身后果推断低秩动力学修补",
+        "en": "Contextual low-rank dynamics residual inference"
+      },
+      "initial_rank": 28,
+      "status": "rethink_as_written",
+      "cluster": "incremental_model_repair",
+      "hypothesis": "A small shared dynamics-residual latent inferred from own consequences can improve other-goal planning at less memory/update cost than full history.",
+      "method_steps": [
+        "Learn frozen base dynamics and a low-rank residual basis on legal training histories.",
+        "Maintain an external posterior over context coefficients with analytic residual observation updates.",
+        "Condition all goal planning on posterior residual predictions without modifying neural parameters."
+      ],
+      "closest_prior": "DICP/OpenWAM predict dynamics and CML infers task latents. Meta-learned dynamics adaptation and recursive Bayesian controller adaptation are close priors. Frozen neural weights do not create novelty, and treating inferred coefficients as a newly trained neural head would violate the deployment constraint.",
+      "falsification": "Separate smooth residual drift from discrete prerequisite/destructive-effect changes. Compare identical-feature Bayesian system identification, full-context DICP and exact latent Bayes. If ordinary identification has identical predictions/cost, this is an application; inability to cover task relations limits central relevance.",
+      "evidence": "Proposal only. No candidate-specific learned-policy or robot experiment. No established new algorithm."
+    },
+    {
+      "id": "C20",
+      "title": {
+        "zh": "按实际反馈训练推断提议",
+        "en": "Causal proposal training for the actual feedback interface"
+      },
+      "initial_rank": 26,
+      "status": "rethink_as_written",
+      "cluster": "joint_inference",
+      "hypothesis": "Causal feedback-matched proposal training improves finite-budget inference compared with bootstrap deployment proposals under student censoring.",
+      "method_steps": [
+        "Estimate modeled causal-prefix posteriors with exact finite inference or an independent controlled filter.",
+        "Train a proposal to cover those posteriors using only observed prefix inputs and the deployment feedback schedule.",
+        "Deploy the frozen proposal with target/proposal importance ratios, retaining the original non-Markovian gate."
+      ],
+      "closest_prior": "CML's training-guided versus deployment-bootstrap interface motivates the question. Learned SMC inference networks and inclusive-KL SMC-Wake directly cover the core training operation. Feedback matching alone may be on-policy dataset engineering; no broad learned-updater novelty is claimed.",
+      "falsification": "Match prefix histories, posterior model and total likelihood/proposal cost. Compare bootstrap CML and ordinary causal learned proposals. If existing proposal learning matches calibration/decision accuracy, no algorithmic novelty remains; if gains require future targets, the proposed causal mechanism fails.",
+      "evidence": "Proposal only. No candidate-specific learned-policy or robot experiment. No established new algorithm."
+    },
+    {
+      "id": "C21",
+      "title": {
+        "zh": "按需增加组合目标查询",
+        "en": "Complete the conjunction basis with an observed counterexample"
+      },
+      "initial_rank": 2,
+      "status": "revise",
+      "cluster": "composition_interactions",
+      "hypothesis": "Counterexample-triggered product-query insertion preserves a correction-relevant conjunction with less memory than enumerating all conjunctions.",
+      "method_steps": [
+        "Keep correction-consistent relation models and a bounded Bellman-query cache.",
+        "Find a model pair agreeing on retained queries but disagreeing on the requested conjunction.",
+        "Insert that product query and replay only its supporting own receipts; retain disagreement if evidence cannot decide."
+      ],
+      "closest_prior": "VE owns query-relative equivalence and expanding function sets; CML owns joint alternatives. CEGAR is a strong proximity signal. Generic Bayes and decision-relative compression are established. No novelty claimed from their combination.",
+      "falsification": "Proposed only: on exact finite destructive-effect cases, match receipts, query count, memory and inference budget against adaptive CEGAR-style abstraction, equal-memory joint inference and multi-goal VE. Falsified if the insertion rule gives no improvement in prefeedback conjunction decisions or its pair search matches full-planner cost.",
+      "evidence": "Proposal only. No candidate-specific learned-policy or robot experiment. No established new algorithm."
+    },
+    {
+      "id": "C22",
+      "title": {
+        "zh": "在新交互处停止经验拼接",
+        "en": "Splice only up to the next interaction frontier"
+      },
+      "initial_rank": 13,
+      "status": "rethink_as_written",
+      "cluster": "dependence_constrained_reuse",
+      "hypothesis": "Truncating composed receipt fragments at their first dependency-region change reduces unsupported conjunction predictions while reusing valid independent prefixes.",
+      "method_steps": [
+        "Index real receipts with local validity regions and coupled resource/arm assignments.",
+        "Join only compatible components and check every modified step's local region.",
+        "Stop at the first new interaction and keep its joint transition unresolved until actual feedback supports continuation."
+      ],
+      "closest_prior": "CoDA already recombines local causal components; MoCoDA is a further primary abstract signal. OpenWAM already supplies counterfactual dynamics records. This is not a new causal augmentation claim and synthesized fragments are not real experiences.",
+      "falsification": "Proposed only: use exact small dependency-switch cases with identical masks and transition records for stepwise CoDA, full dynamics planning and frontier splicing. Falsified if it either certifies an invalid prefix or saves no representation/search work at the same joint-decision error.",
+      "evidence": "Proposal only. No candidate-specific learned-policy or robot experiment. No established new algorithm."
+    },
+    {
+      "id": "C23",
+      "title": {
+        "zh": "保存已观测的动作顺序差异",
+        "en": "Cache observed failures of action-order exchange"
+      },
+      "initial_rank": 8,
+      "status": "rethink_as_written",
+      "cluster": "composition_interactions",
+      "hypothesis": "A sparse conditional cache of observed order defects can preserve destructive interactions more cheaply than full operator reconstruction.",
+      "method_steps": [
+        "Match legal two-skill histories by visible entry state and action-relevant history.",
+        "Compare supported opposite-order joint postconditions; record residual and uncertainty with receipt pointers.",
+        "Preserve implicated ordering when compressing a new conjunction, keeping alternatives when support is insufficient."
+      ],
+      "closest_prior": "Order-sensitive planning, conditional effects, action-model learning and causal control are priors. Some Orders Are Important and Conditional-SAM are primary proximity signals. Neither title/abstract signal is used as new mechanistic inspiration.",
+      "falsification": "Proposed only: compare with same-data OHCAM/conditional operators, partial-order planning and full symbolic planning under matched storage. Falsified if pair defects add no prefeedback conjunction accuracy or require the same complete operator state. Entry-state mismatches must be reported, not labeled order effects.",
+      "evidence": "Proposal only. No candidate-specific learned-policy or robot experiment. No established new algorithm."
+    },
+    {
+      "id": "C24",
+      "title": {
+        "zh": "用效果区别监督验证器",
+        "en": "Teach equivalence classes of observed effects"
+      },
+      "initial_rank": 17,
+      "status": "rethink_as_written",
+      "cluster": "consequence_teaching",
+      "hypothesis": "Effect-defined contrastive pairs teach a verifier reusable consequence distinctions that feature-distance weighting may miss.",
+      "method_steps": [
+        "Project real own transitions onto fixed grounded relation queries.",
+        "Construct same-effect and different-effect pairs with context matching; require valid local masks for augmentation.",
+        "Use a small predeployment readout or nonparametric pair cache, then freeze weights and update observed cache support."
+      ],
+      "closest_prior": "Contrastive learning, VE and CoDA are existing mechanisms. CAIAC and HAVE are close primary search signals, with no body read or borrowed mechanism. The claim cannot be generic causal verifier learning.",
+      "falsification": "Proposed only: keep transitions, grounding, frozen action features, pair count and candidate sets equal. Compare uniform DiVeR, ordinary contrastive feature teaching and direct effect prediction. Falsified if pair construction improves only current candidate ranking or fails to improve an unexecuted composition before feedback.",
+      "evidence": "Proposal only. No candidate-specific learned-policy or robot experiment. No established new algorithm."
+    },
+    {
+      "id": "C25",
+      "title": {
+        "zh": "监督首次可观测的解释分歧",
+        "en": "Teach the first observable distinguishing consequence"
+      },
+      "initial_rank": 9,
+      "status": "rethink_as_written",
+      "cluster": "consequence_teaching",
+      "hypothesis": "Supervision on the first observed hypothesis-separating consequence preserves relation evidence despite later recovery.",
+      "method_steps": [
+        "Save each hypothesis prediction made before an actual observation.",
+        "Extract the earliest observed distinction and use set-valued targets when multiple explanations remain.",
+        "Teach a predeployment witness readout or cache, then replay factual witnesses into frozen-deployment relation records."
+      ],
+      "closest_prior": "OHCAM already refines on mismatches; process supervision and interactive reward verification are established. Search signals name process verifier and interactive robot reward work. Earlier erasure-credit results do not validate this distinct observable target construction.",
+      "falsification": "Proposed only: match own histories, observation access and label budget against dense transition prediction, full-prefix supervision and DiVeR terminal labels. Falsified if witness targets need hidden causes, fail to preserve ambiguity, or add no later-goal relation transfer beyond ordinary consequence teaching.",
+      "evidence": "Proposal only. No candidate-specific learned-policy or robot experiment. No established new algorithm."
+    },
+    {
+      "id": "C26",
+      "title": {
+        "zh": "约束恢复尾段不污染前缀判断",
+        "en": "Hold a relation target fixed across valid recovery-tail substitutions"
+      },
+      "initial_rank": 31,
+      "status": "rethink_as_written",
+      "cluster": "dependence_constrained_reuse",
+      "hypothesis": "Valid independent recovery-tail substitutions prevent a verifier from using a suffix shortcut to label the earlier relation effect.",
+      "method_steps": [
+        "Select a real prefix relation query and observed consequence.",
+        "Substitute only independent, supported tail components while preserving the prefix causes/effects.",
+        "Require pairwise equality of prefix-relation predictions; keep terminal outcomes distinct."
+      ],
+      "closest_prior": "CoDA owns cause/effect-preserving exchange, and causal invariance is prior. RoCoDA and Invariant Action Effect Model are primary signals only. The project already tried erasure-credit; this paired valid-transition target is not evidence that generic attribution is solved.",
+      "falsification": "Proposed only: compare with same-data CoDA, ordinary invariance teaching, prefix consequence supervision and terminal DiVeR. Falsified if certificates require privileged variables, paired targets are invalid under delayed effects, or transfer disappears when ordinary dense targets get equal supervision.",
+      "evidence": "Proposal only. No candidate-specific learned-policy or robot experiment. No established new algorithm."
+    },
+    {
+      "id": "C27",
+      "title": {
+        "zh": "对同一后果交换目标查询",
+        "en": "Swap the verification query on one realized transition"
+      },
+      "initial_rank": 36,
+      "status": "rethink_as_written",
+      "cluster": "consequence_teaching",
+      "hypothesis": "Paired clause-changing queries on the same realized transition teach a fixed verifier to respond to the reusable effect rather than source task identity.",
+      "method_steps": [
+        "Evaluate matched one-step consequence queries on a real own receipt.",
+        "Create pairs differing by one clause, including observed deletion/preservation distinctions.",
+        "Teach a query-conditioned readout before deployment; thereafter add only factual query answers to its external cache."
+      ],
+      "closest_prior": "HER and goal relabeling are direct priors. GS-HER is an especially close primary abstract signal and may entirely cover the operation; method review remains required. Retained without quality elimination and without a novelty claim.",
+      "falsification": "Proposed only: give predicate-level HER, multi-goal supervision and the query-swap method identical receipts, queries and labels. Falsified if no transfer advantage remains under an equal-query control, or labels silently assert success of an unexecuted full goal.",
+      "evidence": "Proposal only. No candidate-specific learned-policy or robot experiment. No established new algorithm."
+    },
+    {
+      "id": "C28",
+      "title": {
+        "zh": "共享诊断任务的准备前缀",
+        "en": "Share preparation prefixes across probe alternatives"
+      },
+      "initial_rank": 14,
+      "status": "rethink_as_written",
+      "cluster": "reachable_acquisition",
+      "hypothesis": "Prefix-factorized executable probe search reduces redundant preparation and likelihood evaluation at matched information objectives and real interaction cost.",
+      "method_steps": [
+        "Expand each diagnostic design into a legal preparation/probe command path.",
+        "Merge identical supported prefixes but preserve different relation predictions and terminal resources.",
+        "Cache shared likelihood terms; execute one edge and re-root on the real observed outcome."
+      ],
+      "closest_prior": "Cost-aware Bayes, causal/dual control, DREAM, DAD and prefix-sharing search are priors. Markov-design and RL experimental design are primary proximity signals; no new mechanism from them is assumed.",
+      "falsification": "Proposed only: compare same legal paths and costs with DAD-style designs, full-cost Bayes-adaptive planning and ordinary shared-prefix search. Falsified if benefits disappear with equal prefix caching, or savings exclude setup/restoration/failure commands. Small exact planning is the correctness reference.",
+      "evidence": "Proposal only. No candidate-specific learned-policy or robot experiment. No established new algorithm."
+    },
+    {
+      "id": "C29",
+      "title": {
+        "zh": "倒推可执行诊断路径",
+        "en": "Backward-compile a distinguishing state into a real probe"
+      },
+      "initial_rank": 15,
+      "status": "rethink_as_written",
+      "cluster": "reachable_acquisition",
+      "hypothesis": "A backward preparation/probe compiler can reuse reachable diagnostic paths while invalidating their unsupported prerequisites after corrections.",
+      "method_steps": [
+        "Identify an observable discriminating probe state using surviving relation hypotheses.",
+        "Regress its requirements to the actual current state under every surviving explanation.",
+        "Cache and execute a common supported preparation/probe path; invalidate it after contradictory own feedback."
+      ],
+      "closest_prior": "Planned exploration, backward regression and causal control are established. Online action-model learning and Markov-design are strong primary signals. Only a reusable correction-invalidated compiler operation is proposed, with a thin delta.",
+      "falsification": "Proposed only: exact finite reference plus same-budget OHCAM full-cost rollouts and Bayes-adaptive/planned exploration. Falsified if a standard information-goal planner matches its cache behavior/cost, or supposedly reachable paths rely on simulator resets or supplied eligibility.",
+      "evidence": "Proposal only. No candidate-specific learned-policy or robot experiment. No established new algorithm."
+    },
+    {
+      "id": "C30",
+      "title": {
+        "zh": "使用保持资源的诊断循环",
+        "en": "Acquire evidence through resource-preserving action cycles"
+      },
+      "initial_rank": 10,
+      "status": "rethink_as_written",
+      "cluster": "reachable_acquisition",
+      "hypothesis": "Short diagnostic cycles with common predicted entry/exit resource states can acquire reusable relation evidence without sacrificing the next task's observable requirements.",
+      "method_steps": [
+        "Enumerate supported legal cycles from the current resource/query state.",
+        "Keep cycles with the same predicted terminal resources under all surviving hypotheses and differing intermediate consequence likelihoods.",
+        "Execute stepwise, retain observed evidence and revoke the return certificate when the real final state differs."
+      ],
+      "closest_prior": "Reversibility-guided exploration, dual control, cost-aware Bayes and DAD are priors. Primary reversibility and active-MDP exploration signals require body review later. The candidate is the explicit hypothesis-discriminating cycle compiler, not safe exploration generally.",
+      "falsification": "Proposed only: compare with exact Bayes-adaptive planning, reversibility exploration and full-cost active design on reversible/irreversible mixed cases. Falsified if cycle restriction saves no real commands or if observed return masks hidden resource changes; no reset may be omitted from cost.",
+      "evidence": "Proposal only. No candidate-specific learned-policy or robot experiment. No established new algorithm."
+    },
+    {
+      "id": "C31",
+      "title": {
+        "zh": "学习哪些证据更新可以交换",
+        "en": "Learn when two evidence updates may commute"
+      },
+      "initial_rank": 6,
+      "status": "rethink_as_written",
+      "cluster": "dependence_constrained_reuse",
+      "hypothesis": "Train a memory updater to give the same decisions when genuinely independent correction records arrive in either order, while allowing order to matter when the physical mechanism changes. The useful operation is learning which events share a mechanism, rather than enforcing indiscriminate permutation invariance.",
+      "method_steps": [
+        "Construct same-world independent and regime-changing legal evidence sequences.",
+        "Apply both orders to the frozen updater; impose decision agreement only on supported commuting pairs.",
+        "Train matched-budget updater and test actual chronological own-policy histories."
+      ],
+      "closest_prior": "Known symmetry/meta-RL operations are direct neighbors; conditional event commutation still requires an exact delta.",
+      "falsification": "Same allowed observations and physical records; compare the named closest operation and exact finite reference with matched bytes, query count and training updates. Separate independent from regime-changing evidence; indiscriminate commutation must fail.",
+      "evidence": "Proposal only. No candidate-specific learned-policy or robot experiment. No established new algorithm."
+    },
+    {
+      "id": "C32",
+      "title": {
+        "zh": "只重开被纠正否定的假设",
+        "en": "Reopen only hypotheses contradicted by a correction"
+      },
+      "initial_rank": 7,
+      "status": "rethink_as_written",
+      "cluster": "incremental_model_repair",
+      "hypothesis": "Cache the reasoning that made a task relation usable, and learn which cached dependencies a new failure actually invalidates. Recompute the affected hypothesis region rather than rebuilding every task model or trusting all cached conclusions.",
+      "method_steps": [
+        "Attach observed support and relation dependencies to cached predictions.",
+        "Infer the invalidated region from a new consequence and reopen its hypotheses.",
+        "Recompute affected values with fallbacks; count missed invalidations and total work."
+      ],
+      "closest_prior": "Small backups and incremental model learning already localize work.",
+      "falsification": "Same allowed observations and physical records; compare the named closest operation and exact finite reference with matched bytes, query count and training updates. Include sparse and dense changes; charge detection, fallback and all rescoring.",
+      "evidence": "Proposal only. No candidate-specific learned-policy or robot experiment. No established new algorithm."
+    },
+    {
+      "id": "C33",
+      "title": {
+        "zh": "学习不依赖来源策略的更新",
+        "en": "Distill an update that remains useful after the policy changes"
+      },
+      "initial_rank": 29,
+      "status": "rethink_as_written",
+      "cluster": "dependence_constrained_reuse",
+      "hypothesis": "Teach the same experience updater under several learner policies so it cannot identify an observation's meaning from the source algorithm's characteristic action order. Test it with its own changed exploration and recovery behavior.",
+      "method_steps": [
+        "Collect information-equivalent histories from multiple behavior policies.",
+        "Train matched decision/update consistency across samplers.",
+        "Deploy the frozen updater on new own-policy histories with equal data controls."
+      ],
+      "closest_prior": "Diverse behavior histories and off-policy memory methods are existing controls.",
+      "falsification": "Same allowed observations and physical records; compare the named closest operation and exact finite reference with matched bytes, query count and training updates. Match information rather than just trajectory count; include diverse-history training without the added loss.",
+      "evidence": "Proposal only. No candidate-specific learned-policy or robot experiment. No established new algorithm."
+    },
+    {
+      "id": "C34",
+      "title": {
+        "zh": "随证据保留实际测量背景",
+        "en": "Carry measurement context with reusable evidence"
+      },
+      "initial_rank": 40,
+      "status": "rethink_as_written",
+      "cluster": "uncertain_feedback",
+      "hypothesis": "Store a correction as a likelihood-bearing observation with its measurement context, rather than as a concluded rule. Let another goal use that observation against its own hypotheses without pretending the same outcome occurred there.",
+      "method_steps": [
+        "Encode each event with its actual measurement context and source likelihood.",
+        "Evaluate that likelihood under the recipient joint hypotheses without copying a posterior.",
+        "Update from factual events counted once and plan for the unexecuted goal."
+      ],
+      "closest_prior": "Bayesian task inference and causal data fusion already justify source-conditioned evidence.",
+      "falsification": "Same allowed observations and physical records; compare the named closest operation and exact finite reference with matched bytes, query count and training updates. Use the actual source measurement likelihood in the recipient; source posterior copying is not a strong baseline.",
+      "evidence": "Proposal only. No candidate-specific learned-policy or robot experiment. No established new algorithm."
+    },
+    {
+      "id": "C35",
+      "title": {
+        "zh": "按下一次纠正的用途训练记忆",
+        "en": "Train memory on the consequences of the next correction"
+      },
+      "initial_rank": 5,
+      "status": "rethink_as_written",
+      "cluster": "predictive_interface",
+      "hypothesis": "When compressing a history, test not only its current decision but how the compressed memory reacts to several possible next observations. Preserve distinctions that are dormant now but matter for learning from the next real correction.",
+      "method_steps": [
+        "Compress a real prefix into bounded memory.",
+        "Apply the same supported next-event branches to full and compressed memories.",
+        "Distill their post-update decisions at equal query/data budget and deploy on actual feedback."
+      ],
+      "closest_prior": "Compressed predictive states are direct mechanism priors; no novelty from future-predictive memory alone.",
+      "falsification": "Same allowed observations and physical records; compare the named closest operation and exact finite reference with matched bytes, query count and training updates. Include equal-branch multistep predictive and PSR distillation; later decisions must improve without extra labels.",
+      "evidence": "Proposal only. No candidate-specific learned-policy or robot experiment. No established new algorithm."
+    },
+    {
+      "id": "C36",
+      "title": {
+        "zh": "根据变化后果更新目标程序",
+        "en": "Update goal programs through changed transition features"
+      },
+      "initial_rank": 33,
+      "status": "rethink_as_written",
+      "cluster": "incremental_model_repair",
+      "hypothesis": "Represent a goal's progress as a small executable automaton and update only the transition features affected by a correction. Compose existing skills toward new ordered or conjunctive goals without reducing the task to an additive reward weight.",
+      "method_steps": [
+        "Compile public goal programs into progress automata.",
+        "Infer changed skill transitions from own feedback and repair affected occupancy features.",
+        "Replan in the product model and compare ordinary full-product replanning."
+      ],
+      "closest_prior": "Temporal logic transfer and successor composition already address non-additive goal structure.",
+      "falsification": "Same allowed observations and physical records; compare the named closest operation and exact finite reference with matched bytes, query count and training updates. Use exact product-MDP and reward-machine baselines, not additive rewards alone.",
+      "evidence": "Proposal only. No candidate-specific learned-policy or robot experiment. No established new algorithm."
+    },
+    {
+      "id": "C37",
+      "title": {
+        "zh": "把被绕过的失败用于未来诊断",
+        "en": "Turn a bypassed failure into a reusable applicability experiment"
+      },
+      "initial_rank": 39,
+      "status": "rethink_as_written",
+      "cluster": "reachable_acquisition",
+      "hypothesis": "A successful workaround should not erase the unresolved failure. Select a short ordinary-command experiment only when resolving that failure would change preparation for another plausible goal.",
+      "method_steps": [
+        "Keep the unresolved failure explanations after a workaround.",
+        "Identify their disagreement on the declared possible goal distribution.",
+        "Choose and execute a reachable paid probe, accounting for preparation and restoration."
+      ],
+      "closest_prior": "Goal-driven design and active TMP are direct priors; earlier CON-03 overlaps.",
+      "falsification": "Same allowed observations and physical records; compare the named closest operation and exact finite reference with matched bytes, query count and training updates. Compare goal-driven experimental design and full-cost Bayes-adaptive exploration.",
+      "evidence": "Proposal only. No candidate-specific learned-policy or robot experiment. No established new algorithm."
+    },
+    {
+      "id": "C38",
+      "title": {
+        "zh": "按效果分歧分配验证监督",
+        "en": "Weight feedback by disagreement about effects, not action distance"
+      },
+      "initial_rank": 30,
+      "status": "rethink_as_written",
+      "cluster": "consequence_teaching",
+      "hypothesis": "Spend verifier-training effort where plausible commands disagree about task consequences. Do not assume that far-apart action representations mean a useful decision, or that similar motions are interchangeable near a task boundary.",
+      "method_steps": [
+        "Estimate consequence disagreement among the same candidate actions.",
+        "Weight critic labels by this disagreement at the same outcome/candidate budget.",
+        "Freeze the verifier and test immediate ranking and later-goal correction transfer."
+      ],
+      "closest_prior": "Consequence-conditioned and counterfactual VLA methods may overlap; need body-level comparison.",
+      "falsification": "Same allowed observations and physical records; compare the named closest operation and exact finite reference with matched bytes, query count and training updates. Match branched outcome labels and direct Q/consequence supervision.",
+      "evidence": "Proposal only. No candidate-specific learned-policy or robot experiment. No established new algorithm."
+    },
+    {
+      "id": "C39",
+      "title": {
+        "zh": "让教师只教学生证据支持的决策",
+        "en": "Teach the student the decision allowed by its own evidence"
+      },
+      "initial_rank": 32,
+      "status": "rethink_as_written",
+      "cluster": "consequence_teaching",
+      "hypothesis": "A teacher with hidden task knowledge should teach a distribution over decisions justified by the student's history, rather than a uniquely correct action from the teacher's private state. This prevents the student from being trained to infer a relation its observations never identified.",
+      "method_steps": [
+        "Infer the hypotheses compatible with the student history during offline teaching.",
+        "Aggregate teacher decisions over these hypotheses rather than private-state labels.",
+        "Train and deploy the frozen student with the same observation interface."
+      ],
+      "closest_prior": "Robust asymmetric and belief-aware distillation are very direct priors.",
+      "falsification": "Same allowed observations and physical records; compare the named closest operation and exact finite reference with matched bytes, query count and training updates. Compare observation-aware asymmetric and belief-aware distillation, not only privileged imitation.",
+      "evidence": "Proposal only. No candidate-specific learned-policy or robot experiment. No established new algorithm."
+    },
+    {
+      "id": "C40",
+      "title": {
+        "zh": "选择能准备下一目标的实验",
+        "en": "Learn experiments that leave the robot ready for the next goal"
+      },
+      "initial_rank": 38,
+      "status": "rethink_as_written",
+      "cluster": "reachable_acquisition",
+      "hypothesis": "Choose a correction experiment partly by the useful physical state it leaves behind. An informative action that destroys a needed resource can be worse than a slightly less informative action that also prepares the next task.",
+      "method_steps": [
+        "Expand legal probes with terminal resource/staging states.",
+        "Train a probe policy for total expected task cost and information under a declared goal prior.",
+        "Execute causal histories and compare full-cost Bayes-adaptive control."
+      ],
+      "closest_prior": "Bayes-adaptive/dual-control objectives already combine information and state consequences.",
+      "falsification": "Same allowed observations and physical records; compare the named closest operation and exact finite reference with matched bytes, query count and training updates. Use the same future goal distribution in all baselines and charge setup/reset.",
+      "evidence": "Proposal only. No candidate-specific learned-policy or robot experiment. No established new algorithm."
+    }
+  ]
+}
