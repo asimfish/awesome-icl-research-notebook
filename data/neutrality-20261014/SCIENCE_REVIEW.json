@@ -1,0 +1,1041 @@
+{
+  "execution_verdict": "PASS",
+  "scientific_verdict": "RETHINK",
+  "decision": "Do not launch a new-method pilot or claim C15/C21/C12 necessity from this cohort. Retain the diagnostic and conventional factual control as evidence.",
+  "reviewer": {
+    "requested": "gpt-6-astra / ultra via adapted collaboration",
+    "actual_visible_identity": "Codex agent described in developer context as GPT-6-based; exact backend model and reasoning configuration not independently visible",
+    "independence": "Fresh delegated review, same-family provisional; not a cross-model certificate"
+  },
+  "prior_reviews_preserved": true,
+  "scope": "Bounded standard-library analysis of existing main-run records only; no rollout, model forward, training, web or code edits.",
+  "reviewed_sources": [
+    "PROBLEM_ANCHOR.md",
+    "PROTOCOL.md",
+    "CODE_REVIEW_002.md",
+    "results-main/result.json",
+    "results-main/episodes.csv",
+    "results-main/query_events.csv",
+    "results-main/source_histories.json"
+  ],
+  "independent_analysis_receipt": "ops/science-independent-analysis.json",
+  "audit": {
+    "status": "PASS",
+    "rows": 21216,
+    "events": 133531,
+    "source_histories": 1536,
+    "counts": {
+      "source_transitions": 2314,
+      "padding_transitions": 16328,
+      "query_transitions": 133531,
+      "per_branch_resets": 21216,
+      "k0_pairs": 1536,
+      "repetition_pairs_per_budget": 1256,
+      "independent_rules": 128,
+      "fixed_checkpoints": [
+        11,
+        29,
+        47
+      ]
+    },
+    "checks": [
+      "All episode keys unique and pair keys/goal match",
+      "All production paired point estimates match recomputation",
+      "All actual/capped/source/retry/reset costs match saved records",
+      "All event flags independently reconstruct from prior public receipts with standard-library parent sets",
+      "No fact_guard known-impossible or completed-action command",
+      "Dedup complete rollout endpoints equal across k for each eligible pair",
+      "First-divergence fact mask explains changed command on shared prefix"
+    ],
+    "analysis_seconds": 2.561413411051035
+  },
+  "allcase": {
+    "raw": {
+      "episodes": 1536,
+      "complete": 1494,
+      "completion_rate": 0.97265625,
+      "total_capped_query_commands": 9223,
+      "mean_capped_query_commands": 6.004557291666667,
+      "actual_query_commands": 9223,
+      "known_impossible_commands": 411,
+      "episodes_with_known_impossible": 225,
+      "completed_action_commands": 82,
+      "duplicate_state_action_commands": 362,
+      "premature_stops": 0
+    },
+    "state_guard": {
+      "episodes": 1536,
+      "complete": 1503,
+      "completion_rate": 0.978515625,
+      "total_capped_query_commands": 9144,
+      "mean_capped_query_commands": 5.953125,
+      "actual_query_commands": 9144,
+      "known_impossible_commands": 392,
+      "episodes_with_known_impossible": 216,
+      "completed_action_commands": 0,
+      "duplicate_state_action_commands": 325,
+      "premature_stops": 0
+    },
+    "fact_guard": {
+      "episodes": 1536,
+      "complete": 1532,
+      "completion_rate": 0.9973958333333334,
+      "total_capped_query_commands": 8828,
+      "mean_capped_query_commands": 5.747395833333333,
+      "actual_query_commands": 8828,
+      "known_impossible_commands": 0,
+      "episodes_with_known_impossible": 0,
+      "completed_action_commands": 0,
+      "duplicate_state_action_commands": 0,
+      "premature_stops": 0
+    },
+    "dedup": {
+      "episodes": 1536,
+      "complete": 1347,
+      "completion_rate": 0.876953125,
+      "total_capped_query_commands": 9626,
+      "mean_capped_query_commands": 6.266927083333333,
+      "actual_query_commands": 9626,
+      "known_impossible_commands": 1460,
+      "episodes_with_known_impossible": 225,
+      "completed_action_commands": 55,
+      "duplicate_state_action_commands": 1411,
+      "premature_stops": 0
+    }
+  },
+  "allcase_effects": {
+    "fact_vs_state_all": {
+      "pairs": 1536,
+      "saved_capped_commands": 316,
+      "mean_query_savings_left_minus_right": 0.20572916666666666,
+      "completion_delta_right_minus_left": 0.018880208333333332,
+      "mean_capped_total_delta_right_minus_left": -0.20572916666666666,
+      "completion_gains": 29,
+      "completion_losses": 0,
+      "first_action_changes": 0,
+      "first_action_change_fraction": 0.0
+    },
+    "state_vs_raw_all": {
+      "pairs": 1536,
+      "saved_capped_commands": 79,
+      "mean_query_savings_left_minus_right": 0.051432291666666664,
+      "completion_delta_right_minus_left": 0.005859375,
+      "mean_capped_total_delta_right_minus_left": -0.051432291666666664,
+      "completion_gains": 9,
+      "completion_losses": 0,
+      "first_action_changes": 0,
+      "first_action_change_fraction": 0.0
+    },
+    "dedup_vs_raw_all": {
+      "pairs": 1536,
+      "saved_capped_commands": -403,
+      "mean_query_savings_left_minus_right": -0.2623697916666667,
+      "completion_delta_right_minus_left": -0.095703125,
+      "mean_capped_total_delta_right_minus_left": 0.2623697916666667,
+      "completion_gains": 0,
+      "completion_losses": 147,
+      "first_action_changes": 0,
+      "first_action_change_fraction": 0.0
+    }
+  },
+  "per_seed_allcase": {
+    "11": {
+      "raw": {
+        "episodes": 512,
+        "complete": 495,
+        "completion_rate": 0.966796875,
+        "total_capped_query_commands": 3150,
+        "mean_capped_query_commands": 6.15234375,
+        "actual_query_commands": 3150,
+        "known_impossible_commands": 158,
+        "episodes_with_known_impossible": 90,
+        "completed_action_commands": 47,
+        "duplicate_state_action_commands": 154,
+        "premature_stops": 0
+      },
+      "state_guard": {
+        "episodes": 512,
+        "complete": 499,
+        "completion_rate": 0.974609375,
+        "total_capped_query_commands": 3109,
+        "mean_capped_query_commands": 6.072265625,
+        "actual_query_commands": 3109,
+        "known_impossible_commands": 152,
+        "episodes_with_known_impossible": 86,
+        "completed_action_commands": 0,
+        "duplicate_state_action_commands": 138,
+        "premature_stops": 0
+      },
+      "fact_guard": {
+        "episodes": 512,
+        "complete": 511,
+        "completion_rate": 0.998046875,
+        "total_capped_query_commands": 2985,
+        "mean_capped_query_commands": 5.830078125,
+        "actual_query_commands": 2985,
+        "known_impossible_commands": 0,
+        "episodes_with_known_impossible": 0,
+        "completed_action_commands": 0,
+        "duplicate_state_action_commands": 0,
+        "premature_stops": 0
+      },
+      "dedup": {
+        "episodes": 512,
+        "complete": 430,
+        "completion_rate": 0.83984375,
+        "total_capped_query_commands": 3337,
+        "mean_capped_query_commands": 6.517578125,
+        "actual_query_commands": 3337,
+        "known_impossible_commands": 591,
+        "episodes_with_known_impossible": 90,
+        "completed_action_commands": 31,
+        "duplicate_state_action_commands": 583,
+        "premature_stops": 0
+      }
+    },
+    "29": {
+      "raw": {
+        "episodes": 512,
+        "complete": 501,
+        "completion_rate": 0.978515625,
+        "total_capped_query_commands": 3045,
+        "mean_capped_query_commands": 5.947265625,
+        "actual_query_commands": 3045,
+        "known_impossible_commands": 130,
+        "episodes_with_known_impossible": 68,
+        "completed_action_commands": 18,
+        "duplicate_state_action_commands": 103,
+        "premature_stops": 0
+      },
+      "state_guard": {
+        "episodes": 512,
+        "complete": 504,
+        "completion_rate": 0.984375,
+        "total_capped_query_commands": 3026,
+        "mean_capped_query_commands": 5.91015625,
+        "actual_query_commands": 3026,
+        "known_impossible_commands": 123,
+        "episodes_with_known_impossible": 66,
+        "completed_action_commands": 0,
+        "duplicate_state_action_commands": 93,
+        "premature_stops": 0
+      },
+      "fact_guard": {
+        "episodes": 512,
+        "complete": 511,
+        "completion_rate": 0.998046875,
+        "total_capped_query_commands": 2930,
+        "mean_capped_query_commands": 5.72265625,
+        "actual_query_commands": 2930,
+        "known_impossible_commands": 0,
+        "episodes_with_known_impossible": 0,
+        "completed_action_commands": 0,
+        "duplicate_state_action_commands": 0,
+        "premature_stops": 0
+      },
+      "dedup": {
+        "episodes": 512,
+        "complete": 461,
+        "completion_rate": 0.900390625,
+        "total_capped_query_commands": 3151,
+        "mean_capped_query_commands": 6.154296875,
+        "actual_query_commands": 3151,
+        "known_impossible_commands": 423,
+        "episodes_with_known_impossible": 68,
+        "completed_action_commands": 12,
+        "duplicate_state_action_commands": 400,
+        "premature_stops": 0
+      }
+    },
+    "47": {
+      "raw": {
+        "episodes": 512,
+        "complete": 498,
+        "completion_rate": 0.97265625,
+        "total_capped_query_commands": 3028,
+        "mean_capped_query_commands": 5.9140625,
+        "actual_query_commands": 3028,
+        "known_impossible_commands": 123,
+        "episodes_with_known_impossible": 67,
+        "completed_action_commands": 17,
+        "duplicate_state_action_commands": 105,
+        "premature_stops": 0
+      },
+      "state_guard": {
+        "episodes": 512,
+        "complete": 500,
+        "completion_rate": 0.9765625,
+        "total_capped_query_commands": 3009,
+        "mean_capped_query_commands": 5.876953125,
+        "actual_query_commands": 3009,
+        "known_impossible_commands": 117,
+        "episodes_with_known_impossible": 64,
+        "completed_action_commands": 0,
+        "duplicate_state_action_commands": 94,
+        "premature_stops": 0
+      },
+      "fact_guard": {
+        "episodes": 512,
+        "complete": 510,
+        "completion_rate": 0.99609375,
+        "total_capped_query_commands": 2913,
+        "mean_capped_query_commands": 5.689453125,
+        "actual_query_commands": 2913,
+        "known_impossible_commands": 0,
+        "episodes_with_known_impossible": 0,
+        "completed_action_commands": 0,
+        "duplicate_state_action_commands": 0,
+        "premature_stops": 0
+      },
+      "dedup": {
+        "episodes": 512,
+        "complete": 456,
+        "completion_rate": 0.890625,
+        "total_capped_query_commands": 3138,
+        "mean_capped_query_commands": 6.12890625,
+        "actual_query_commands": 3138,
+        "known_impossible_commands": 446,
+        "episodes_with_known_impossible": 67,
+        "completed_action_commands": 12,
+        "duplicate_state_action_commands": 428,
+        "premature_stops": 0
+      }
+    }
+  },
+  "per_seed_effects": {
+    "11": {
+      "fact_vs_state": {
+        "pairs": 512,
+        "saved_capped_commands": 124,
+        "mean_query_savings_left_minus_right": 0.2421875,
+        "completion_delta_right_minus_left": 0.0234375,
+        "mean_capped_total_delta_right_minus_left": -0.2421875,
+        "completion_gains": 12,
+        "completion_losses": 0,
+        "first_action_changes": 0,
+        "first_action_change_fraction": 0.0
+      },
+      "state_vs_raw": {
+        "pairs": 512,
+        "saved_capped_commands": 41,
+        "mean_query_savings_left_minus_right": 0.080078125,
+        "completion_delta_right_minus_left": 0.0078125,
+        "mean_capped_total_delta_right_minus_left": -0.080078125,
+        "completion_gains": 4,
+        "completion_losses": 0,
+        "first_action_changes": 0,
+        "first_action_change_fraction": 0.0
+      },
+      "dedup_vs_raw": {
+        "pairs": 512,
+        "saved_capped_commands": -187,
+        "mean_query_savings_left_minus_right": -0.365234375,
+        "completion_delta_right_minus_left": -0.126953125,
+        "mean_capped_total_delta_right_minus_left": 0.365234375,
+        "completion_gains": 0,
+        "completion_losses": 65,
+        "first_action_changes": 0,
+        "first_action_change_fraction": 0.0
+      }
+    },
+    "29": {
+      "fact_vs_state": {
+        "pairs": 512,
+        "saved_capped_commands": 96,
+        "mean_query_savings_left_minus_right": 0.1875,
+        "completion_delta_right_minus_left": 0.013671875,
+        "mean_capped_total_delta_right_minus_left": -0.1875,
+        "completion_gains": 7,
+        "completion_losses": 0,
+        "first_action_changes": 0,
+        "first_action_change_fraction": 0.0
+      },
+      "state_vs_raw": {
+        "pairs": 512,
+        "saved_capped_commands": 19,
+        "mean_query_savings_left_minus_right": 0.037109375,
+        "completion_delta_right_minus_left": 0.005859375,
+        "mean_capped_total_delta_right_minus_left": -0.037109375,
+        "completion_gains": 3,
+        "completion_losses": 0,
+        "first_action_changes": 0,
+        "first_action_change_fraction": 0.0
+      },
+      "dedup_vs_raw": {
+        "pairs": 512,
+        "saved_capped_commands": -106,
+        "mean_query_savings_left_minus_right": -0.20703125,
+        "completion_delta_right_minus_left": -0.078125,
+        "mean_capped_total_delta_right_minus_left": 0.20703125,
+        "completion_gains": 0,
+        "completion_losses": 40,
+        "first_action_changes": 0,
+        "first_action_change_fraction": 0.0
+      }
+    },
+    "47": {
+      "fact_vs_state": {
+        "pairs": 512,
+        "saved_capped_commands": 96,
+        "mean_query_savings_left_minus_right": 0.1875,
+        "completion_delta_right_minus_left": 0.01953125,
+        "mean_capped_total_delta_right_minus_left": -0.1875,
+        "completion_gains": 10,
+        "completion_losses": 0,
+        "first_action_changes": 0,
+        "first_action_change_fraction": 0.0
+      },
+      "state_vs_raw": {
+        "pairs": 512,
+        "saved_capped_commands": 19,
+        "mean_query_savings_left_minus_right": 0.037109375,
+        "completion_delta_right_minus_left": 0.00390625,
+        "mean_capped_total_delta_right_minus_left": -0.037109375,
+        "completion_gains": 2,
+        "completion_losses": 0,
+        "first_action_changes": 0,
+        "first_action_change_fraction": 0.0
+      },
+      "dedup_vs_raw": {
+        "pairs": 512,
+        "saved_capped_commands": -110,
+        "mean_query_savings_left_minus_right": -0.21484375,
+        "completion_delta_right_minus_left": -0.08203125,
+        "mean_capped_total_delta_right_minus_left": 0.21484375,
+        "completion_gains": 0,
+        "completion_losses": 42,
+        "first_action_changes": 0,
+        "first_action_change_fraction": 0.0
+      }
+    }
+  },
+  "published_intervals": {
+    "fact_vs_state_all": {
+      "pairs": 1536,
+      "query_command_savings_left_minus_right": 0.20572916666666666,
+      "completion_delta_right_minus_left": 0.018880208333333332,
+      "capped_total_cost_delta_right_minus_left": -0.20572916666666666,
+      "95ci_query_command_savings": [
+        0.15364583333333334,
+        0.2584798177083334
+      ],
+      "95ci_completion_delta": [
+        0.008463541666666666,
+        0.03191731770833339
+      ],
+      "95ci_total_cost_delta": [
+        -0.25847981770833334,
+        -0.15364583333333334
+      ],
+      "first_action_change_fraction": 0.0,
+      "bootstrap_zero_denominator_replicates": 0
+    },
+    "state_vs_raw_all": {
+      "pairs": 1536,
+      "query_command_savings_left_minus_right": 0.051432291666666664,
+      "completion_delta_right_minus_left": 0.005859375,
+      "capped_total_cost_delta_right_minus_left": -0.051432291666666664,
+      "95ci_query_command_savings": [
+        0.03125,
+        0.07552083333333333
+      ],
+      "95ci_completion_delta": [
+        0.0013020833333333333,
+        0.012369791666666666
+      ],
+      "95ci_total_cost_delta": [
+        -0.07552083333333333,
+        -0.03125
+      ],
+      "first_action_change_fraction": 0.0,
+      "bootstrap_zero_denominator_replicates": 0
+    },
+    "dedup_vs_raw_all": {
+      "pairs": 1536,
+      "query_command_savings_left_minus_right": -0.2623697916666667,
+      "completion_delta_right_minus_left": -0.095703125,
+      "capped_total_cost_delta_right_minus_left": 0.2623697916666667,
+      "95ci_query_command_savings": [
+        -0.32421875,
+        -0.203125
+      ],
+      "95ci_completion_delta": [
+        -0.11588541666666667,
+        -0.076171875
+      ],
+      "95ci_total_cost_delta": [
+        0.203125,
+        0.32421875
+      ],
+      "first_action_change_fraction": 0.0,
+      "bootstrap_zero_denominator_replicates": 0
+    }
+  },
+  "independent_bootstrap": {
+    "implementation": "Python random.Random(814117),4000 whole-rule draws; ratio-of-sums; linear percentile interpolation. Different RNG stream from production NumPy PCG64; same unit/estimator.",
+    "results": {
+      "fact_vs_state_all": {
+        "savings95ci": [
+          0.156884765625,
+          0.26171875
+        ],
+        "completion_delta95ci": [
+          0.008463541666666666,
+          0.03126627604166673
+        ],
+        "capped_total_delta95ci": [
+          -0.26171875,
+          -0.15688476562499992
+        ],
+        "empty_denominator_draws": 0
+      },
+      "state_vs_raw_all": {
+        "savings95ci": [
+          0.031901041666666664,
+          0.07421875
+        ],
+        "completion_delta95ci": [
+          0.0013020833333333333,
+          0.012369791666666666
+        ],
+        "capped_total_delta95ci": [
+          -0.07421875,
+          -0.031901041666666664
+        ],
+        "empty_denominator_draws": 0
+      },
+      "dedup_vs_raw_all": {
+        "savings95ci": [
+          -0.3248697916666667,
+          -0.20572916666666666
+        ],
+        "completion_delta95ci": [
+          -0.11588541666666667,
+          -0.07682291666666667
+        ],
+        "capped_total_delta95ci": [
+          0.20572916666666666,
+          0.3248697916666667
+        ],
+        "empty_denominator_draws": 0
+      },
+      "repeat1": {
+        "savings95ci": [
+          -0.2693316479093231,
+          -0.08804058901557182
+        ],
+        "completion_delta95ci": [
+          -0.035228625523369514,
+          -0.013599456869009582
+        ],
+        "capped_total_delta95ci": [
+          1.0880405890155718,
+          1.2693316479093233
+        ],
+        "empty_denominator_draws": 0
+      },
+      "repeat4": {
+        "savings95ci": [
+          -1.1882758203571742,
+          -0.8335945873526259
+        ],
+        "completion_delta95ci": [
+          -0.17652068604346688,
+          -0.11404850997388752
+        ],
+        "capped_total_delta95ci": [
+          4.833594587352625,
+          5.188275820357174
+        ],
+        "empty_denominator_draws": 0
+      },
+      "repeat8": {
+        "savings95ci": [
+          -1.6319237361459134,
+          -1.236280256941597
+        ],
+        "completion_delta95ci": [
+          -0.23150181849352813,
+          -0.16227018385291767
+        ],
+        "capped_total_delta95ci": [
+          9.236280256941598,
+          9.631923736145913
+        ],
+        "empty_denominator_draws": 0
+      }
+    }
+  },
+  "repetition": {
+    "1": {
+      "pairs": 1256,
+      "saved_capped_commands": -222,
+      "mean_query_savings_left_minus_right": -0.1767515923566879,
+      "completion_delta_right_minus_left": -0.02388535031847134,
+      "mean_capped_total_delta_right_minus_left": 1.1767515923566878,
+      "completion_gains": 5,
+      "completion_losses": 35,
+      "first_action_changes": 184,
+      "first_action_change_fraction": 0.1464968152866242,
+      "k0": {
+        "episodes": 1256,
+        "complete": 1220,
+        "completion_rate": 0.9713375796178344,
+        "total_capped_query_commands": 7609,
+        "mean_capped_query_commands": 6.05812101910828,
+        "actual_query_commands": 7609,
+        "known_impossible_commands": 345,
+        "episodes_with_known_impossible": 189,
+        "completed_action_commands": 80,
+        "duplicate_state_action_commands": 296,
+        "premature_stops": 0
+      },
+      "padded": {
+        "episodes": 1256,
+        "complete": 1190,
+        "completion_rate": 0.947452229299363,
+        "total_capped_query_commands": 7831,
+        "mean_capped_query_commands": 6.234872611464968,
+        "actual_query_commands": 7831,
+        "known_impossible_commands": 573,
+        "episodes_with_known_impossible": 260,
+        "completed_action_commands": 190,
+        "duplicate_state_action_commands": 600,
+        "premature_stops": 0
+      }
+    },
+    "4": {
+      "pairs": 1256,
+      "saved_capped_commands": -1262,
+      "mean_query_savings_left_minus_right": -1.0047770700636942,
+      "completion_delta_right_minus_left": -0.14410828025477707,
+      "mean_capped_total_delta_right_minus_left": 5.004777070063694,
+      "completion_gains": 7,
+      "completion_losses": 188,
+      "first_action_changes": 407,
+      "first_action_change_fraction": 0.32404458598726116,
+      "k0": {
+        "episodes": 1256,
+        "complete": 1220,
+        "completion_rate": 0.9713375796178344,
+        "total_capped_query_commands": 7609,
+        "mean_capped_query_commands": 6.05812101910828,
+        "actual_query_commands": 7609,
+        "known_impossible_commands": 345,
+        "episodes_with_known_impossible": 189,
+        "completed_action_commands": 80,
+        "duplicate_state_action_commands": 296,
+        "premature_stops": 0
+      },
+      "padded": {
+        "episodes": 1256,
+        "complete": 1039,
+        "completion_rate": 0.8272292993630573,
+        "total_capped_query_commands": 8871,
+        "mean_capped_query_commands": 7.062898089171974,
+        "actual_query_commands": 8871,
+        "known_impossible_commands": 1418,
+        "episodes_with_known_impossible": 436,
+        "completed_action_commands": 624,
+        "duplicate_state_action_commands": 1602,
+        "premature_stops": 0
+      }
+    },
+    "8": {
+      "pairs": 1256,
+      "saved_capped_commands": -1798,
+      "mean_query_savings_left_minus_right": -1.4315286624203822,
+      "completion_delta_right_minus_left": -0.19585987261146498,
+      "mean_capped_total_delta_right_minus_left": 9.431528662420382,
+      "completion_gains": 6,
+      "completion_losses": 252,
+      "first_action_changes": 501,
+      "first_action_change_fraction": 0.39888535031847133,
+      "k0": {
+        "episodes": 1256,
+        "complete": 1220,
+        "completion_rate": 0.9713375796178344,
+        "total_capped_query_commands": 7609,
+        "mean_capped_query_commands": 6.05812101910828,
+        "actual_query_commands": 7609,
+        "known_impossible_commands": 345,
+        "episodes_with_known_impossible": 189,
+        "completed_action_commands": 80,
+        "duplicate_state_action_commands": 296,
+        "premature_stops": 0
+      },
+      "padded": {
+        "episodes": 1256,
+        "complete": 974,
+        "completion_rate": 0.7754777070063694,
+        "total_capped_query_commands": 9407,
+        "mean_capped_query_commands": 7.489649681528663,
+        "actual_query_commands": 9407,
+        "known_impossible_commands": 1882,
+        "episodes_with_known_impossible": 524,
+        "completed_action_commands": 812,
+        "duplicate_state_action_commands": 2171,
+        "premature_stops": 0
+      }
+    }
+  },
+  "per_seed_repetition": {
+    "11": {
+      "1": {
+        "pairs": 418,
+        "saved_capped_commands": -67,
+        "mean_query_savings_left_minus_right": -0.16028708133971292,
+        "completion_delta_right_minus_left": -0.028708133971291867,
+        "mean_capped_total_delta_right_minus_left": 1.1602870813397128,
+        "completion_gains": 1,
+        "completion_losses": 13,
+        "first_action_changes": 77,
+        "first_action_change_fraction": 0.18421052631578946
+      },
+      "4": {
+        "pairs": 418,
+        "saved_capped_commands": -398,
+        "mean_query_savings_left_minus_right": -0.9521531100478469,
+        "completion_delta_right_minus_left": -0.15311004784688995,
+        "mean_capped_total_delta_right_minus_left": 4.952153110047847,
+        "completion_gains": 3,
+        "completion_losses": 67,
+        "first_action_changes": 140,
+        "first_action_change_fraction": 0.3349282296650718
+      },
+      "8": {
+        "pairs": 418,
+        "saved_capped_commands": -568,
+        "mean_query_savings_left_minus_right": -1.3588516746411483,
+        "completion_delta_right_minus_left": -0.21052631578947367,
+        "mean_capped_total_delta_right_minus_left": 9.358851674641148,
+        "completion_gains": 2,
+        "completion_losses": 90,
+        "first_action_changes": 185,
+        "first_action_change_fraction": 0.44258373205741625
+      }
+    },
+    "29": {
+      "1": {
+        "pairs": 423,
+        "saved_capped_commands": -94,
+        "mean_query_savings_left_minus_right": -0.2222222222222222,
+        "completion_delta_right_minus_left": -0.018912529550827423,
+        "mean_capped_total_delta_right_minus_left": 1.2222222222222223,
+        "completion_gains": 1,
+        "completion_losses": 9,
+        "first_action_changes": 41,
+        "first_action_change_fraction": 0.09692671394799054
+      },
+      "4": {
+        "pairs": 423,
+        "saved_capped_commands": -439,
+        "mean_query_savings_left_minus_right": -1.037825059101655,
+        "completion_delta_right_minus_left": -0.15602836879432624,
+        "mean_capped_total_delta_right_minus_left": 5.037825059101655,
+        "completion_gains": 1,
+        "completion_losses": 67,
+        "first_action_changes": 136,
+        "first_action_change_fraction": 0.3215130023640662
+      },
+      "8": {
+        "pairs": 423,
+        "saved_capped_commands": -607,
+        "mean_query_savings_left_minus_right": -1.4349881796690307,
+        "completion_delta_right_minus_left": -0.18203309692671396,
+        "mean_capped_total_delta_right_minus_left": 9.43498817966903,
+        "completion_gains": 1,
+        "completion_losses": 78,
+        "first_action_changes": 156,
+        "first_action_change_fraction": 0.36879432624113473
+      }
+    },
+    "47": {
+      "1": {
+        "pairs": 415,
+        "saved_capped_commands": -61,
+        "mean_query_savings_left_minus_right": -0.14698795180722893,
+        "completion_delta_right_minus_left": -0.024096385542168676,
+        "mean_capped_total_delta_right_minus_left": 1.146987951807229,
+        "completion_gains": 3,
+        "completion_losses": 13,
+        "first_action_changes": 66,
+        "first_action_change_fraction": 0.15903614457831325
+      },
+      "4": {
+        "pairs": 415,
+        "saved_capped_commands": -425,
+        "mean_query_savings_left_minus_right": -1.0240963855421688,
+        "completion_delta_right_minus_left": -0.12289156626506025,
+        "mean_capped_total_delta_right_minus_left": 5.024096385542169,
+        "completion_gains": 3,
+        "completion_losses": 54,
+        "first_action_changes": 131,
+        "first_action_change_fraction": 0.3156626506024096
+      },
+      "8": {
+        "pairs": 415,
+        "saved_capped_commands": -623,
+        "mean_query_savings_left_minus_right": -1.5012048192771084,
+        "completion_delta_right_minus_left": -0.19518072289156627,
+        "mean_capped_total_delta_right_minus_left": 9.501204819277108,
+        "completion_gains": 3,
+        "completion_losses": 84,
+        "first_action_changes": 160,
+        "first_action_change_fraction": 0.3855421686746988
+      }
+    }
+  },
+  "first_decision": {
+    "all_four_k0_first_actions_identical_pairs": 1536,
+    "total_pairs": 1536,
+    "interpretation": "No observed first-query action improvement. This does not establish absence of neural source-history use because all four arms receive the same source facts; later guard benefits include some source-constraint reuse."
+  },
+  "first_divergence_attribution": {
+    "definition": "First differing command on paired state_guard/fact_guard k0 trajectories with identical prior query prefix; classify evidence already sufficient to rule out state_guard candidate. Source-only/query-only names mean sufficient under that evidence but not the other; both is redundant sufficiency, combined-only requires the intersection.",
+    "by_seed": {
+      "11": {
+        "source_only": 12,
+        "query_only": 74,
+        "both": 0,
+        "combined_only": 0,
+        "no_divergence": 426
+      },
+      "29": {
+        "source_only": 21,
+        "query_only": 45,
+        "both": 0,
+        "combined_only": 0,
+        "no_divergence": 446
+      },
+      "47": {
+        "source_only": 19,
+        "query_only": 45,
+        "both": 0,
+        "combined_only": 0,
+        "no_divergence": 448
+      }
+    },
+    "pooled": {
+      "source_only": {
+        "cases": 52,
+        "completion_delta_count": 2,
+        "total_capped_command_savings": 82,
+        "first_divergence_steps": {
+          "3": 18,
+          "2": 26,
+          "1": 4,
+          "4": 4
+        }
+      },
+      "query_only": {
+        "cases": 164,
+        "completion_delta_count": 27,
+        "total_capped_command_savings": 234,
+        "first_divergence_steps": {
+          "5": 28,
+          "4": 41,
+          "6": 23,
+          "2": 14,
+          "8": 4,
+          "7": 9,
+          "3": 43,
+          "9": 2
+        }
+      },
+      "both": {
+        "cases": 0,
+        "completion_delta_count": 0,
+        "total_capped_command_savings": 0,
+        "first_divergence_steps": {}
+      },
+      "combined_only": {
+        "cases": 0,
+        "completion_delta_count": 0,
+        "total_capped_command_savings": 0,
+        "first_divergence_steps": {}
+      },
+      "no_divergence": {
+        "cases": 1320,
+        "completion_delta_count": 0,
+        "total_capped_command_savings": 0,
+        "first_divergence_steps": {
+          "null": 1320
+        }
+      }
+    }
+  },
+  "first_divergence_limit": "Classification identifies which evidence suffices to exclude the candidate at the first shared-prefix divergence. Outcome sums grouped by that classification are descriptive whole-trajectory effects, not source-only/query-only guard interventions or a causal decomposition of all later gains.",
+  "dedup": {
+    "failures": 189,
+    "identical_input_revisited": 188,
+    "by_seed": {
+      "11": 82,
+      "29": 51,
+      "47": 55
+    },
+    "interpretation": "Revisited exact canonical-history/state/goal means deterministic greedy reevaluation cannot exit without input change; confirms a local absorbing-loop mechanism, not planning or posterior beliefs."
+  },
+  "ordinary_guard_sufficiency": {
+    "k0_complete": 1532,
+    "k0_episodes": 1536,
+    "all_padding_complete": 5296,
+    "all_padding_episodes": 5304,
+    "known_impossible_commands_all_padding": 0,
+    "scope": "Known-impossible behavior is excluded structurally; near-ceiling task completion is the substantive observed corroboration. Remaining failures/costs mean global optimality is not established. No necessity for proposed additional mechanisms follows."
+  },
+  "claims_matrix": [
+    {
+      "claim": "The frozen project controllers sometimes choose commands already excluded by public factual evidence.",
+      "status": "SUPPORTED",
+      "evidence": "Raw k0:411 known-impossible commands in225/1536 episodes. State guard:392 such commands in216 episodes.",
+      "allowed_wording": "A public-evidence consistency defect is observable in these three frozen toy controllers.",
+      "forbidden_extension": "A decoded incorrect Bayesian belief or a general robot-policy failure."
+    },
+    {
+      "claim": "Factual masking improves query rollouts beyond visible progress masking.",
+      "status": "SUPPORTED",
+      "evidence": "1532 versus1503 completions;316 fewer capped commands over1536 pairs; gains12/7/10 and command savings124/96/96 by checkpoint.",
+      "allowed_wording": "An established factual guard improves later closed-loop behavior beyond state/STOP masks on this cohort.",
+      "forbidden_extension": "Improved first action on a previously unexecuted target or novel algorithm efficacy."
+    },
+    {
+      "claim": "All guard gains arise only from query feedback, with no source constraint reuse.",
+      "status": "REJECTED",
+      "evidence": "Of216 first divergences,52 are source-only and164 query-only; both0, combined-only0.",
+      "allowed_wording": "The external factual guard reuses source constraints in some later query decisions.",
+      "forbidden_extension": "52 cases prove the neural controller itself learned transferable relations; category outcome sums identify pure source treatment effects."
+    },
+    {
+      "claim": "The controls improve the first decision before query feedback.",
+      "status": "NOT_SUPPORTED",
+      "evidence": "All four zero-padding first actions coincide in1536/1536 pairs. Every state/fact first divergence occurs after at least one query action.",
+      "allowed_wording": "No first-decision improvement is demonstrated by these controls.",
+      "forbidden_extension": "No source information is ever useful, or the raw model cannot use source information; all arms share source history."
+    },
+    {
+      "claim": "Neutral source repetition causes adverse mean behavior in the selected subset.",
+      "status": "SUPPORTED_WITH_SCOPE",
+      "evidence": "For1256 eligible pairs, k1/4/8 net completion changes are-30/-181/-246, with query cost increases0.17675/1.00478/1.43153, and first-action changes184/407/501. All three checkpoint means have the adverse sign.",
+      "allowed_wording": "Under deterministic identical factual retries, the input intervention changes first decisions and worsens aggregate subsequent performance in the failure-conditioned subset.",
+      "forbidden_extension": "Every changed decision is an error or the effect holds for the full population/stochastic feedback."
+    },
+    {
+      "claim": "The repetition result proves posterior corruption, planning or a specific memory-loss mechanism.",
+      "status": "NOT_SUPPORTED",
+      "evidence": "No internal belief decoder or compute-matched mechanism comparison exists. Exact factual supports stay invariant, but this is a reference-model statement.",
+      "allowed_wording": "Behavior is sensitive to informationally redundant tokens; latent cause remains unidentified.",
+      "forbidden_extension": "Identifying neural posterior corruption, learned planning, overwriting, forgetting, saturation or computational-clock mechanism as proven."
+    },
+    {
+      "claim": "Deleting redundant receipts is a repair.",
+      "status": "REJECTED_ON_THIS_COHORT",
+      "evidence": "Dedup k0 completes1347/1536 versus raw1494/1536;147 losses,0 gains;403 more capped commands.188/189 dedup failures revisit identical canonical-history/state/goal.",
+      "allowed_wording": "Dedup can create an absorbing local loop for this deterministic greedy policy; redundant tokens sometimes enable behavior to change.",
+      "forbidden_extension": "Useful repeated tokens necessarily implement planning or carry additional environmental information."
+    },
+    {
+      "claim": "C15/C21/C12 are necessary to resolve the measured defect.",
+      "status": "NOT_JUSTIFIED",
+      "evidence": "Ordinary fact guard eliminates known-impossible/repeated-completed commands and reaches1532/1536 k0 and5296/5304 across all recorded padding branches.",
+      "allowed_wording": "This defect does not presently justify those added mechanisms.",
+      "forbidden_extension": "Those unimplemented methods were ablated, are generally ineffective, or all future relation-use problems are solved."
+    },
+    {
+      "claim": "This advances a new algorithm or the original robot relation-learning claim.",
+      "status": "RETHINK",
+      "evidence": "External standard inference repairs most observed failures; first-query transfer improvement is absent; no embodied evaluation, new learning algorithm or broad-controller replication is present.",
+      "allowed_wording": "A useful negative design result and bounded controller diagnosis; preserve as evidence against unnecessary complexity.",
+      "forbidden_extension": "SOTA/robot efficacy, novelty of masking or acting/thinking separation, or clean final-test acceptance."
+    }
+  ],
+  "single_discriminator": {
+    "name": "Evidence provenance at the first state_guard/fact_guard divergence",
+    "status": "COMPLETED_FROM_EXISTING_RECORDS",
+    "reason": "Separates source-derived relation reuse from correction using query evidence without confusing later behavior with first-query improvement.",
+    "procedure": "For k0 matched trajectories, stop at the first differing command while all prior query commands/state/goal still match. Build per-action supports independently from source receipts alone, common query prefix alone, and their union. Test whether each excludes the state_guard candidate.",
+    "by_seed": {
+      "11": {
+        "source_only": 12,
+        "query_only": 74,
+        "both": 0,
+        "combined_only": 0,
+        "no_divergence": 426
+      },
+      "29": {
+        "source_only": 21,
+        "query_only": 45,
+        "both": 0,
+        "combined_only": 0,
+        "no_divergence": 446
+      },
+      "47": {
+        "source_only": 19,
+        "query_only": 45,
+        "both": 0,
+        "combined_only": 0,
+        "no_divergence": 448
+      }
+    },
+    "pooled": {
+      "source_only": {
+        "cases": 52,
+        "completion_delta_count": 2,
+        "total_capped_command_savings": 82,
+        "first_divergence_steps": {
+          "3": 18,
+          "2": 26,
+          "1": 4,
+          "4": 4
+        }
+      },
+      "query_only": {
+        "cases": 164,
+        "completion_delta_count": 27,
+        "total_capped_command_savings": 234,
+        "first_divergence_steps": {
+          "5": 28,
+          "4": 41,
+          "6": 23,
+          "2": 14,
+          "8": 4,
+          "7": 9,
+          "3": 43,
+          "9": 2
+        }
+      },
+      "both": {
+        "cases": 0,
+        "completion_delta_count": 0,
+        "total_capped_command_savings": 0,
+        "first_divergence_steps": {}
+      },
+      "combined_only": {
+        "cases": 0,
+        "completion_delta_count": 0,
+        "total_capped_command_savings": 0,
+        "first_divergence_steps": {}
+      },
+      "no_divergence": {
+        "cases": 1320,
+        "completion_delta_count": 0,
+        "total_capped_command_savings": 0,
+        "first_divergence_steps": {
+          "null": 1320
+        }
+      }
+    },
+    "decision": "The guard sometimes transfers source constraints, but most first divergences use query evidence and none improve the first query action. This discriminator is now exhausted for these logs. No additional experiment or mechanism is warranted solely by this measured defect."
+  },
+  "uncertainty_and_limits": [
+    "128 independent rule clusters;1536 paired cases are not1536 independent rules. Bootstrap conditions on checkpoints11/29/47 and resamples selected ratios with their denominators.",
+    "Independent bootstrap uses the Python standard-library RNG, not the production NumPy stream. Point estimates match exactly; nearby independently generated intervals reproduce all reported effect directions. Exact production random-number output was not reexecuted.",
+    "First4 rule classes were used by the prespecified development smoke. They are not pristine final-test material, although the main design was fixed before the smoke and no outcome-driven method change is recorded.",
+    "Source collection stops early, and is not completed required-task streaming. Repetition effects condition on a source failure.",
+    "Information-neutrality assumes deterministic stationary fully observed consequences; it does not extend to stochastic failures without a new argument.",
+    "Source and padding simulator work is shared across cloned mode evaluations; per-branch costs include the source/retries/reset. These are not free deployment branches.",
+    "No belief readout, compute-matched mechanism test, relationship-discovery proof, or robot generalization evidence is present.",
+    "Supplied prior summaries for Zeva2608.30880v2, Guez2019 and Taufeeque2024 were used only as scope warnings. No new source verification or novelty certificate was performed.",
+    "Same-family provisional provenance; exact backend/effort is not independently exposed."
+  ]
+}
