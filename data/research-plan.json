@@ -5,12 +5,12 @@
     "en": "From one correction to the next goal"
   },
   "intro": {
-    "zh": "用一个夹具例子讲清研究对象、经验如何进入决策，以及现有实验支持到了哪一步。",
-    "en": "One fixture example explains what is learned, how experience enters decisions, and what the experiments establish."
+    "zh": "当前候选：在必需任务失败时，选择能为实际后续策略产生有用经验的修正。完整故事、直接前作与旧结果保留。",
+    "en": "Current candidate: choose corrections in required tasks that produce useful experience for the actual later policy. The full story, direct priors and earlier results remain available."
   },
   "status": {
-    "zh": "直接前作已补入 · 四类可能不足待验证 · 新算法仍未建立",
-    "en": "Direct priors audited · four possible boundaries untested · no new algorithm established"
+    "zh": "恢复选择机制已具体化 · 两轮REVISE · 新颖性与净收益待验证 · 无本轮新实验",
+    "en": "Recovery-selection mechanism specified · two REVISE reviews · novelty and net benefit untested · no new experiments this round"
   },
   "metrics": [
     {

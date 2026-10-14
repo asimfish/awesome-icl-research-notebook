@@ -5,6 +5,7 @@ from urllib.parse import urlsplit, unquote
 from datetime import datetime
 import json
 import re
+import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
 checks = []
@@ -105,7 +106,14 @@ check('reframe_review_without_scientific_promotion', active['candidate_count'] =
       active['scientific_status'] == 'REVISE' and active['review_independence'] == 'same-family' and
       active['acceptance_status'] == 'provisional')
 pilot = json.loads((ROOT / 'data/learned-pilot.json').read_text())
-check('learned_pilot_counts_match_evidence', active['learned_policy_evaluation_episodes'] == pilot['main_evaluation_branches'] and active['training_runs'] == pilot['training_runs'] == 15 and active['robot_episodes'] == pilot['robot_episodes'] == 0)
+own_stream = json.loads((ROOT / 'data/algorithm-cycle/own-stream/result.json').read_text())
+check('own_stream_evaluation_does_not_add_training_or_robot_runs',
+      own_stream['training_runs'] == own_stream['robot_episodes'] == 0)
+check('learned_pilot_counts_match_evidence',
+      active['learned_policy_evaluation_episodes'] ==
+      pilot['main_evaluation_branches'] + own_stream['evaluation_branches'] and
+      active['training_runs'] == pilot['training_runs'] == 15 and
+      active['robot_episodes'] == pilot['robot_episodes'] == 0)
 check('learned_pilot_not_promoted', pilot['original_primary_completion_support_gate'] == 'FAILED' and pilot['GPU_hours'] == 0 and 'symbolic' in pilot['scope'])
 check('learned_pilot_novelty_and_collection_limits', '不是' in (ROOT / 'data/paper-story-zh.md').read_text() and pilot['fresh_cost_confirmation']['cost_excludes_initial_collection'])
 check('old_primary_explicitly_archived', active['previous_primary'] == 'A3' and
@@ -150,6 +158,25 @@ files = [p for p in paths if p.is_file()]
 check('no_symlinks', not any(p.is_symlink() for p in paths))
 secret = re.compile(r'Bearer\s+[A-Za-z0-9_-]{12,}|gh[pousr]_[A-Za-z0-9]{15,}|github_pat_[A-Za-z0-9_]{15,}|ct-[a-f0-9]{24,}|-----BEGIN (?:RSA |OPENSSH |EC )?PRIVATE KEY-----')
 for path in files:
+    if path.suffix == '.pyc':
+        # Compiled test/tool code is not copied into the Pages artifact.
+        check('bytecode_outside_public_surface:' + str(path.relative_to(ROOT)),
+              path.relative_to(ROOT).parts[0] in ['tests', 'tools', 'experiments'])
+        continue
+    if path.suffix in ['.pt', '.npz']:
+        # Inspect stored bytes only; never execute pickle/model deserialization.
+        with zipfile.ZipFile(path) as archive:
+            members = archive.infolist()
+            check('bounded_binary_archive:' + str(path.relative_to(ROOT)),
+                  len(members) <= 256 and
+                  sum(member.file_size for member in members) <= 16 * 1024 * 1024)
+            for member in members:
+                text = archive.read(member).decode('utf-8', errors='replace')
+                label = str(path.relative_to(ROOT)) + ':' + member.filename
+                check('no_credentials:' + label, secret.search(text) is None)
+                check('no_machine_path:' + label,
+                      not any(value in text for value in ['/mnt/', '/home/', 'file://']))
+        continue
     if path.suffix == '.pdf':
         check('PDF_signature:' + str(path.relative_to(ROOT)), path.read_bytes().startswith(b'%PDF-'))
     if path.suffix not in ['.png', '.pdf']:
