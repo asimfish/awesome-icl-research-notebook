@@ -1,16 +1,16 @@
 {
   "schema": "awesome-icl.research-plan.v1",
   "title": {
-    "zh": "从纠正经验到可复用关系：算法选题扩展",
-    "en": "Reusable relations from correction: expanding algorithm candidates"
+    "zh": "从一次纠正到下一目标",
+    "en": "From one correction to the next goal"
   },
   "intro": {
-    "zh": "40个机制候选、完整评审和直接前作核查。优先修订3个操作，尚未找到足以接受的算法差异。",
-    "en": "40 mechanism candidates, full-pool review and direct-prior audits. Three operations merit refinement; no algorithmic difference is accepted."
+    "zh": "用一个夹具例子讲清研究对象、经验如何进入决策，以及现有实验支持到了哪一步。",
+    "en": "One fixture example explains what is learned, how experience enters decisions, and what the experiments establish."
   },
   "status": {
-    "zh": "RETHINK · 同模型家族暂定评审 · 本轮新训练／机器人实验：0",
-    "en": "RETHINK · same-family provisional review · new training/robot experiments this cycle:0"
+    "zh": "故事主线已重写 · 符号经验价值已测到 · 新算法操作仍未确定",
+    "en": "Story revised · symbolic experience value observed · new algorithm operation unresolved"
   },
   "metrics": [
     {

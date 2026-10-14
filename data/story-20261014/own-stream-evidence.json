@@ -1,0 +1,60 @@
+{
+  "scope": "own required-attempt frozen learned-policy transfer diagnostic",
+  "training_runs": 0,
+  "robot_episodes": 0,
+  "evaluation_branches": 73728,
+  "rules": 256,
+  "streams_per_rule": 8,
+  "required_tasks_per_stream": 6,
+  "unique_goals_within_stream": true,
+  "data_seed": 6412,
+  "excluded_closures": 1015,
+  "bootstrap_seed": 6531,
+  "bootstrap_unit": "rule after averaging streams and checkpoints",
+  "stream_command_savings": 8.079915364583332,
+  "rule_bootstrap_95ci_commands": [
+    7.539436848958336,
+    8.608280436197914
+  ],
+  "completion_delta": 0.01958550347222222,
+  "rule_bootstrap_95ci_completion": [
+    0.01410522460937499,
+    0.025526936848958365
+  ],
+  "seeds": [
+    {
+      "seed": 11,
+      "stream_command_savings": 8.01806640625,
+      "completion_delta": 0.02734375,
+      "retain_completion": 0.9817708333333334,
+      "erase_completion": 0.9544270833333334
+    },
+    {
+      "seed": 29,
+      "stream_command_savings": 7.84716796875,
+      "completion_delta": 0.012451171875,
+      "retain_completion": 0.9873860677083334,
+      "erase_completion": 0.9749348958333334
+    },
+    {
+      "seed": 47,
+      "stream_command_savings": 8.37451171875,
+      "completion_delta": 0.018961588541666664,
+      "retain_completion": 0.98974609375,
+      "erase_completion": 0.9707845052083334
+    }
+  ],
+  "first_task_identity_verified": true,
+  "frozen_weights_verified": true,
+  "own_feedback_in_both_arms": true,
+  "STOP_failure_charged_full_budget": true,
+  "actual_seconds": 10.22867460991256,
+  "device": "cpu",
+  "threads": 2,
+  "limits": [
+    "No new acquisition training, relation identification or algorithm novelty",
+    "Whole-stream policy intervention; histories later differ",
+    "No retrospective noninferiority margin; report cost and completion jointly",
+    "Selected-method development cohort; cannot become a later final test"
+  ]
+}
